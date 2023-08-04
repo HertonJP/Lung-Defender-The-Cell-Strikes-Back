@@ -37,4 +37,5 @@ public class MenuController : MonoBehaviour
         volumeTextValue.text = defaultVolume.ToString("0.0");
         VolumeApply();
     }
+
 }
