@@ -8,11 +8,19 @@ using TMPro;
 public class MenuController : MonoBehaviour
 {
     public string sceneName;
+    public Animator transitionAnimation;
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private float defaultVolume = 1.0f;
-    public void PlayButton(string sceneName)
+    public void PlayButton()
     {
+        StartCoroutine(LoadScene());
+    }
+
+    IEnumerator LoadScene()
+    {
+        transitionAnimation.SetTrigger("end");
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(sceneName);
     }
     public void ExitButton()
