@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class FloatingTextController : MonoBehaviour
 {
-    [SerializeField] private Text textComponent;
+    [SerializeField] private TextMesh textComponent;
     [SerializeField] private float floatSpeed = 1f;
     [SerializeField] private float fadeDuration = 1f;
 
