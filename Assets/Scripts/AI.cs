@@ -16,7 +16,7 @@ public class AI : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Player not found! Make sure the player has a 'Player' tag.");
+            return;
         }
     }
 

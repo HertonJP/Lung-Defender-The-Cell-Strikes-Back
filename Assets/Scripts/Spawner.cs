@@ -7,9 +7,6 @@ using TMPro;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
-    [SerializeField] private GameObject paladinProjectiles;
-    [SerializeField] private GameObject priestProjectiles;
-
     [SerializeField] private int baseEnemies = 3;
     [SerializeField] private float enemiesPerSecond = 1f;
     [SerializeField] private float timeBetweenWaves = 10f;
@@ -40,7 +37,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        waveText = GameObject.Find("Current Wave Text").GetComponent<TextMeshProUGUI>();
+       // waveText = GameObject.Find("Current Wave Text").GetComponent<TextMeshProUGUI>();
         StartCoroutine(StartWave());
     }
 
@@ -63,7 +60,7 @@ public class Spawner : MonoBehaviour
         {
             EndWave();
         }
-        waveText.text = "Current Wave: " + currentWave.ToString();
+        //waveText.text = "Current Wave: " + currentWave.ToString();
     }
 
     private void EndWave()

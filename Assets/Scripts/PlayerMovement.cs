@@ -29,7 +29,10 @@ public class PlayerMovement : MonoBehaviour
         {
             StartRoll();
         }
-
+        if ((movement.x < 0 && facingRight) || (movement.x > 0 && !facingRight))
+        {
+            Flip();
+        }
         bool isMoving = movement.magnitude > 0.1f;
         animator.SetBool("isRunning", isMoving);
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
