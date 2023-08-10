@@ -17,19 +17,12 @@ public class PlayerMeleeAttack : MonoBehaviour
         if (hitboxIndex == 1)
         {
             hitbox1.enabled = true;
+            CheckColliders(hitbox1);
         }
         else if (hitboxIndex == 2)
         {
             hitbox2.enabled = true;
-        }
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, hitbox1.bounds.size, 0f);
-        foreach (Collider2D collider in colliders)
-        {
-            Enemy enemy = collider.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(attackDamage);
-            }
+            CheckColliders(hitbox2);
         }
     }
 
@@ -45,5 +38,16 @@ public class PlayerMeleeAttack : MonoBehaviour
         }
     }
 
-    
+    private void CheckColliders(Collider2D hitboxCollider)
+    {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(hitboxCollider.transform.position, hitboxCollider.bounds.size, 0f);
+        foreach (Collider2D collider in colliders)
+        {
+            Enemy enemy = collider.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(attackDamage);
+            }
+        }
+    }
 }
