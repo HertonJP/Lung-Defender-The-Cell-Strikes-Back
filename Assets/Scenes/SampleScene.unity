@@ -915,6 +915,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3110290502189817490, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Size.x
+      value: 3.1382859
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110290502189817490, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Size.y
+      value: 4.4616585
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110290502189817490, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.43210757
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110290502189817490, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.3545723
+      objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425640, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: cam
       value: 
@@ -966,6 +982,22 @@ PrefabInstance:
     - target: {fileID: 3110290503495425654, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_Name
       value: white_blood
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778237680684427909, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Size.x
+      value: 3.282616
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778237680684427909, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Size.y
+      value: 5.678932
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778237680684427909, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.08725917
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778237680684427909, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.43618572
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
