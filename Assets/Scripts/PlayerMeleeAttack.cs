@@ -4,7 +4,7 @@ public class PlayerMeleeAttack : MonoBehaviour
 {
     [SerializeField] private Collider2D hitbox1;
     [SerializeField] private Collider2D hitbox2;
-    public int attackDamage = 10;
+    public playerStats playerStats;
 
     private void Start()
     {
@@ -46,7 +46,8 @@ public class PlayerMeleeAttack : MonoBehaviour
             Enemy enemy = collider.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(attackDamage);
+                int damage = playerStats.CalculateDamage(playerStats.attackDamage);
+                enemy.TakeDamage(damage);
             }
         }
     }

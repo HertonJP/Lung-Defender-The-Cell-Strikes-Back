@@ -142,6 +142,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox1: {fileID: 2024899147}
   hitbox2: {fileID: 1541291712}
+  playerStats: {fileID: 182944447}
+--- !u!114 &182944447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182944431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc50207d2f132fc429c30000de16d0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 0
+  vit: 0
+  agility: 0
+  luck: 0
+  xp: 0
+  playerLevel: 1
+  critChance: 0.5
+  availableStatPoints: 0
   attackDamage: 10
 --- !u!1 &208805731
 GameObject:
