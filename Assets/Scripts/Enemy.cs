@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform firingPoint;
     [SerializeField] public int initialEnemyHP = 20;
     [SerializeField] private GameObject floatingTextPrefab;
+    [SerializeField] private GameObject hitVFXPrefab;
     public int enemyHP;
     private bool isDead = false;
 
@@ -74,6 +75,17 @@ public class Enemy : MonoBehaviour
         else
         {
             ShowFloatingText(damage.ToString());
+            PlayHitVFX();
+        }
+    }
+
+
+    private void PlayHitVFX()
+    {
+        if (hitVFXPrefab != null)
+        {
+            GameObject hitVFXObject = Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
+            Destroy(hitVFXObject, 0.3f);
         }
     }
 
