@@ -119,7 +119,7 @@ MonoBehaviour:
     m_Bits: 64
   projectilesPrefab: {fileID: 0}
   firingPoint: {fileID: 0}
-  initialEnemyHP: 20
+  initialEnemyHP: 30
   floatingTextPrefab: {fileID: 5500894286564896549, guid: d9b73db23a35c5049acb0c71937583b9, type: 3}
   enemyHP: 20
   targetingRange: 3

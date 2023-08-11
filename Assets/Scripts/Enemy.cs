@@ -10,34 +10,30 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject floatingTextPrefab;
     public int enemyHP;
     private bool isDead = false;
-    //private Animator animator;
 
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] public float initialAttackSpeed = 1f;
     public float attackSpeed;
 
-
     private Transform target;
     private float timeUntilFire;
 
+    private bool isShowingText = false;
+
     private void Start()
     {
-       // animator = GetComponent<Animator>();
         enemyHP = initialEnemyHP;
         attackSpeed = initialAttackSpeed;
     }
 
     private void Update()
     {
-              
-
         if (target == null)
         {
             FindTarget();
             return;
         }
         float distanceToTarget = Vector2.Distance(target.position, transform.position);
-        //animator.SetBool("inRange", distanceToTarget <= targetingRange);
 
         if (!inRange())
         {
@@ -49,12 +45,9 @@ public class Enemy : MonoBehaviour
         }
         if (timeUntilFire >= 1f / attackSpeed)
         {
-            //animator.SetTrigger("isAttack");
             timeUntilFire = 0f;
         }
     }
-
-    
 
     private bool inRange()
     {
@@ -83,12 +76,24 @@ public class Enemy : MonoBehaviour
             ShowFloatingText(damage.ToString());
         }
     }
+
+    private IEnumerator DestroyWithDelay(float delay)
+    {
+        if (isShowingText)
+        {
+            yield return new WaitForSeconds(delay);
+            Destroy(gameObject);
+        }
+    }
+
     private void Die()
     {
-        // animasi mati
+        isShowingText = true;
 
-        Destroy(gameObject);
+        float destroyDelay = 0.5f; 
+        StartCoroutine(DestroyWithDelay(destroyDelay));
     }
+
     private void ShowFloatingText(string text)
     {
         if (floatingTextPrefab != null)
@@ -101,6 +106,7 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
