@@ -79,24 +79,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void CheckPlayerLevel(playerStats player)
-    {
-        int[] levelXPRequirements = { 0, 25, 50, 75, 100 };
-        int maxLevel = levelXPRequirements.Length + 1;
-
-        for (int level = player.playerLevel; level <= maxLevel; level++)
-        {
-            int requiredXP = levelXPRequirements[level - 1];
-            if (player.xp >= requiredXP)
-            {
-                player.playerLevel = level;
-            }
-            else
-            {
-                break; 
-            }
-        }
-    }
     private void PlayHitVFX()
     {
         if (hitVFXPrefab != null)
@@ -115,21 +97,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Die()
-    {
-        isShowingText = true;
-
-        float destroyDelay = 0.5f; 
-        StartCoroutine(DestroyWithDelay(destroyDelay));
-        int xpToGrant = 5;
-        playerStats player = FindObjectOfType<playerStats>();
-        if (player != null)
-        {
-            player.xp += xpToGrant;
-            CheckPlayerLevel(player);
-        }
-    }
-
     private void ShowFloatingText(string text)
     {
         if (floatingTextPrefab != null)
@@ -142,10 +109,18 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
-    private void OnDrawGizmosSelected()
+    private void Die()
     {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, targetingRange);
+        isShowingText = true;
+
+        float destroyDelay = 0.5f;
+        StartCoroutine(DestroyWithDelay(destroyDelay));
+
+        int xpToGrant = 5;
+        playerStats player = FindObjectOfType<playerStats>();
+        if (player != null)
+        {
+            player.GainXP(xpToGrant);
+        }
     }
 }

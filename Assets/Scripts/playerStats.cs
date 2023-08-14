@@ -36,7 +36,7 @@ public class playerStats : MonoBehaviour
     {
         playerLevel++;
         availableStatPoints += 3;
-        CheckLevelUp();
+        xp = 0;
         Debug.Log("Player Leveled up");
     }
 
