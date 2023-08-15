@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.CompareTag("Border"))
         {
+            Debug.Log("kena border");
             rb.velocity = Vector2.zero;
         }
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 303446570074867422}
   - component: {fileID: 1069986343537608608}
   - component: {fileID: 2697133779386040292}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: latent_swing_vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3475042448550210620}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5813880984593966322}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 5091493113994913918}
   - component: {fileID: 5025831897487541883}
   - component: {fileID: 5322860130892077383}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ MonoBehaviour:
   - {fileID: 6050337167234482611}
   - {fileID: 8298833212699576270}
   m_Bounds:
-    m_Center: {x: 0.0032636821, y: 0, z: 0}
+    m_Center: {x: 0.0032632053, y: 0, z: 0}
     m_Extent: {x: 0.337872, y: 0.30499998, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 5205833207785865560}
   - component: {fileID: 5205833207785865561}
   - component: {fileID: 5205833207785865562}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 5205833209075438806}
   - component: {fileID: 5205833209075438800}
   - component: {fileID: 5205833209075438807}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8298833212699576270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: root_bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6850260579602798597}
   - component: {fileID: 5205833208772822216}
-  m_Layer: 0
+  - component: {fileID: 7490482575818085454}
+  - component: {fileID: 2316055995098019991}
+  - component: {fileID: 7521762228477510147}
+  - component: {fileID: 1421212822998402280}
+  m_Layer: 7
   m_Name: latent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,6 +583,91 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7490482575818085454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753659029274312806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af30e475d9f3f84f9c010f9fad97d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  rb: {fileID: 7521762228477510147}
+--- !u!114 &2316055995098019991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753659029274312806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219fd1f55cffca246b7c2ada7fde44f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  projectilesPrefab: {fileID: 0}
+  firingPoint: {fileID: 0}
+  initialEnemyHP: 20
+  floatingTextPrefab: {fileID: 5500894286564896549, guid: d9b73db23a35c5049acb0c71937583b9, type: 3}
+  hitVFXPrefab: {fileID: 2981612518552317830, guid: ba83bc4fec4ddc741b63c0ab0d2d7e9c, type: 3}
+  enemyHP: 0
+  targetingRange: 3
+  initialAttackSpeed: 1
+  attackSpeed: 0
+--- !u!50 &7521762228477510147
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753659029274312806}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &1421212822998402280
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753659029274312806}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &6501681724089631451
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +679,7 @@ GameObject:
   - component: {fileID: 2893863457955884111}
   - component: {fileID: 6126574710743532637}
   - component: {fileID: 472302594966280659}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: front arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +769,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3475042448550210620}
   m_Bounds:
-    m_Center: {x: 0.028823458, y: 0.000301674, z: 0}
+    m_Center: {x: 0.028824411, y: 0.000301674, z: 0}
     m_Extent: {x: 0.11177101, y: 0.13969836, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -694,7 +783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6050337167234482611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +818,7 @@ GameObject:
   - component: {fileID: 151497632690824336}
   - component: {fileID: 1569037512226105093}
   - component: {fileID: 128666883649479999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: back arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +908,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5813880984593966322}
   m_Bounds:
-    m_Center: {x: -0.032086954, y: -0.00044476986, z: 0}
+    m_Center: {x: -0.032086954, y: -0.0004451275, z: 0}
     m_Extent: {x: 0.111547515, y: 0.121048346, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1

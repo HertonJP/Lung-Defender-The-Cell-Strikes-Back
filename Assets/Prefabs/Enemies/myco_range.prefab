@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8978946541469228929}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3285192745702346022}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: root_bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8586838070603045339}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7484289794210848505}
   - component: {fileID: 5035188012802994296}
   - component: {fileID: 8037460780926342161}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: back-arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4196945395105221602}
   - component: {fileID: 3217789275467653785}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 5362818957383197111}
   - component: {fileID: 5294902842226593714}
   - component: {fileID: 4979442391743500430}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6040755214302826956}
   - component: {fileID: 7647894175102017202}
-  m_Layer: 0
+  - component: {fileID: 153420098416671678}
+  - component: {fileID: 4380382770996301611}
+  - component: {fileID: 1091197595222730303}
+  - component: {fileID: 2220991417698291595}
+  m_Layer: 7
   m_Name: myco_range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,6 +455,91 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &153420098416671678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836033705582561711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af30e475d9f3f84f9c010f9fad97d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  rb: {fileID: 1091197595222730303}
+--- !u!114 &4380382770996301611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836033705582561711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219fd1f55cffca246b7c2ada7fde44f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  projectilesPrefab: {fileID: 0}
+  firingPoint: {fileID: 0}
+  initialEnemyHP: 20
+  floatingTextPrefab: {fileID: 5500894286564896549, guid: d9b73db23a35c5049acb0c71937583b9, type: 3}
+  hitVFXPrefab: {fileID: 2981612518552317830, guid: ba83bc4fec4ddc741b63c0ab0d2d7e9c, type: 3}
+  enemyHP: 0
+  targetingRange: 3
+  initialAttackSpeed: 1
+  attackSpeed: 0
+--- !u!50 &1091197595222730303
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836033705582561711}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &2220991417698291595
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836033705582561711}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &6268602195123292946
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +551,7 @@ GameObject:
   - component: {fileID: 2660783044209436038}
   - component: {fileID: 6467703779915419028}
   - component: {fileID: 741376340006539290}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: front arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7601306144341852022}
   - component: {fileID: 5068363108845975698}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8137336957176857360}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
