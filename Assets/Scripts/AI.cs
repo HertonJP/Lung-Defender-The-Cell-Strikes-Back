@@ -6,6 +6,8 @@ public class AI : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     private Transform target;
 
+    private bool isFacingRight = true;
+
     private void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -28,26 +30,28 @@ public class AI : MonoBehaviour
 
             rb.velocity = direction * speed;
 
-            if (direction.x > 0 && !IsFacingRight())
+            if (direction.x > 0 && !isFacingRight)
             {
                 Flip();
             }
-            else if (direction.x < 0 && IsFacingRight())
+            else if (direction.x < 0 && isFacingRight)
             {
                 Flip();
             }
         }
     }
 
-    private bool IsFacingRight()
-    {
-        return transform.localScale.x > 0;
-    }
-
     private void Flip()
     {
-        Vector3 newScale = transform.localScale;
-        newScale.x *= -1;
-        transform.localScale = newScale;
+        isFacingRight = !isFacingRight;
+
+        if (isFacingRight)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
     }
 }
