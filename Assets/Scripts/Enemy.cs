@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         enemyHP = initialEnemyHP;
         attackSpeed = initialAttackSpeed;
     }
@@ -76,7 +77,10 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            anim.SetTrigger("isHit");
+            if (anim != null)
+            {
+                anim.SetTrigger("isHit");
+            }
             ShowFloatingText(damage.ToString());
             PlayHitVFX();
         }
