@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private GameObject projectilesPrefab;
     [SerializeField] private Transform firingPoint;
-    [SerializeField] public int initialEnemyHP = 20;
     [SerializeField] private GameObject floatingTextPrefab;
     [SerializeField] private GameObject hitVFXPrefab;
     public int enemyHP;
@@ -14,8 +13,11 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] public float initialAttackSpeed = 1f;
+    [SerializeField] public int initialEnemyHP = 20;
+    [SerializeField] public int enemyDamagePoints = 5;
     public float attackSpeed;
 
+    private Animator anim;
     private Transform target;
     private float timeUntilFire;
 
@@ -74,6 +76,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            anim.SetTrigger("isHit");
             ShowFloatingText(damage.ToString());
             PlayHitVFX();
         }

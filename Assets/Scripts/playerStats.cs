@@ -9,14 +9,22 @@ public class playerStats : MonoBehaviour
     [SerializeField] public int agility = 0;
     [SerializeField] public int luck = 0;
 
+    [SerializeField] public int playerMaxHP = 100;
     [SerializeField] public int xp = 0;
     [SerializeField] public int playerLevel = 1;
     [SerializeField] public float critChance = 0.5f;
     [SerializeField] public int availableStatPoints = 0;
     [SerializeField] public int attackDamage = 10;
 
-    private int[] xpThresholds = { 0, 25, 50, 75, 100, 100, 100, 100, 100, 100, 100};
+    [SerializeField] private GameObject hitVFXPrefab;
 
+    public int playerHP;
+    private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
+
+    private void Start()
+    {
+        playerHP = playerMaxHP;
+    }
     public void GainXP(int amount)
     {
         xp += amount;
@@ -50,6 +58,33 @@ public class playerStats : MonoBehaviour
         {
             return baseDamage; 
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        playerHP -= damage;
+        if (playerHP <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            PlayHitVFX();
+        }
+    }
+    private void PlayHitVFX()
+    {
+        if (hitVFXPrefab != null)
+        {
+            GameObject hitVFXObject = Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
+            Destroy(hitVFXObject, 0.3f);
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log("mati");
+        Destroy(gameObject);
     }
 
     public void AllocateStatPoint(int statIndex)
