@@ -2,40 +2,25 @@ using UnityEngine;
 
 public class enemyMeleeAttack : MonoBehaviour
 {
-    [SerializeField] private Collider2D hitbox1;
-    [SerializeField] private Collider2D hitbox2;
+    [SerializeField] private Collider2D hitbox;
+    public playerStats player;
     public Enemy enemy;
 
     private void Start()
     {
-        hitbox1.enabled = false;
-        hitbox2.enabled = false;
+        hitbox.enabled = false;
+
     }
 
-    public void EnableHitbox(int hitboxIndex)
+    public void EnableHitbox()
     {
-        if (hitboxIndex == 1)
-        {
-            hitbox1.enabled = true;
-            CheckColliders(hitbox1);
-        }
-        else if (hitboxIndex == 2)
-        {
-            hitbox2.enabled = true;
-            CheckColliders(hitbox2);
-        }
+         hitbox.enabled = true;
+         CheckColliders(hitbox);
     }
 
-    public void DisableHitbox(int hitboxIndex)
+    public void DisableHitbox()
     {
-        if (hitboxIndex == 1)
-        {
-            hitbox1.enabled = false;
-        }
-        else if (hitboxIndex == 2)
-        {
-            hitbox2.enabled = false;
-        }
+        hitbox.enabled = false;
     }
 
     private void CheckColliders(Collider2D hitboxCollider)
@@ -44,7 +29,7 @@ public class enemyMeleeAttack : MonoBehaviour
         foreach (Collider2D collider in colliders)
         {
             playerStats player = collider.GetComponent<playerStats>();
-            if (enemy != null)
+            if (player != null)
             {
                 int damage = enemy.enemyDamagePoints;
                 player.TakeDamage(damage);
