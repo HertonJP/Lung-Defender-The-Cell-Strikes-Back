@@ -28,6 +28,12 @@ public class AI : MonoBehaviour
         {
             Vector2 direction = (target.position - transform.position).normalized;
 
+            if (Vector2.Distance(transform.position, target.position) <= 3f)
+            {
+                rb.velocity = Vector2.zero;
+                return;
+            }
+
             rb.velocity = direction * speed;
 
             if (direction.x > 0 && !isFacingRight)

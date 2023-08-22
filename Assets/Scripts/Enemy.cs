@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform firingPoint;
     [SerializeField] private GameObject floatingTextPrefab;
     [SerializeField] private GameObject hitVFXPrefab;
+    [SerializeField] private GameObject attackRange;
     public int enemyHP;
     private bool isDead = false;
 
@@ -49,13 +50,14 @@ public class Enemy : MonoBehaviour
         }
         if (timeUntilFire >= 1f / attackSpeed)
         {
+            anim.SetTrigger("isAttack");
             timeUntilFire = 0f;
         }
     }
 
-    private bool inRange()
+    public bool inRange()
     {
-        return Vector2.Distance(target.position, transform.position) <= targetingRange;
+        return Vector2.Distance(target.position, attackRange.transform.position) <= targetingRange;
     }
 
     private void FindTarget()
@@ -129,5 +131,11 @@ public class Enemy : MonoBehaviour
         {
             player.GainXP(xpToGrant);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(attackRange.transform.position, targetingRange);
     }
 }
