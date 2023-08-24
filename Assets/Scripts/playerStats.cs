@@ -95,15 +95,19 @@ public class playerStats : MonoBehaviour
             {
                 case 0: // Strength
                     strength++;
+                    attackDamage += 1; 
                     break;
                 case 1: // Vitality
                     vit++;
+                    playerMaxHP += 5;
+                    playerHP += 5;
                     break;
                 case 2: // Agility
                     agility++;
                     break;
                 case 3: // Luck
                     luck++;
+                    critChance += 0.05f; 
                     break;
             }
             availableStatPoints--;
