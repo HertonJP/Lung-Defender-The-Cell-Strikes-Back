@@ -4109,9 +4109,9 @@ RectTransform:
   - {fileID: 750678841}
   - {fileID: 476910728}
   - {fileID: 206775198}
-  - {fileID: 1891257103}
   - {fileID: 1028925804}
   - {fileID: 1483439750}
+  - {fileID: 1891257103}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16778,7 +16778,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 208805735}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -23943,7 +23943,7 @@ RectTransform:
   - {fileID: 2104287867}
   - {fileID: 1959272540}
   m_Father: {fileID: 208805735}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -46500,7 +46500,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6bc29694ca59a1c40baf68f7d2563c0f, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -50336,7 +50336,7 @@ RectTransform:
   - {fileID: 1923473650}
   - {fileID: 1107054317}
   m_Father: {fileID: 208805735}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
