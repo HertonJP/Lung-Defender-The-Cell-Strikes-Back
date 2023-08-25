@@ -42,34 +42,10 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetTrigger("isRolling");
 
-        rollDirection = transform.forward;
-
-        isRolling = true;
-        Vector3 targetPosition = transform.position + rollDirection * 2f;
-        StartCoroutine(RollCoroutine(targetPosition));
+     
     }
 
-    private IEnumerator RollCoroutine(Vector3 targetPosition)
-    {
-        float elapsedTime = 0f;
-        float rollDuration = 0.5f;
-
-        while (elapsedTime < rollDuration)
-        {
-
-            transform.position = Vector3.Lerp(transform.position, targetPosition, elapsedTime / rollDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.position = targetPosition;
-        isRolling = false;
-    }
-
-    public void FinishRoll()
-    {
-        isRolling = false;
-    }
+ 
 
     private void FixedUpdate()
     {

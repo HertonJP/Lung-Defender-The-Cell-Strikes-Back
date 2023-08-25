@@ -1,8 +1,8 @@
 using UnityEngine;
-
 public class enemyMeleeAttack : MonoBehaviour
 {
     [SerializeField] private Collider2D hitbox;
+    [SerializeField] private float knockbackForce;
     public Enemy enemy;
 
     private void Start()
@@ -31,6 +31,9 @@ public class enemyMeleeAttack : MonoBehaviour
             {
                 int damage = enemy.enemyDamagePoints;
                 player.TakeDamage(damage);
+
+                Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+                player.ApplyKnockback(knockbackDirection, knockbackForce);
             }
         }
     }

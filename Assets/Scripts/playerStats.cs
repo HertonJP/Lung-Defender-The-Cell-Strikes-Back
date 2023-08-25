@@ -113,4 +113,12 @@ public class playerStats : MonoBehaviour
             availableStatPoints--;
         }
     }
+
+
+    //misc
+    public void ApplyKnockback(Vector2 direction, float force)
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(direction * force, ForceMode2D.Impulse);
+    }
 }

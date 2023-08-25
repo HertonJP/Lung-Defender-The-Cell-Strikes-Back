@@ -851,6 +851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 3981587970105960364}
+  knockbackForce: 2
   enemy: {fileID: 7360928090622815538}
 --- !u!1 &6088494632940732550
 GameObject:
