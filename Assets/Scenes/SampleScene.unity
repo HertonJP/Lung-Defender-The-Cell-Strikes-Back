@@ -8311,7 +8311,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2058124481}
   m_FillRect: {fileID: 1195041438}
   m_HandleRect: {fileID: 2058124480}
@@ -12791,7 +12791,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1352605544}
   m_FillRect: {fileID: 1519273906}
   m_HandleRect: {fileID: 1352605543}
@@ -53971,6 +53971,22 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3110290503495425641, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Mass
+      value: 8.8474865
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110290503495425641, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_UseAutoMass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110290503495425641, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110290503495425641, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425642, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_RootOrder
       value: 3
