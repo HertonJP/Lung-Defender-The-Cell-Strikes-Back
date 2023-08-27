@@ -20,9 +20,9 @@ public class ChooseTalentPanel : MonoBehaviour
             Talent randTalent = talentManager.RandomTalent();
             randomTalents.Add(randTalent);
             talentButtons[i].image.sprite = randTalent.talentImage;
-            int index = i; // Important to capture the loop variable in a local variable
+            int index = i;
 
-            talentButtons[i].onClick.RemoveAllListeners(); // Clear previous onClick events
+            talentButtons[i].onClick.RemoveAllListeners();
             talentButtons[i].onClick.AddListener(() => ChooseTalent(randomTalents[index]));
         }
 

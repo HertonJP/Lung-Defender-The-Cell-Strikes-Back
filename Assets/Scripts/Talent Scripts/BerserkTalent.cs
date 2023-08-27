@@ -11,6 +11,7 @@ public class BerserkTalent : Talent
 
     public override void Activate(playerStats player)
     {
+        TalentUIManager.Instance.berserk.SetActive(true);
         MonoBehaviour host = player.GetComponent<MonoBehaviour>();
         if (host != null)
         {

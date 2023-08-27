@@ -127,7 +127,7 @@ public class Enemy : MonoBehaviour
 
         int xpToGrant = 5;
         playerStats player = FindObjectOfType<playerStats>();
-        if (player != null)
+        if (player != null && player.playerLevel <=4)
         {
             player.GainXP(xpToGrant);
         }

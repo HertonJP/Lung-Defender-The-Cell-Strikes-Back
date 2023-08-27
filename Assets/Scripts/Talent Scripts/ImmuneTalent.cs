@@ -5,6 +5,8 @@ using System.Collections;
 public class ImmuneTalent : Talent
 {
     public float immuneTime = 3f;
+    public float immuneCooldown = 20f;
+    private float lastActivatedTime = 0f;
 
     public override void Activate(playerStats player)
     {
@@ -19,11 +21,18 @@ public class ImmuneTalent : Talent
     {
         while (true)
         {
-            if (Input.GetMouseButtonDown(1)) 
+            float currentTime = Time.time;
+
+            if (currentTime - lastActivatedTime >= immuneCooldown)
             {
-                yield return ActivateImmune(player);
+                if (Input.GetMouseButtonDown(1))
+                {
+                    lastActivatedTime = currentTime;
+                    yield return ActivateImmune(player);
+                }
             }
-            yield return null; 
+
+            yield return null;
         }
     }
 

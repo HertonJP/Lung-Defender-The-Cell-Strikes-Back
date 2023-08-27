@@ -16,17 +16,22 @@ public class playerStats : MonoBehaviour
     [SerializeField] public int availableStatPoints = 0;
     [SerializeField] public int attackDamage = 10;
     [SerializeField] public float movementSpeed = 5f;
+    [SerializeField] public float rollCooldown = 2f;
 
     [SerializeField] private GameObject hitVFXPrefab;
 
+    public TalentUIManager talentUI;
     public ChooseTalentPanel chooseTalentPanel;
     public float evasionChance = 0f;
-    public bool canRevive = false;
+    public bool canRevive;
+    public bool isRollout;
     public int playerHP;
     private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
 
     private void Start()
     {
+        canRevive = false;
+        isRollout = false;
         playerHP = playerMaxHP;
     }
     public void GainXP(int amount)
@@ -73,18 +78,25 @@ public class playerStats : MonoBehaviour
             Debug.Log("Miss");
             return;
         }
+
+        playerHP -= damage;
+
         if (playerHP <= 0)
         {
-            Die();
-        }
-        if(playerHP <= 0 && canRevive)
-        {
-            playerHP = playerMaxHP / 2;
-            canRevive = false;
+            if (canRevive)
+            {
+                Debug.Log("Revived");
+                playerHP = playerMaxHP / 2;
+                talentUI.revive.SetActive(false);
+                canRevive = false;
+            }
+            else
+            {
+                Die();
+            }
         }
         else
         {
-            playerHP -= damage;
             PlayHitVFX();
         }
     }

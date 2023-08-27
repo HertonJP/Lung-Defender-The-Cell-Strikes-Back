@@ -7,9 +7,12 @@ public class PlayerMovement : MonoBehaviour
     public playerStats player;
     public Rigidbody2D rb;
     public Camera cam;
+    public Collider2D rolloutHitbox;
     private bool facingRight = false;
     private Animator animator;
     private bool isRolling = false;
+
+    private float lastRollTime = 0f;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -17,21 +20,30 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        rolloutHitbox.enabled = false;
     }
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        
 
-        if (Input.GetKeyDown(KeyCode.Q) && !isRolling)
+        float currentTime = Time.time;
+
+        if (currentTime - lastRollTime >= player.rollCooldown)
         {
-            StartRoll();
+            if (Input.GetKeyDown(KeyCode.Q) && !isRolling)
+            {
+                StartRoll();
+                lastRollTime = currentTime;
+            }
         }
+
         if ((movement.x < 0 && facingRight) || (movement.x > 0 && !facingRight))
         {
             Flip();
         }
+
         bool isMoving = movement.magnitude > 0.1f;
         animator.SetBool("isRunning", isMoving);
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -40,8 +52,20 @@ public class PlayerMovement : MonoBehaviour
     private void StartRoll()
     {
         animator.SetTrigger("isRolling");
+        isRolling = true;
+
+        if (player.isRollout)
+        {
+            rolloutHitbox.enabled = true;
+        }
     }
 
+    private void EndRoll()
+    {
+        animator.ResetTrigger("isRolling");
+        isRolling = false;
+        rolloutHitbox.enabled = false;
+    }
 
     private void FixedUpdate()
     {
@@ -49,25 +73,20 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-
-
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.CompareTag("Border"))
         {
-            Debug.Log("kena border");
+            Debug.Log("Hit border");
             rb.velocity = Vector2.zero;
         }
     }
 
     void Flip()
     {
-
         facingRight = !facingRight;
-
-
         Vector3 newScale = transform.localScale;
         newScale.x *= -1;
         transform.localScale = newScale;

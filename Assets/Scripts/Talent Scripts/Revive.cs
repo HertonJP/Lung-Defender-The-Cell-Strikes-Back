@@ -7,6 +7,8 @@ public class Revive : Talent
 {
     public override void Activate(playerStats player)
     {
+        Debug.Log("Revive Talent");
         player.canRevive = true;
+        TalentUIManager.Instance.revive.SetActive(true);
     }
 }
