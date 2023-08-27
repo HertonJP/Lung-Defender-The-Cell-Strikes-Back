@@ -41,11 +41,8 @@ public class PlayerMovement : MonoBehaviour
     private void StartRoll()
     {
         animator.SetTrigger("isRolling");
-
-     
     }
 
- 
 
     private void FixedUpdate()
     {

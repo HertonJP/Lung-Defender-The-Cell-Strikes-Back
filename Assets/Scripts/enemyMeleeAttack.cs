@@ -32,8 +32,6 @@ public class enemyMeleeAttack : MonoBehaviour
                 int damage = enemy.enemyDamagePoints;
                 player.TakeDamage(damage);
 
-                Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
-                player.ApplyKnockback(knockbackDirection, knockbackForce);
             }
         }
     }

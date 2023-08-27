@@ -18,6 +18,8 @@ public class playerStats : MonoBehaviour
 
     [SerializeField] private GameObject hitVFXPrefab;
 
+    public ChooseTalentPanel chooseTalentPanel;
+    public float evasionChance = 0f;
     public int playerHP;
     private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
 
@@ -34,7 +36,7 @@ public class playerStats : MonoBehaviour
     public void CheckLevelUp()
     {
         int nextLevelThreshold = xpThresholds[playerLevel - 1];
-        if (xp >= nextLevelThreshold)
+        if (xp >= nextLevelThreshold && playerLevel <=4)
         {
             LevelUp();
         }
@@ -46,6 +48,8 @@ public class playerStats : MonoBehaviour
         availableStatPoints += 3;
         xp = 0;
         Debug.Log("Player Leveled up");
+
+        chooseTalentPanel.ShowPanel();
     }
 
     public int CalculateDamage(int baseDamage)
@@ -62,13 +66,18 @@ public class playerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        playerHP -= damage;
+        if (Random.Range(0f, 1f) < evasionChance)
+        {
+            Debug.Log("Miss");
+            return;
+        }
         if (playerHP <= 0)
         {
             Die();
         }
         else
         {
+            playerHP -= damage;
             PlayHitVFX();
         }
     }
@@ -112,13 +121,5 @@ public class playerStats : MonoBehaviour
             }
             availableStatPoints--;
         }
-    }
-
-
-    //misc
-    public void ApplyKnockback(Vector2 direction, float force)
-    {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(direction * force, ForceMode2D.Impulse);
     }
 }
