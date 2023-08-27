@@ -3278,17 +3278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8c84a022686cf40a2faf187d48c2e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &182944457 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 182944447, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
-  m_PrefabInstance: {fileID: 3110290503677648089}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc50207d2f132fc429c30000de16d0cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &189706592
 GameObject:
   m_ObjectHideFlags: 0
@@ -13184,7 +13173,7 @@ MonoBehaviour:
   maxHealthText: {fileID: 1082626654}
   xpText: {fileID: 284011817}
   maxXpText: {fileID: 205128458}
-  player: {fileID: 182944457}
+  player: {fileID: 182944447}
 --- !u!114 &702315507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13677,7 +13666,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741520903}
-  - component: {fileID: 741520904}
   m_Layer: 6
   m_Name: Immune
   m_TagString: Untagged
@@ -13700,18 +13688,6 @@ Transform:
   m_Father: {fileID: 1223781953}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &741520904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741520902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 269c4209abe3f0349a581c25e1e437d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &741882088
 GameObject:
   m_ObjectHideFlags: 0
@@ -54799,6 +54775,26 @@ PrefabInstance:
       propertyPath: chooseTalentPanel
       value: 
       objectReference: {fileID: 885790179}
+    - target: {fileID: 182944456, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: allTalents.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 182944456, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: allTalents.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bec4282db94575499a9ed282f8b6314, type: 2}
+    - target: {fileID: 182944456, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: availableTalents.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 182944456, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: availableTalents.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bec4282db94575499a9ed282f8b6314, type: 2}
+    - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: talentUI
+      value: 
+      objectReference: {fileID: 702315507}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: chooseTalentPanel
       value: 
@@ -54855,5 +54851,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: white_blood
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 182944447, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}

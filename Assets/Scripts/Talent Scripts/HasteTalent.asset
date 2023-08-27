@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c400371f17931a489067e2b698b4d4c, type: 3}
-  m_Name: ImmuneTalent
+  m_Script: {fileID: 11500000, guid: 6ecd1c19d25ee334cb261f229e0ee378, type: 3}
+  m_Name: HasteTalent
   m_EditorClassIdentifier: 
-  talentName: Immune
-  talentImage: {fileID: 21300000, guid: 75ae18f4374b9674ea1c83fa182ccab1, type: 3}
+  talentName: Haste
+  talentImage: {fileID: 21300000, guid: fd476ed70f217694593fc0d9ee122dc0, type: 3}
   isActive: 0
-  immuneTime: 3
-  immuneCooldown: 5

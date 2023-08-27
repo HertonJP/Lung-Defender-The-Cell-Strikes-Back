@@ -23,8 +23,12 @@ public class playerStats : MonoBehaviour
     public TalentUIManager talentUI;
     public ChooseTalentPanel chooseTalentPanel;
     public float evasionChance = 0f;
+    public bool canBerserk;
     public bool canRevive;
     public bool isRollout;
+    public int damageMultiplier = 2;
+    public float healthThreshold = 0.4f;
+    private bool isBerserkActive;
     public int playerHP;
     private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
 
@@ -32,6 +36,7 @@ public class playerStats : MonoBehaviour
     {
         canRevive = false;
         isRollout = false;
+        canBerserk = false;
         playerHP = playerMaxHP;
     }
     public void GainXP(int amount)
@@ -80,6 +85,7 @@ public class playerStats : MonoBehaviour
         }
 
         playerHP -= damage;
+        CheckForLowHealth();
 
         if (playerHP <= 0)
         {
@@ -115,6 +121,23 @@ public class playerStats : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private IEnumerator CheckForLowHealth()
+    {
+        while (true)
+        {
+            if (playerHP <= playerMaxHP * healthThreshold && !isBerserkActive && canBerserk)
+            {
+                isBerserkActive = true;
+                attackDamage *= damageMultiplier;
+            }
+            else if (playerHP > playerMaxHP * healthThreshold && isBerserkActive && canBerserk)
+            {
+                isBerserkActive = false;
+                attackDamage /= damageMultiplier;
+            }
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
     public void AllocateStatPoint(int statIndex)
     {
         if (availableStatPoints > 0)
