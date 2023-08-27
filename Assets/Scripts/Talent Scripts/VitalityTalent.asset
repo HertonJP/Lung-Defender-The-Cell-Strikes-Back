@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf82f17944538547a37a6004f1b9eb1, type: 3}
-  m_Name: BerserkTalent
+  m_Script: {fileID: 11500000, guid: 863a3d04aeb0bca408449cab83112dc6, type: 3}
+  m_Name: VitalityTalent
   m_EditorClassIdentifier: 
-  talentName: Berserk
-  talentImage: {fileID: 21300000, guid: 4f4bc60139b5a3e40ba86bac5c705b21, type: 3}
+  talentName: Vitality Boost
+  talentImage: {fileID: 0}
   isActive: 0
-  damageMultiplier: 2
-  healthThreshold: 0.4

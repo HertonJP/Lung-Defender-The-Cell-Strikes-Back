@@ -15,11 +15,13 @@ public class playerStats : MonoBehaviour
     [SerializeField] public float critChance = 0.5f;
     [SerializeField] public int availableStatPoints = 0;
     [SerializeField] public int attackDamage = 10;
+    [SerializeField] public float movementSpeed = 5f;
 
     [SerializeField] private GameObject hitVFXPrefab;
 
     public ChooseTalentPanel chooseTalentPanel;
     public float evasionChance = 0f;
+    public bool canRevive = false;
     public int playerHP;
     private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
 
@@ -75,6 +77,11 @@ public class playerStats : MonoBehaviour
         {
             Die();
         }
+        if(playerHP <= 0 && canRevive)
+        {
+            playerHP = playerMaxHP / 2;
+            canRevive = false;
+        }
         else
         {
             playerHP -= damage;
@@ -109,10 +116,11 @@ public class playerStats : MonoBehaviour
                 case 1: // Vitality
                     vit++;
                     playerMaxHP += 5;
-                    playerHP += 5;
+                    playerHP += 10;
                     break;
                 case 2: // Agility
                     agility++;
+                    movementSpeed += 0.5f;
                     break;
                 case 3: // Luck
                     luck++;

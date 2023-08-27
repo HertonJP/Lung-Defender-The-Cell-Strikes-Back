@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b4537bb2326a843a3711e7e30355e2, type: 3}
   m_Name: StrengthTalent
   m_EditorClassIdentifier: 
-  talentName: Strength
+  talentName: Strength Boost
   talentImage: {fileID: 0}
   isActive: 0

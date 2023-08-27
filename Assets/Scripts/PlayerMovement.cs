@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public float movementSpeed = 5f;
+    public playerStats player;
     public Rigidbody2D rb;
     public Camera cam;
     private bool facingRight = false;
     private Animator animator;
     private bool isRolling = false;
-    private Vector3 rollDirection;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -46,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * player.movementSpeed * Time.fixedDeltaTime);
 
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
