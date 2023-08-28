@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float initialAttackSpeed = 1f;
     [SerializeField] public int initialEnemyHP = 20;
     [SerializeField] public int enemyDamagePoints = 5;
-    [SerializeField] private bool isRangeEnemy = false;
     public float attackSpeed;
 
     private Animator anim;
@@ -40,7 +39,6 @@ public class Enemy : MonoBehaviour
             return;
         }
         float distanceToTarget = Vector2.Distance(target.position, transform.position);
-
         if (!inRange())
         {
             target = null;
@@ -54,14 +52,11 @@ public class Enemy : MonoBehaviour
             anim.SetTrigger("isAttack");
             timeUntilFire = 0f;
         }
-        if(inRange() && isRangeEnemy)
-        {
-            return;
-        }
     }
 
     public void RangeAttack()
     {
+        Debug.Log("range attack kepanggil");
         if (target == null)
         {
             return;

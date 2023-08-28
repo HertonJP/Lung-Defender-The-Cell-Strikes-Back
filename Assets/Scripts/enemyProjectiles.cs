@@ -8,7 +8,6 @@ public class enemyProjectiles : MonoBehaviour
     private Vector2 initialDirection;
     [SerializeField] private float projectilesSpeed = 5f;
     [SerializeField] private int projectilesDamage = 5;
-    public playerStats player;
 
     private void FixedUpdate()
     {
@@ -24,7 +23,7 @@ public class enemyProjectiles : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            
+            playerStats player = other.gameObject.GetComponent<playerStats>();
             if (player != null && !player.isImmune)
             {
                 other.gameObject.GetComponent<playerStats>().TakeDamage(projectilesDamage);
