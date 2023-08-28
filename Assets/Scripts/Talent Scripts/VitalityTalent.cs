@@ -8,6 +8,7 @@ public class VitalityTalent : Talent
     public override void Activate(playerStats player)
     {
         player.vit += 5;
+        player.playerMaxHP += 50;
         player.playerHP += 50;
     }
 }

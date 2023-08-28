@@ -18,7 +18,7 @@ public class HUD : MonoBehaviour
         healthSlider.maxValue = player.playerMaxHP;
         xpSlider.maxValue = 100;
 
-        maxHealthText.text = player.playerMaxHP.ToString();
+        
         maxXpText.text = "100";
     }
 
@@ -26,10 +26,11 @@ public class HUD : MonoBehaviour
     {
         float currentHealth = player.playerHP;
         float currentXP = player.xp;
-
+        healthSlider.maxValue = player.playerMaxHP;
         healthSlider.value = currentHealth;
         xpSlider.value = currentXP;
 
+        maxHealthText.text = player.playerMaxHP.ToString();
         healthText.text = currentHealth.ToString();
         xpText.text = currentXP.ToString();
     }

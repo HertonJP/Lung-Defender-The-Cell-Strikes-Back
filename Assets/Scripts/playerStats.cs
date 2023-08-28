@@ -150,7 +150,7 @@ public class playerStats : MonoBehaviour
                     break;
                 case 1: // Vitality
                     vit++;
-                    playerMaxHP += 5;
+                    playerMaxHP += 10;
                     playerHP += 10;
                     break;
                 case 2: // Agility
