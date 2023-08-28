@@ -39,7 +39,7 @@ public class ImmuneTalent : Talent
     private IEnumerator ActivateImmune(playerStats player)
     {
         SpriteRenderer playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
-
+        player.isImmune = true;
         if (playerSpriteRenderer != null)
         {
             playerSpriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
@@ -53,7 +53,7 @@ public class ImmuneTalent : Talent
         {
             playerSpriteRenderer.color = Color.white;
         }
-
+        player.isImmune = false;
         Physics2D.IgnoreLayerCollision(player.gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
     }
 }

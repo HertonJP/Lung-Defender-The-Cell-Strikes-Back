@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float initialAttackSpeed = 1f;
     [SerializeField] public int initialEnemyHP = 20;
     [SerializeField] public int enemyDamagePoints = 5;
+    [SerializeField] private bool isRangeEnemy = false;
     public float attackSpeed;
 
     private Animator anim;
@@ -53,8 +54,25 @@ public class Enemy : MonoBehaviour
             anim.SetTrigger("isAttack");
             timeUntilFire = 0f;
         }
+        if(inRange() && isRangeEnemy)
+        {
+            return;
+        }
     }
 
+    public void RangeAttack()
+    {
+        if (target == null)
+        {
+            return;
+        }
+        GameObject projectilesObj = Instantiate(projectilesPrefab, firingPoint.position, Quaternion.identity);
+
+        Vector2 directionToPlayer = target.transform.position - firingPoint.position;
+
+        enemyProjectiles projectilesScript = projectilesObj.GetComponent<enemyProjectiles>();
+        projectilesScript.SetInitialDirection(directionToPlayer);
+    }
     public bool inRange()
     {
         return Vector2.Distance(target.position, attackRange.transform.position) <= targetingRange;

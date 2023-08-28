@@ -39,6 +39,7 @@ public class playerStats : MonoBehaviour
     public bool isLifestealActive = false;
     public float lifestealDuration = 5f;
     private float lifestealEndTime;
+    public bool isImmune = false;
 
     private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
