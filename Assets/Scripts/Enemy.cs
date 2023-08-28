@@ -72,20 +72,26 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         enemyHP -= damage;
-        if (enemyHP <= 0 && !isDead)
+        playerStats player = FindObjectOfType<playerStats>();
+        if (player != null && player.isLifestealActive)
         {
-            isDead = true;
-            Die();
+            int healAmount = Mathf.RoundToInt(damage * 0.2f);
+            player.playerHP = Mathf.Min(player.playerHP + healAmount, player.playerMaxHP);
         }
-        else
-        {
-            if (anim != null)
+            if (enemyHP <= 0 && !isDead)
             {
-                anim.SetTrigger("isHit");
+                isDead = true;
+                Die();
             }
-            ShowFloatingText(damage.ToString());
-            PlayHitVFX();
-        }
+            else
+            {
+                if (anim != null)
+                {
+                    anim.SetTrigger("isHit");
+                }
+                ShowFloatingText(damage.ToString());
+                PlayHitVFX();
+            }
     }
 
     private void PlayHitVFX()

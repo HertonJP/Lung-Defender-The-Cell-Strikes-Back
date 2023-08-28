@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class playerStats : MonoBehaviour
 {
-    [SerializeField] public int strength = 0;
-    [SerializeField] public int vit = 0;
-    [SerializeField] public int agility = 0;
-    [SerializeField] public int luck = 0;
+    [Header("Stats")]
+    public int strength = 0;
+    public int vit = 0;
+    public int agility = 0;
+    public int luck = 0;
 
-    [SerializeField] public int playerMaxHP = 100;
-    [SerializeField] public int xp = 0;
-    [SerializeField] public int playerLevel = 1;
-    [SerializeField] public float critChance = 0.5f;
-    [SerializeField] public int availableStatPoints = 0;
-    [SerializeField] public int attackDamage = 10;
-    [SerializeField] public float movementSpeed = 5f;
-    [SerializeField] public float rollCooldown = 2f;
+    [Header("Attributes")]
+    public int playerMaxHP = 100;
+    public int xp = 0;
+    public int playerLevel = 1;
+    public float critChance = 0.5f;
+    public int availableStatPoints = 0;
+    public int attackDamage = 10;
+    public float movementSpeed = 5f;
+    public float rollCooldown = 2f;
 
+    [Header("Visual Effects")]
+    [SerializeField] private GameObject levelUpVFX;
     [SerializeField] private GameObject hitVFXPrefab;
 
+    [Header("UI & Gameplay")]
     public TalentUIManager talentUI;
     public ChooseTalentPanel chooseTalentPanel;
     public float evasionChance = 0f;
@@ -30,7 +36,11 @@ public class playerStats : MonoBehaviour
     public float healthThreshold = 0.4f;
     private bool isBerserkActive;
     public int playerHP;
-    private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};
+    public bool isLifestealActive = false;
+    public float lifestealDuration = 5f;
+    private float lifestealEndTime;
+
+    private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
     private void Start()
     {
@@ -38,7 +48,17 @@ public class playerStats : MonoBehaviour
         isRollout = false;
         canBerserk = false;
         playerHP = playerMaxHP;
+        StartCoroutine(CheckForLowHealth());
     }
+
+    private void Update()
+    {
+        if (isLifestealActive && Time.time >= lifestealEndTime)
+        {
+            isLifestealActive = false;
+        }
+    }
+
     public void GainXP(int amount)
     {
         xp += amount;
@@ -48,7 +68,7 @@ public class playerStats : MonoBehaviour
     public void CheckLevelUp()
     {
         int nextLevelThreshold = xpThresholds[playerLevel - 1];
-        if (xp >= nextLevelThreshold && playerLevel <=4)
+        if (xp >= nextLevelThreshold && playerLevel <= 4)
         {
             LevelUp();
         }
@@ -60,32 +80,37 @@ public class playerStats : MonoBehaviour
         availableStatPoints += 3;
         xp = 0;
         Debug.Log("Player Leveled up");
+        GameObject instantiatedVFX = Instantiate(levelUpVFX, transform.position, Quaternion.identity);
+        Destroy(instantiatedVFX, 2f);
 
         chooseTalentPanel.ShowPanel();
     }
 
+    public void Heal(int amount)
+    {
+        playerHP = Mathf.Min(playerMaxHP, playerHP + amount);
+    }
     public int CalculateDamage(int baseDamage)
     {
-        if (Random.value <= critChance)
+        if (UnityEngine.Random.value <= critChance)
         {
-            return baseDamage * 2; 
+            return baseDamage * 2;
         }
         else
         {
-            return baseDamage; 
+            return baseDamage;
         }
     }
 
     public void TakeDamage(int damage)
     {
-        if (Random.Range(0f, 1f) < evasionChance)
+        if (UnityEngine.Random.Range(0f, 1f) < evasionChance)
         {
             Debug.Log("Miss");
             return;
         }
 
         playerHP -= damage;
-        CheckForLowHealth();
 
         if (playerHP <= 0)
         {
@@ -93,7 +118,12 @@ public class playerStats : MonoBehaviour
             {
                 Debug.Log("Revived");
                 playerHP = playerMaxHP / 2;
-                talentUI.revive.SetActive(false);
+
+                if (talentUI != null && talentUI.revive != null)
+                {
+                    talentUI.revive.SetActive(false);
+                }
+
                 canRevive = false;
             }
             else
@@ -104,6 +134,15 @@ public class playerStats : MonoBehaviour
         else
         {
             PlayHitVFX();
+        }
+    }
+
+    public void ActivateLifesteal()
+    {
+        if (Time.time - lifestealEndTime > 20)
+        {
+            isLifestealActive = true;
+            lifestealEndTime = Time.time + lifestealDuration;
         }
     }
     private void PlayHitVFX()

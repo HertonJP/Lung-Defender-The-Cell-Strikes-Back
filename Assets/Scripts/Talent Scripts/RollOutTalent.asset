@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RollOutTalent
   m_EditorClassIdentifier: 
   talentName: Roll Out
-  talentImage: {fileID: 21300000, guid: 7f46cb40bf027524ba0b701b91ded203, type: 3}
+  talentImage: {fileID: 21300000, guid: 8ee5a41cf507df947bb50294ecba3598, type: 3}
   isActive: 0

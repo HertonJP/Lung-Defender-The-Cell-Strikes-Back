@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: BerserkTalent
   m_EditorClassIdentifier: 
   talentName: Berserk
-  talentImage: {fileID: 21300000, guid: 4f4bc60139b5a3e40ba86bac5c705b21, type: 3}
+  talentImage: {fileID: 21300000, guid: cc4a22cbe7d26aa4c9bf21156b5adb78, type: 3}
   isActive: 0
-  damageMultiplier: 2
-  healthThreshold: 0.4

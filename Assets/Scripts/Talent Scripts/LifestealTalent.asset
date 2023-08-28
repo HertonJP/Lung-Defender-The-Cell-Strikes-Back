@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f73fb384e497f94c9abc69d691af1da, type: 3}
-  m_Name: EvasionTalent
+  m_Script: {fileID: 11500000, guid: fc3eea713188f3f4ea66202f80d6b0df, type: 3}
+  m_Name: LifestealTalent
   m_EditorClassIdentifier: 
-  talentName: Evasion
-  talentImage: {fileID: 21300000, guid: c638ea206e0f1df4a8cac228e6065e19, type: 3}
+  talentName: 
+  talentImage: {fileID: 21300000, guid: 448934dea76d0404dac294fbaec18b97, type: 3}
   isActive: 0
+  lifestealDuration: 5
+  lifestealCooldown: 20
