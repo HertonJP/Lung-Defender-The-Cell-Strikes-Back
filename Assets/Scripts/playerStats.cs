@@ -25,6 +25,8 @@ public class playerStats : MonoBehaviour
     [SerializeField] private GameObject levelUpVFX;
     [SerializeField] private GameObject hitVFXPrefab;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource levelUpSFX;
 
     [Header("UI & Gameplay")]
     public TalentUIManager talentUI;
@@ -85,6 +87,7 @@ public class playerStats : MonoBehaviour
         availableStatPoints += 3;
         xp = 0;
         Debug.Log("Player Leveled up");
+        levelUpSFX.Play();
         GameObject instantiatedVFX = Instantiate(levelUpVFX, transform.position, Quaternion.identity);
         Destroy(instantiatedVFX, 2f);
 

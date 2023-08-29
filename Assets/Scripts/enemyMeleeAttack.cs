@@ -3,10 +3,14 @@ public class enemyMeleeAttack : MonoBehaviour
 {
     [SerializeField] private Collider2D hitbox;
     [SerializeField] private float knockbackForce;
+    [SerializeField] private AudioSource attackSFX;
+  
+
     public Enemy enemy;
 
     private void Start()
     {
+        attackSFX = GetComponent<AudioSource>();
         hitbox.enabled = false;
     }
 
@@ -19,6 +23,11 @@ public class enemyMeleeAttack : MonoBehaviour
     public void DisableHitbox()
     {
         hitbox.enabled = false;
+    }
+
+    public void enemyAttackSFX()
+    {
+        attackSFX.Play();
     }
 
     private void CheckColliders(Collider2D hitboxCollider)

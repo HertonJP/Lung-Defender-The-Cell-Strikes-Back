@@ -8,11 +8,13 @@ public class ChooseTalentPanel : MonoBehaviour
     public playerStats playerStats;
     public GameObject panel;
     public Button[] talentButtons;
+    [SerializeField] private AudioSource showPanelSFX;
+    [SerializeField] private AudioSource chooseTalentSFX;
 
     public void ShowPanel()
     {
         panel.SetActive(true);
-
+        showPanelSFX.Play();
         List<Talent> randomTalents = new List<Talent>();
         List<Talent> excludeList = new List<Talent>();
 
@@ -38,6 +40,7 @@ public class ChooseTalentPanel : MonoBehaviour
 
     public void ChooseTalent(Talent chosenTalent)
     {
+        chooseTalentSFX.Play();
         Time.timeScale = 1f;
         panel.SetActive(false);
         talentManager.ActivateTalent(chosenTalent);

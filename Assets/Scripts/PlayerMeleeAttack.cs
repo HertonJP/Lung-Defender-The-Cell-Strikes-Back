@@ -4,6 +4,9 @@ public class PlayerMeleeAttack : MonoBehaviour
 {
     [SerializeField] private Collider2D hitbox1;
     [SerializeField] private Collider2D hitbox2;
+    [SerializeField] private AudioSource attack1SFX;
+    [SerializeField] private AudioSource attack2SFX;
+    [SerializeField] private AudioSource attack3SFX;
     public playerStats playerStats;
 
     private void Start()
@@ -38,6 +41,20 @@ public class PlayerMeleeAttack : MonoBehaviour
         }
     }
 
+    public void playSFX1()
+    {
+        attack1SFX.Play();
+    }
+
+    public void playSFX2()
+    {
+        attack2SFX.Play();
+    }
+
+    public void playSFX3()
+    {
+        attack3SFX.Play();
+    }
     private void CheckColliders(Collider2D hitboxCollider)
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(hitboxCollider.transform.position, hitboxCollider.bounds.size, 0f);
