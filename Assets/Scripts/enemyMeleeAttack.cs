@@ -27,7 +27,7 @@ public class enemyMeleeAttack : MonoBehaviour
         foreach (Collider2D collider in colliders)
         {
             playerStats player = collider.GetComponent<playerStats>();
-            if (player != null)
+            if (player != null && !player.isImmune)
             {
                 int damage = enemy.enemyDamagePoints;
                 player.TakeDamage(damage);

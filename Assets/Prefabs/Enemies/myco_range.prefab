@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 2220991417698291595}
   m_Layer: 7
   m_Name: myco_range
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -558,7 +558,7 @@ MonoBehaviour:
   initialAttackSpeed: 1
   initialEnemyHP: 30
   enemyDamagePoints: 5
-  attackSpeed: 1
+  attackSpeed: 2
 --- !u!50 &1091197595222730303
 Rigidbody2D:
   serializedVersion: 4

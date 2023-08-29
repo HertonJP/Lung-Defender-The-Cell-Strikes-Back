@@ -50,6 +50,14 @@ public class PlayerMovement : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    public void DashRoll()
+    {
+        player.movementSpeed += 15;
+    }
+    public void EndDashRoll()
+    {
+        player.movementSpeed -= 15;
+    }
     private void StartRoll()
     {
         animator.SetTrigger("isRolling");

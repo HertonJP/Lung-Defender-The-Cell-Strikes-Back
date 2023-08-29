@@ -14,11 +14,18 @@ public class ChooseTalentPanel : MonoBehaviour
         panel.SetActive(true);
 
         List<Talent> randomTalents = new List<Talent>();
+        List<Talent> excludeList = new List<Talent>();
 
         for (int i = 0; i < 3; i++)
         {
-            Talent randTalent = talentManager.RandomTalent();
+            Talent randTalent = talentManager.RandomTalent(excludeList);
+            if (randTalent == null) 
+            {
+                break;
+            }
+
             randomTalents.Add(randTalent);
+            excludeList.Add(randTalent);
             talentButtons[i].image.sprite = randTalent.talentImage;
             int index = i;
 

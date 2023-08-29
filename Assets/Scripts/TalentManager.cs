@@ -12,10 +12,21 @@ public class TalentManager : MonoBehaviour
         availableTalents = new List<Talent>(allTalents);
     }
 
-    public Talent RandomTalent()
+    public Talent RandomTalent(List<Talent> excludeList)
     {
-        int index = Random.Range(0, availableTalents.Count);
-        Talent selected = availableTalents[index];
+        List<Talent> selectableTalents = new List<Talent>(availableTalents);
+        foreach (Talent talent in excludeList)
+        {
+            selectableTalents.Remove(talent);
+        }
+
+        if (selectableTalents.Count == 0)
+        {
+            return null;
+        }
+
+        int index = Random.Range(0, selectableTalents.Count);
+        Talent selected = selectableTalents[index];
         return selected;
     }
 

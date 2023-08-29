@@ -10,6 +10,8 @@ public class LifestealTalent : Talent
 
     public override void Activate(playerStats player)
     {
+        lastActivatedTime = Time.time - lifestealCooldown;
+        Debug.Log("bisa lifesteal harusnya");
         MonoBehaviour host = player.GetComponent<MonoBehaviour>();
         if (host != null)
         {
@@ -19,6 +21,7 @@ public class LifestealTalent : Talent
 
     private IEnumerator CheckForEKey(playerStats player)
     {
+        SpriteRenderer playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
         while (true)
         {
             float currentTime = Time.time;
@@ -29,7 +32,19 @@ public class LifestealTalent : Talent
                 {
                     lastActivatedTime = currentTime;
                     player.isLifestealActive = true;
+
+                    if (playerSpriteRenderer != null)
+                    {
+                        playerSpriteRenderer.color = new Color(0.5f, 1f, 0.5f);
+                    }
+
                     yield return new WaitForSeconds(lifestealDuration);
+
+                    if (playerSpriteRenderer != null)
+                    {
+                        playerSpriteRenderer.color = Color.white;
+                    }
+
                     player.isLifestealActive = false;
                 }
             }

@@ -28,6 +28,10 @@ public class enemyProjectiles : MonoBehaviour
             {
                 other.gameObject.GetComponent<playerStats>().TakeDamage(projectilesDamage);
             }
+        }
+
+        if (!other.gameObject.CompareTag("Enemy"))
+        {
             Destroy(gameObject);
         }
     }

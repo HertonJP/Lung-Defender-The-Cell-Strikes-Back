@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 1315045842}
   m_Layer: 7
   m_Name: myco_melee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 985023732}
+  knockbackForce: 0
   enemy: {fileID: 1300872584884493689}
 --- !u!1 &1722497309259981612
 GameObject:

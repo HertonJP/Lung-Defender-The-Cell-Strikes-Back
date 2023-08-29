@@ -10,6 +10,7 @@ public class ImmuneTalent : Talent
 
     public override void Activate(playerStats player)
     {
+        lastActivatedTime = Time.time - immuneCooldown;
         MonoBehaviour host = player.GetComponent<MonoBehaviour>();
         if (host != null)
         {
@@ -54,6 +55,5 @@ public class ImmuneTalent : Talent
             playerSpriteRenderer.color = Color.white;
         }
         player.isImmune = false;
-        Physics2D.IgnoreLayerCollision(player.gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
     }
 }

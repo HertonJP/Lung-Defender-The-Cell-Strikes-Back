@@ -25,6 +25,7 @@ public class playerStats : MonoBehaviour
     [SerializeField] private GameObject levelUpVFX;
     [SerializeField] private GameObject hitVFXPrefab;
 
+
     [Header("UI & Gameplay")]
     public TalentUIManager talentUI;
     public ChooseTalentPanel chooseTalentPanel;
@@ -58,6 +59,9 @@ public class playerStats : MonoBehaviour
         {
             isLifestealActive = false;
         }
+
+        
+        
     }
 
     public void GainXP(int amount)
