@@ -1,11 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private TextMeshProUGUI currentStageText;
+    [SerializeField] private TextMeshProUGUI pressHereText;
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     public playerStats player;
     public Cameras cam;
@@ -23,7 +26,10 @@ public class Spawner : MonoBehaviour
     {
         onEnemyDestroy.AddListener(enemyDestroyed);
     }
-
+    private void Update()
+    {
+        currentStageText.text = currentStage.ToString();
+    }
     private void enemyDestroyed()
     {
         enemiesAlive--;
@@ -65,11 +71,13 @@ public class Spawner : MonoBehaviour
             case 0:
             case 3:
             case 6:
+                pressHereText.enabled = true;
                 cam.shopCam.enabled = true;
                 cam.mainCam.enabled = false;
                 player.gameObject.transform.position = shopSpawn.transform.position;
                 break;
             case 1:
+                pressHereText.enabled = false;
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
@@ -81,6 +89,7 @@ public class Spawner : MonoBehaviour
                 indicesToUse = new int[] { 1, 2 };
                 break;
             case 4:
+                pressHereText.enabled = false;
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
@@ -92,6 +101,7 @@ public class Spawner : MonoBehaviour
                 indicesToUse = new int[] { 2, 3, 4 };
                 break;
             case 7:
+                pressHereText.enabled = false;
                 yield break;
         }
 
