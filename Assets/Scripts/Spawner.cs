@@ -1,27 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using TMPro;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
-    [SerializeField] private int baseEnemies = 3;
-    [SerializeField] private float enemiesPerSecond = 1f;
-    [SerializeField] private float timeBetweenWaves = 10f;
-    [SerializeField] private float difficultyScalingFactor = 0.75f;
     [SerializeField] private Transform[] spawnPoints;
-    [SerializeField] private int wavesUntilStatIncrease = 5;
-    public int wavesCompleted = 0;
-    private TextMeshProUGUI waveText;
-
     public static UnityEvent onEnemyDestroy = new UnityEvent();
+    public playerStats player;
+    public Cameras cam;
+    public Transform fightSpawn;
+    public Transform shopSpawn;
+    public Transform bossfightSpawn;
 
     public int currentWave = 0;
-    private float timeSinceLastSpawn;
-    private int enemiesAlive;
-    private int enemiesLeftToSpawn;
+    public int currentStage = 0;
+    public bool isShopClear = false;
+
+    public int enemiesAlive;
     private bool isSpawning = false;
 
     private void Awake()
@@ -31,13 +27,11 @@ public class Spawner : MonoBehaviour
 
     private void enemyDestroyed()
     {
-        Debug.Log("enemy berkurang");
         enemiesAlive--;
     }
 
     private void Start()
     {
-       // waveText = GameObject.Find("Current Wave Text").GetComponent<TextMeshProUGUI>();
         StartCoroutine(StartWave());
     }
 
@@ -47,62 +41,87 @@ public class Spawner : MonoBehaviour
         {
             return;
         }
-        timeSinceLastSpawn += Time.deltaTime;
-
-        if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
-        {
-            SpawnEnemy();
-            enemiesLeftToSpawn--;
-            enemiesAlive++;
-            timeSinceLastSpawn = 0f;
-        }
-        if (enemiesLeftToSpawn == 0)
-        {
-            EndWave();
-        }
-        //waveText.text = "Current Wave: " + currentWave.ToString();
-    }
-
-    private void EndWave()
-    {
+        StartCoroutine(SpawnBasedOnStage());
         isSpawning = false;
-        timeSinceLastSpawn = 0f;
-        currentWave++;
-        if (wavesCompleted >= wavesUntilStatIncrease)
-        {
-            for (int i = 0; i < enemyPrefabs.Length; i++)
-            {
-                Enemy enemyPrefabScript = enemyPrefabs[i].GetComponent<Enemy>();
-                enemyPrefabScript.enemyHP += 10;
-                enemyPrefabScript.attackSpeed += 0.5f;
-            }
-
-            wavesCompleted = 0;
-        }
-        StartCoroutine(StartWave());
     }
 
-    private void SpawnEnemy()
+    private IEnumerator SpawnBasedOnStage()
     {
-        int index = Random.Range(0, enemyPrefabs.Length);
-        GameObject prefabToSpawn = enemyPrefabs[index];
+        int enemiesToSpawn = 0;
+        int[] indicesToUse = new int[0];
 
-        Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        switch (currentStage)
+        {
+            case 0:
+            case 3:
+            case 6:
+                cam.shopCam.enabled = true;
+                cam.mainCam.enabled = false;
+                player.gameObject.transform.position = shopSpawn.transform.position;
+                if (!isShopClear)
+                {
+                    yield break;
+                }
+                isShopClear = false;
+                currentStage++;
+                break;
+            case 1:
+                player.gameObject.transform.position = fightSpawn.transform.position;
+                cam.mainCam.enabled = true;
+                cam.shopCam.enabled = false;
+                enemiesToSpawn = 5;
+                indicesToUse = new int[] { 0, 1 };
+                break;
+            case 2:
+                enemiesToSpawn = 5;
+                indicesToUse = new int[] { 1, 2 };
+                break;
+            case 4:
+                player.gameObject.transform.position = fightSpawn.transform.position;
+                cam.mainCam.enabled = true;
+                cam.shopCam.enabled = false;
+                enemiesToSpawn = 5;
+                indicesToUse = new int[] { 1, 2, 3 };
+                break;
+            case 5:
+                enemiesToSpawn = 5;
+                indicesToUse = new int[] { 2, 3, 4 };
+                break;
+            case 7:
+                yield break;
+        }
 
-        Instantiate(prefabToSpawn, randomSpawnPoint.position, Quaternion.identity);
+        for (int i = 0; i < enemiesToSpawn; i++)
+        {
+            int randomIndex = indicesToUse[Random.Range(0, indicesToUse.Length)];
+            Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            Instantiate(enemyPrefabs[randomIndex], randomSpawnPoint.position, Quaternion.identity);
+            enemiesAlive++;
+            yield return new WaitForSeconds(1);
+        }
     }
-
-
 
     private IEnumerator StartWave()
     {
-        yield return new WaitForSeconds(timeBetweenWaves);
+        yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear));
+        yield return new WaitForSeconds(3);
+
+        if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear))
+        {
+            currentStage++;
+            isShopClear = false;
+        }
+        else if (currentStage != 0 && currentStage != 3 && currentStage != 6 && enemiesAlive == 0)
+        {
+            currentStage++;
+        }
         isSpawning = true;
-        enemiesLeftToSpawn = EnemiesPerWave();
+        StopCoroutine(StartWave());
+        StartCoroutine(StartWave());
     }
 
-    private int EnemiesPerWave()
+    public void OnShopClear()
     {
-        return Mathf.RoundToInt(baseEnemies * Mathf.Pow(currentWave, difficultyScalingFactor));
+        isShopClear = true;
     }
 }

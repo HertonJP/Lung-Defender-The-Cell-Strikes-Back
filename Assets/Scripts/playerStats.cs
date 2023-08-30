@@ -31,6 +31,7 @@ public class playerStats : MonoBehaviour
     [Header("UI & Gameplay")]
     public TalentUIManager talentUI;
     public ChooseTalentPanel chooseTalentPanel;
+    public Transform shopSpawn;
     public float evasionChance = 0f;
     public bool canBerserk;
     public bool canRevive;
@@ -41,13 +42,14 @@ public class playerStats : MonoBehaviour
     public int playerHP;
     public bool isLifestealActive = false;
     public float lifestealDuration = 5f;
-    private float lifestealEndTime;
+    public float lifestealEndTime;
     public bool isImmune = false;
 
     private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
     private void Start()
     {
+        this.gameObject.transform.position = shopSpawn.transform.position;
         canRevive = false;
         isRollout = false;
         canBerserk = false;
@@ -61,9 +63,6 @@ public class playerStats : MonoBehaviour
         {
             isLifestealActive = false;
         }
-
-        
-        
     }
 
     public void GainXP(int amount)
@@ -91,7 +90,6 @@ public class playerStats : MonoBehaviour
         GameObject instantiatedVFX = Instantiate(levelUpVFX, transform.position, Quaternion.identity);
         Destroy(instantiatedVFX, 2f);
 
-        chooseTalentPanel.ShowPanel();
     }
 
     public void Heal(int amount)

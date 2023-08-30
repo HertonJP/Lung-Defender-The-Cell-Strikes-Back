@@ -86,11 +86,7 @@ public class Enemy : MonoBehaviour
     {
         enemyHP -= damage;
         playerStats player = FindObjectOfType<playerStats>();
-        if (player != null && player.isLifestealActive)
-        {
-            int healAmount = Mathf.RoundToInt(damage * 0.2f);
-            player.playerHP = Mathf.Min(player.playerHP + healAmount, player.playerMaxHP);
-        }
+        
             if (enemyHP <= 0 && !isDead)
             {
                 isDead = true;
@@ -151,7 +147,10 @@ public class Enemy : MonoBehaviour
             player.GainXP(xpToGrant);
         }
     }
-
+    void OnDestroy()
+    {
+        Spawner.onEnemyDestroy.Invoke();
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;

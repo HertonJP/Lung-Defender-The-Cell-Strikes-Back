@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Cameras : MonoBehaviour
 {
-    [SerializeField] private Camera mainCam;
-    [SerializeField] private Camera shopCam;
-    [SerializeField] private Camera bossCam;
+    public Camera mainCam;
+    public Camera shopCam;
+    public Camera bossCam;
 
     private void Start()
     {
-        mainCam.enabled = true;
-        shopCam.enabled = false;
+        mainCam.enabled = false;
+        shopCam.enabled = true;
         bossCam.enabled = false;
     }
 }

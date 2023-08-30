@@ -30,8 +30,10 @@ public class LifestealTalent : Talent
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    Debug.Log("ngelifesteal");
                     lastActivatedTime = currentTime;
                     player.isLifestealActive = true;
+                    player.lifestealEndTime = Time.time + lifestealDuration;
 
                     if (playerSpriteRenderer != null)
                     {

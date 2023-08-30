@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = false;
     private Animator animator;
     private bool isRolling = false;
+    [SerializeField] private AudioSource rollSFX;
+    [SerializeField] private AudioSource walkSFX;
 
     private float lastRollTime = 0f;
 
@@ -50,6 +52,14 @@ public class PlayerMovement : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    public void playWalkSFX()
+    {
+        walkSFX.Play();
+    }
+    public void playRollSFX()
+    {
+        rollSFX.Play();
+    }
     public void DashRoll()
     {
         player.movementSpeed += 15;
@@ -88,7 +98,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Border"))
         {
-            Debug.Log("Hit border");
             rb.velocity = Vector2.zero;
         }
     }

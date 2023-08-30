@@ -63,9 +63,16 @@ public class PlayerMeleeAttack : MonoBehaviour
             Enemy enemy = collider.GetComponent<Enemy>();
             if (enemy != null)
             {
+
                 int damage = playerStats.CalculateDamage(playerStats.attackDamage);
                 enemy.TakeDamage(damage);
+                if (playerStats != null && playerStats.isLifestealActive)
+                {
+                    int healAmount = Mathf.RoundToInt(damage * 0.5f);
+                    playerStats.playerHP = Mathf.Min(playerStats.playerHP + healAmount, playerStats.playerMaxHP);
+                }
             }
+
         }
     }
 }

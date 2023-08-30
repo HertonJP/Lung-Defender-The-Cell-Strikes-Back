@@ -8,6 +8,7 @@ public class ChooseTalentPanel : MonoBehaviour
     public playerStats playerStats;
     public GameObject panel;
     public Button[] talentButtons;
+    public Spawner spawner;
     [SerializeField] private AudioSource showPanelSFX;
     [SerializeField] private AudioSource chooseTalentSFX;
 
@@ -40,6 +41,7 @@ public class ChooseTalentPanel : MonoBehaviour
 
     public void ChooseTalent(Talent chosenTalent)
     {
+        spawner.OnShopClear();
         chooseTalentSFX.Play();
         Time.timeScale = 1f;
         panel.SetActive(false);
