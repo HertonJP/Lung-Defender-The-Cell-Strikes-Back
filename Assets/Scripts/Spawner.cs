@@ -18,7 +18,6 @@ public class Spawner : MonoBehaviour
     public bool isShopClear = false;
 
     public int enemiesAlive;
-    private bool isSpawning = false;
 
     private void Awake()
     {
@@ -35,14 +34,25 @@ public class Spawner : MonoBehaviour
         StartCoroutine(StartWave());
     }
 
-    private void Update()
+    private IEnumerator StartWave()
     {
-        if (!isSpawning)
+        while (true)
         {
-            return;
+            yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear));
+            yield return new WaitForSeconds(3);
+
+            if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear))
+            {
+                isShopClear = false;
+                currentStage++;
+            }
+            else if (currentStage != 0 && currentStage != 3 && currentStage != 6)
+            {
+                currentStage++;
+            }
+
+            yield return StartCoroutine(SpawnBasedOnStage());
         }
-        StartCoroutine(SpawnBasedOnStage());
-        isSpawning = false;
     }
 
     private IEnumerator SpawnBasedOnStage()
@@ -58,12 +68,6 @@ public class Spawner : MonoBehaviour
                 cam.shopCam.enabled = true;
                 cam.mainCam.enabled = false;
                 player.gameObject.transform.position = shopSpawn.transform.position;
-                if (!isShopClear)
-                {
-                    yield break;
-                }
-                isShopClear = false;
-                currentStage++;
                 break;
             case 1:
                 player.gameObject.transform.position = fightSpawn.transform.position;
@@ -99,25 +103,6 @@ public class Spawner : MonoBehaviour
             enemiesAlive++;
             yield return new WaitForSeconds(1);
         }
-    }
-
-    private IEnumerator StartWave()
-    {
-        yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear));
-        yield return new WaitForSeconds(3);
-
-        if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear))
-        {
-            currentStage++;
-            isShopClear = false;
-        }
-        else if (currentStage != 0 && currentStage != 3 && currentStage != 6 && enemiesAlive == 0)
-        {
-            currentStage++;
-        }
-        isSpawning = true;
-        StopCoroutine(StartWave());
-        StartCoroutine(StartWave());
     }
 
     public void OnShopClear()

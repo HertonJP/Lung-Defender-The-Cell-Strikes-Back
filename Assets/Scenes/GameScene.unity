@@ -19116,6 +19116,7 @@ MonoBehaviour:
   currentWave: 0
   currentStage: 0
   isShopClear: 0
+  enemiesAlive: 0
 --- !u!4 &967499451
 Transform:
   m_ObjectHideFlags: 0
