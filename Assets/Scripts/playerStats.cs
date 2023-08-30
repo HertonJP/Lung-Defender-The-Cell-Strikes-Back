@@ -44,6 +44,8 @@ public class playerStats : MonoBehaviour
     public float lifestealDuration = 5f;
     public float lifestealEndTime;
     public bool isImmune = false;
+    public Shake shake;
+    [SerializeField] private AudioSource critSFX;
 
     private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
@@ -55,6 +57,7 @@ public class playerStats : MonoBehaviour
         canBerserk = false;
         playerHP = playerMaxHP;
         StartCoroutine(CheckForLowHealth());
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
     }
 
     private void Update()
@@ -100,6 +103,8 @@ public class playerStats : MonoBehaviour
     {
         if (UnityEngine.Random.value <= critChance)
         {
+            shake.CamShake();
+            critSFX.Play();
             return baseDamage * 2;
         }
         else

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Border
   - Enemy
+  - ScreenShake
   layers:
   - Default
   - TransparentFX
