@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (currentTime - lastRollTime >= player.rollCooldown)
         {
-            if (Input.GetKeyDown(KeyCode.Q) && !isRolling)
+            if (Input.GetKeyDown(KeyCode.Space) && !isRolling)
             {
                 StartRoll();
                 lastRollTime = currentTime;

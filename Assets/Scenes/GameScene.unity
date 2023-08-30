@@ -14102,7 +14102,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dff8baebc103b3d4cbdcb6c96c2f3728, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20253,9 +20253,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 18aa11a2fbe84a24d9979ab28e1808e9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f3304328dde36364999f0dbe653ab60c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -23735,7 +23735,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 62fff69fa4a3b114d9d3bc1c25e60063, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -54731,9 +54731,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 25cc784955eaa5e4cb24cbc1d220ab9b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3f1c53b6a72829449bc024068e87a09f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.055
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -54945,7 +54945,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f7662577ced2b014fb6ca958114f456e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -57083,7 +57083,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c25a9aea7002dd5489cbf9933d50898d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -57372,7 +57372,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5b5269c82d7fbef43abc2193ed4a35d7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -58018,6 +58018,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 182944438, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 8.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 182944438, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 8.08
+      objectReference: {fileID: 0}
     - target: {fileID: 1725810999, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: player
       value: 
