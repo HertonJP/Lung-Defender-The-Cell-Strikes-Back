@@ -7,4 +7,6 @@ public class groundBreak : MonoBehaviour
     public playerStats player;
     public Enemy enemy;
 
+    [SerializeField] private Collider2D gbCollider;
+
 }

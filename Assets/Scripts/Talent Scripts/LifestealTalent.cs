@@ -11,7 +11,7 @@ public class LifestealTalent : Talent
     public override void Activate(playerStats player)
     {
         lastActivatedTime = Time.time - lifestealCooldown;
-        Debug.Log("bisa lifesteal harusnya");
+        TalentUIManager.Instance.lifesteal.SetActive(true);
         MonoBehaviour host = player.GetComponent<MonoBehaviour>();
         if (host != null)
         {

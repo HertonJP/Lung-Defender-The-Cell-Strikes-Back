@@ -9,12 +9,14 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private TextMeshProUGUI currentStageText;
     [SerializeField] private TextMeshProUGUI pressHereText;
+    [SerializeField] private GameObject bossPrefabs;
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     public playerStats player;
     public Cameras cam;
     public Transform fightSpawn;
     public Transform shopSpawn;
     public Transform bossfightSpawn;
+    public Transform bossSpawn;
 
     public int currentWave = 0;
     public int currentStage = 0;
@@ -102,6 +104,8 @@ public class Spawner : MonoBehaviour
                 break;
             case 7:
                 pressHereText.enabled = false;
+                player.gameObject.transform.position = bossfightSpawn.transform.position;
+                Instantiate(bossPrefabs, bossSpawn.position, Quaternion.identity);
                 yield break;
         }
 

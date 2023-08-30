@@ -11,6 +11,8 @@ public class TalentUIManager : MonoBehaviour
     [SerializeField] public GameObject doubleRoll;
     [SerializeField] public GameObject haste;
     [SerializeField] public GameObject rollout;
+    [SerializeField] public GameObject immune;
+    [SerializeField] public GameObject lifesteal;
 
     private void Awake()
     {
@@ -31,5 +33,7 @@ public class TalentUIManager : MonoBehaviour
         doubleRoll.SetActive(false);
         haste.SetActive(false);
         rollout.SetActive(false);
+        immune.SetActive(false);
+        lifesteal.SetActive(false);
     }
 }

@@ -12,6 +12,7 @@ public class ImmuneTalent : Talent
     {
         lastActivatedTime = Time.time - immuneCooldown;
         MonoBehaviour host = player.GetComponent<MonoBehaviour>();
+        TalentUIManager.Instance.immune.SetActive(true);
         if (host != null)
         {
             host.StartCoroutine(CheckForRightClick(player));
