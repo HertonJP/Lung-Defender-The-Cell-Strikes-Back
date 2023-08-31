@@ -17,6 +17,7 @@ public class Bossfight : MonoBehaviour
     [SerializeField] private GameObject youWinPanel;
     private Transform phase2Position;
     private Animator anim;
+    [SerializeField] private AudioSource youWinSFX;
     private void Start()
     {
         youWinPanel.SetActive(false);
@@ -40,6 +41,7 @@ public class Bossfight : MonoBehaviour
         if(enemy.enemyHP <= 0)
         {
             youWinPanel.SetActive(true);
+            youWinSFX.Play();
             Time.timeScale = 0f;
         }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)

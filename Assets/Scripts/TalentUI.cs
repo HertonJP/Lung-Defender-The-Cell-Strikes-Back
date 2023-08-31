@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TalentUI : MonoBehaviour
 {
     public Image abilityImage1;
-    public float cooldown1 = 5;
+    public float cooldown1 = 20;
     bool isCooldown1 = false;
     public KeyCode ability1;
 
@@ -16,7 +16,7 @@ public class TalentUI : MonoBehaviour
     //public KeyCode ability2;
 
     public Image abilityImage3;
-    public float cooldown3 = 15;
+    public float cooldown3 = 20;
     bool isCooldown3 = false;
     public KeyCode ability3;
 
