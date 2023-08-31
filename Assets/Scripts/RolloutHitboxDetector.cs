@@ -5,18 +5,18 @@ using UnityEngine;
 public class RolloutHitboxDetector : MonoBehaviour
 {
     public playerStats playerStats;
-    private Collider2D hitboxCollider;
-
-    private void Start()
-    {
-        hitboxCollider = GetComponent<Collider2D>();
-    }
+    [SerializeField] private Collider2D hitboxCollider;
+    private HashSet<Enemy> hitEnemies = new HashSet<Enemy>();
 
     private void Update()
     {
-        if (playerStats.isRollout)
+        if (playerStats.isRollout && hitboxCollider.enabled)
         {
             CheckColliders();
+        }
+        else
+        {
+            hitEnemies.Clear();
         }
     }
 
@@ -27,10 +27,11 @@ public class RolloutHitboxDetector : MonoBehaviour
         foreach (Collider2D collider in colliders)
         {
             Enemy enemy = collider.GetComponent<Enemy>();
-            if (enemy != null)
+            if (enemy != null && !hitEnemies.Contains(enemy))
             {
                 int damage = Mathf.RoundToInt(playerStats.playerMaxHP * 0.05f);
                 enemy.TakeDamage(damage);
+                hitEnemies.Add(enemy);
 
                 if (playerStats.isLifestealActive)
                 {

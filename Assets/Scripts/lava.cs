@@ -5,12 +5,36 @@ using UnityEngine;
 public class lava : MonoBehaviour
 {
     public playerStats player;
-    [SerializeField] private Collider2D lavaPrefabs;
-
+    private Collider2D lavaCollider;
     public int lavaDamage = 20;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
     {
-        player.TakeDamage(lavaDamage);
+        lavaCollider = GetComponent<Collider2D>();
+        lavaCollider.enabled = false;
+        player = FindObjectOfType<playerStats>();
+    }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            player.TakeDamage(lavaDamage);
+        }
+    }
+
+    public void EnableCollider()
+    {
+        if (lavaCollider != null)
+        {
+            lavaCollider.enabled = true;
+        }
+    }
+
+    public void DisableCollider()
+    {
+        if (lavaCollider != null)
+        {
+            lavaCollider.enabled = false;
+        }
     }
 }

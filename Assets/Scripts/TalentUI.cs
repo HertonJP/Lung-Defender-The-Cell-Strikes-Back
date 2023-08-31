@@ -10,10 +10,10 @@ public class TalentUI : MonoBehaviour
     bool isCooldown1 = false;
     public KeyCode ability1;
 
-    public Image abilityImage2;
-    public float cooldown2 = 2;
-    bool isCooldown2 = false;
-    public KeyCode ability2;
+    //public Image abilityImage2;
+    //public float cooldown2 = 2;
+    //bool isCooldown2 = false;
+    //public KeyCode ability2;
 
     public Image abilityImage3;
     public float cooldown3 = 15;
@@ -23,14 +23,14 @@ public class TalentUI : MonoBehaviour
     private void Start()
     {
         abilityImage1.fillAmount = 0;
-        abilityImage2.fillAmount = 0;
+        //abilityImage2.fillAmount = 0;
         abilityImage3.fillAmount = 0;
     }
 
     private void Update()
     {
         Ability1();
-        Ability2();
+        //Ability2();
         Ability3();
     }
 
@@ -54,25 +54,24 @@ public class TalentUI : MonoBehaviour
         }
     }
 
-    void Ability2()
-    {
-        if (Input.GetKey(ability2) && isCooldown2 == false)
-        {
-            isCooldown2 = true;
-            abilityImage2.fillAmount = 1;
-        }
+    //void Ability2()
+   // {
+       // if (Input.GetKey(ability2) && isCooldown2 == false)
+       // {
+           // isCooldown2 = true;
+            //abilityImage2.fillAmount = 1;
+       // }
+        //if (isCooldown2)
+       // {
+           // abilityImage2.fillAmount -= 1 / cooldown2 * Time.deltaTime;
 
-        if (isCooldown2)
-        {
-            abilityImage2.fillAmount -= 1 / cooldown2 * Time.deltaTime;
-
-            if (abilityImage2.fillAmount <= 0)
-            {
-                abilityImage2.fillAmount = 0;
-                isCooldown2 = false;
-            }
-        }
-    }
+           // if (abilityImage2.fillAmount <= 0)
+          //  {
+           //     abilityImage2.fillAmount = 0;
+             //   isCooldown2 = false;
+          //  }
+       // }
+  //  }
 
     void Ability3()
     {
