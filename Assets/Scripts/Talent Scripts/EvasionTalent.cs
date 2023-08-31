@@ -6,7 +6,7 @@ public class EvasionTalent : Talent
 {
     public override void Activate(playerStats player)
     {
-        player.evasionChance = 0.1f;
+        player.evasionChance = 0.2f;
         TalentUIManager.Instance.swift.SetActive(true);
     }
 }

@@ -410,13 +410,13 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 5500894286564896549, guid: d9b73db23a35c5049acb0c71937583b9, type: 3}
   hitVFXPrefab: {fileID: 8241798187265032030, guid: 39b2a9d69d0826e42a75aa0be9498d39, type: 3}
   attackRange: {fileID: 4696153181309686616}
-  xpToGrant: 5
+  xpToGrant: 75
   isBoss: 0
   enemyHP: 0
   targetingRange: 4.5
   initialAttackSpeed: 1
-  initialEnemyHP: 20
-  enemyDamagePoints: 5
+  initialEnemyHP: 150
+  enemyDamagePoints: 10
   attackSpeed: 0
 --- !u!114 &586541354553142940
 MonoBehaviour:
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af30e475d9f3f84f9c010f9fad97d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
   rb: {fileID: 3383631596102852598}
 --- !u!82 &7565655403188796883
 AudioSource:

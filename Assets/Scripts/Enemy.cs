@@ -183,7 +183,7 @@ public class Enemy : MonoBehaviour
         float destroyDelay = 2.4f;
         StartCoroutine(DestroyWithDelay(destroyDelay));
         playerStats player = FindObjectOfType<playerStats>();
-        if (player != null && player.playerLevel <= 9)
+        if (player != null && player.playerLevel <= 14)
         {
             player.GainXP(xpToGrant);
         }

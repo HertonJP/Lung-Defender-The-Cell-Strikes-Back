@@ -13,6 +13,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private AudioSource shopBGM;
     [SerializeField] private AudioSource fightBGM;
     [SerializeField] private AudioSource bossBGM;
+    [SerializeField] private GameObject stageClearPanel;
+    [SerializeField] private GameObject youWinPanel;
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     public playerStats player;
     public Cameras cam;
@@ -44,6 +46,8 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        youWinPanel.SetActive(false);
+        stageClearPanel.SetActive(false);
         shopBGM.Play();
         StartCoroutine(StartWave());
     }
@@ -53,19 +57,27 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear));
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(5);
 
             if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear))
             {
                 isShopClear = false;
                 currentStage++;
             }
-            else if (currentStage != 0 && currentStage != 3 && currentStage != 6)
+            else if (currentStage != 0 && currentStage != 3 && currentStage != 6 && currentStage!=7)
             {
+                stageClearPanel.SetActive(true);
                 currentStage++;
                 sfx.stageClearSFX.Play();
+                yield return new WaitForSeconds(2);
+                stageClearPanel.SetActive(false);
             }
-
+            if(currentStage == 7)
+            {
+                youWinPanel.SetActive(true);
+                yield return new WaitForSeconds(2);
+                youWinPanel.SetActive(false);
+            }
             yield return StartCoroutine(SpawnBasedOnStage());
         }
     }
@@ -107,7 +119,7 @@ public class Spawner : MonoBehaviour
                 break;
             case 2:
                 fightBGM.Play();
-                enemiesToSpawn = 7;
+                enemiesToSpawn = 8;
                 indicesToUse = new int[] { 1, 2 };
                 break;
             case 4:
@@ -117,13 +129,13 @@ public class Spawner : MonoBehaviour
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
-                enemiesToSpawn = 5;
-                indicesToUse = new int[] { 1, 2, 3 };
+                enemiesToSpawn = 7;
+                indicesToUse = new int[] { 2, 3 };
                 break;
             case 5:
                 fightBGM.Play();
                 enemiesToSpawn = 4;
-                indicesToUse = new int[] { 2, 3, 4 };
+                indicesToUse = new int[] { 3, 4 };
                 break;
             case 7:
                 cam.shopCam.enabled = false;

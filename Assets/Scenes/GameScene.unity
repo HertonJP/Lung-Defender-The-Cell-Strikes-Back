@@ -1229,7 +1229,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ee8368b7285ca3b478d6b148cbdf62a0, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -14201,9 +14201,9 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 5753659029274312806, guid: 285cb9369d8c3464c870af880c02072c, type: 3}
   - {fileID: 1555954423567175668, guid: 34edfa4dbdf83ab4f974b993877261d0, type: 3}
-  - {fileID: 6023954019641036969, guid: bed9baff520712d4cb42a1de9daac85d, type: 3}
-  - {fileID: 4836033705582561711, guid: 72473d8a13be743469ec9c1e003643c0, type: 3}
   - {fileID: 2146771158537692955, guid: 632c3b782d4031843bc7f3b0bc2c7266, type: 3}
+  - {fileID: 4836033705582561711, guid: 72473d8a13be743469ec9c1e003643c0, type: 3}
+  - {fileID: 6023954019641036969, guid: bed9baff520712d4cb42a1de9daac85d, type: 3}
   spawnPoints:
   - {fileID: 1514695060}
   - {fileID: 454185636}
@@ -14215,6 +14215,8 @@ MonoBehaviour:
   shopBGM: {fileID: 967499456}
   fightBGM: {fileID: 967499455}
   bossBGM: {fileID: 967499454}
+  stageClearPanel: {fileID: 1428639792}
+  youWinPanel: {fileID: 1528028913}
   player: {fileID: 182944447}
   cam: {fileID: 967499452}
   fightSpawn: {fileID: 338488570}
@@ -15547,7 +15549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1028925802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20606,7 +20608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1428639793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38707,7 +38709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1528028914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47328,7 +47330,7 @@ PrefabInstance:
       objectReference: {fileID: 2107860219}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: playerMaxHP
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: attackDamage

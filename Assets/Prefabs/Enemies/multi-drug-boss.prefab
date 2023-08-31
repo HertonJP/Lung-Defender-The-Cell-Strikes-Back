@@ -548,7 +548,7 @@ MonoBehaviour:
   enemyHP: 0
   targetingRange: 10
   initialAttackSpeed: 1
-  initialEnemyHP: 100
+  initialEnemyHP: 1000
   enemyDamagePoints: 5
   attackSpeed: 1
 --- !u!114 &2436906584931565984

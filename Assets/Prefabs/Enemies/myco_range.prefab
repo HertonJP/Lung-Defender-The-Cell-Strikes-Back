@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af30e475d9f3f84f9c010f9fad97d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
   rb: {fileID: 1091197595222730303}
 --- !u!114 &4380382770996301611
 MonoBehaviour:
@@ -614,13 +614,13 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 5500894286564896549, guid: d9b73db23a35c5049acb0c71937583b9, type: 3}
   hitVFXPrefab: {fileID: 2981612518552317830, guid: ba83bc4fec4ddc741b63c0ab0d2d7e9c, type: 3}
   attackRange: {fileID: 306422366}
-  xpToGrant: 5
+  xpToGrant: 50
   isBoss: 0
   enemyHP: 0
   targetingRange: 15
   initialAttackSpeed: 1
-  initialEnemyHP: 30
-  enemyDamagePoints: 5
+  initialEnemyHP: 50
+  enemyDamagePoints: 7
   attackSpeed: 2
 --- !u!50 &1091197595222730303
 Rigidbody2D:

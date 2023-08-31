@@ -49,7 +49,7 @@ public class playerStats : MonoBehaviour
     public Shake shake;
     [SerializeField] private AudioSource critSFX;
 
-    private int[] xpThresholds = { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+    private int[] xpThresholds = { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
     private void Start()
     {
@@ -70,6 +70,10 @@ public class playerStats : MonoBehaviour
         {
             levelUpButton.SetActive(true);
         }
+        if(availableStatPoints <= 0 && Time.timeScale != 0)
+        {
+            levelUpButton.SetActive(false);
+        }
         if (isLifestealActive && Time.time >= lifestealEndTime)
         {
             isLifestealActive = false;
@@ -85,7 +89,7 @@ public class playerStats : MonoBehaviour
     public void CheckLevelUp()
     {
         int nextLevelThreshold = xpThresholds[playerLevel - 1];
-        if (xp >= nextLevelThreshold && playerLevel <= 4)
+        if (xp >= nextLevelThreshold && playerLevel <= 14)
         {
             LevelUp();
         }
