@@ -146,12 +146,14 @@ public class Enemy : MonoBehaviour
     }
     public void StartAttack()
     {
+        if (isDead) return;
         anim.SetBool("isAttacking", true);
         anim.SetTrigger("isAttack");
     }
 
     public void EndAttack()
     {
+        if (isDead) return;
         anim.SetBool("isAttacking", false);
     }
     private void StopAttackingAndFollowing()
@@ -179,8 +181,6 @@ public class Enemy : MonoBehaviour
 
         float destroyDelay = 2.4f;
         StartCoroutine(DestroyWithDelay(destroyDelay));
-
-        anim.enabled = false;
         playerStats player = FindObjectOfType<playerStats>();
         if (player != null && player.playerLevel <= 9)
         {
