@@ -48,6 +48,7 @@ public class playerStats : MonoBehaviour
     public GameObject levelUpButton;
     public Shake shake;
     [SerializeField] private AudioSource critSFX;
+    [SerializeField] private AudioSource gameOverSFX;
 
     private int[] xpThresholds = { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
@@ -70,7 +71,7 @@ public class playerStats : MonoBehaviour
         {
             levelUpButton.SetActive(true);
         }
-        if(availableStatPoints <= 0 || Time.timeScale != 0)
+        if(availableStatPoints <= 0 || Time.timeScale == 0)
         {
             levelUpButton.SetActive(false);
         }
@@ -182,6 +183,7 @@ public class playerStats : MonoBehaviour
         Debug.Log("mati");
         Destroy(gameObject);
         gameOverPanel.SetActive(true);
+        gameOverSFX.Play();
         Time.timeScale = 0f;
     }
 
@@ -223,7 +225,7 @@ public class playerStats : MonoBehaviour
                     break;
                 case 3: // Luck
                     luck++;
-                    critChance += 0.05f; 
+                    critChance += 0.025f; 
                     break;
             }
             availableStatPoints--;

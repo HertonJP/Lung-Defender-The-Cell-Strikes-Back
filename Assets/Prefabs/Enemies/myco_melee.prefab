@@ -194,9 +194,11 @@ MonoBehaviour:
   enemyHP: 0
   targetingRange: 3.5
   initialAttackSpeed: 1
-  initialEnemyHP: 50
+  initialEnemyHP: 35
   enemyDamagePoints: 5
+  phase2Tag: Phase2Position
   attackSpeed: 1
+  target: {fileID: 0}
 --- !u!50 &2973302525597831502
 Rigidbody2D:
   serializedVersion: 4

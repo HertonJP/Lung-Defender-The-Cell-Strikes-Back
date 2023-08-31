@@ -15273,7 +15273,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6f849962979c30b49851766843cdf2d9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -15369,7 +15369,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 828d4183175002844a4074827443b458, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -22661,7 +22661,7 @@ Animator:
   m_GameObject: {fileID: 1428639792}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f25d3dd5cfc31c478f35bb2e02b5da7, type: 2}
+  m_Controller: {fileID: 9100000, guid: f7b9e1475a1c07a45a4e74105b585c5a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -51011,12 +51011,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2107860219}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: gameOverSFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: playerMaxHP
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: attackDamage
-      value: 5
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: gameOverPanel

@@ -415,9 +415,11 @@ MonoBehaviour:
   enemyHP: 0
   targetingRange: 4.5
   initialAttackSpeed: 1
-  initialEnemyHP: 150
+  initialEnemyHP: 125
   enemyDamagePoints: 10
+  phase2Tag: Phase2Position
   attackSpeed: 0
+  target: {fileID: 0}
 --- !u!114 &586541354553142940
 MonoBehaviour:
   m_ObjectHideFlags: 0
