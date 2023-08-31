@@ -13,6 +13,7 @@ public class PauseController : MonoBehaviour
     // public GameObject tutorPanel;
     public GameObject gameOverPanel;
     public AudioSource pauseSFX;
+    public AudioSource gameOverSFX;
 
     private void Start()
     {
@@ -71,6 +72,7 @@ public class PauseController : MonoBehaviour
     public void gameOver()
     {
         gameOverPanel.SetActive(true);
+        gameOverSFX.Play();
         Time.timeScale = 0f;
         isPaused = true;
     }

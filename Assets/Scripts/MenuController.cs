@@ -79,4 +79,8 @@ public class MenuController : MonoBehaviour
         Screen.fullScreen = isFullscreen;
     }
 
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+    }
 }

@@ -11759,6 +11759,7 @@ MonoBehaviour:
   isPaused: 0
   gameOverPanel: {fileID: 1028925801}
   pauseSFX: {fileID: 638478337}
+  gameOverSFX: {fileID: 69055994}
 --- !u!4 &702315505
 Transform:
   m_ObjectHideFlags: 0
