@@ -35,12 +35,9 @@ public class Bossfight : MonoBehaviour
 
     private void Update()
     {
-        if (phase2Position != null)
-        {
-            transform.position = phase2Position.position;
-        }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
         {
+            enemy.transform.position = phase2Position.position;
             isPhase2 = true;
             StartPhase2();
         }
