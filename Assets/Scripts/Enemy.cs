@@ -9,16 +9,22 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject floatingTextPrefab;
     [SerializeField] private GameObject hitVFXPrefab;
     [SerializeField] private GameObject attackRange;
+    [SerializeField] private int xpToGrant = 5;
+    [SerializeField] public bool isBoss = false;
     public int enemyHP;
     private bool isDead = false;
+
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] public float initialAttackSpeed = 1f;
     [SerializeField] public int initialEnemyHP = 20;
     [SerializeField] public int enemyDamagePoints = 5;
     public float attackSpeed;
+
     private Animator anim;
     private Transform target;
-    private float attackCooldown;
+    private float timeUntilFire;
+    private bool isAttacking = false;
+
     private bool isShowingText = false;
 
     private void Start()
@@ -26,53 +32,71 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         enemyHP = initialEnemyHP;
         attackSpeed = initialAttackSpeed;
-        attackCooldown = 0f;
     }
 
     private void Update()
     {
-        attackCooldown -= Time.deltaTime;
-
+        if(isBoss && enemyHP <= initialEnemyHP / 2)
+        {
+            anim.enabled = false;
+        }
         if (target == null)
         {
             FindTarget();
             return;
         }
-
+        float distanceToTarget = Vector2.Distance(target.position, transform.position);
         if (!inRange())
         {
             target = null;
         }
-        else if (inRange() && attackCooldown <= 0)
+        else
+        {
+            timeUntilFire += Time.deltaTime;
+        }
+        if (timeUntilFire >= 1f / attackSpeed)
         {
             StartAttack();
-            attackCooldown = 1f / attackSpeed;
+            timeUntilFire = 0f;
         }
     }
 
     public void RangeAttack()
     {
-        if (target == null) return;
+        Debug.Log("range attack kepanggil");
+        if (target == null)
+        {
+            return;
+        }
         GameObject projectilesObj = Instantiate(projectilesPrefab, firingPoint.position, Quaternion.identity);
+
         Vector2 directionToPlayer = target.transform.position - firingPoint.position;
+
         enemyProjectiles projectilesScript = projectilesObj.GetComponent<enemyProjectiles>();
         projectilesScript.SetInitialDirection(directionToPlayer);
     }
-
     public bool inRange()
     {
+        if (target == null || attackRange == null)
+        {
+            return false;
+        }
         return Vector2.Distance(target.position, attackRange.transform.position) <= targetingRange;
     }
 
     private void FindTarget()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, Vector2.zero, 0f, playerMask);
-        if (hits.Length > 0) target = hits[0].transform;
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, playerMask);
+        if (hits.Length > 0)
+        {
+            target = hits[0].transform;
+        }
     }
 
     public void TakeDamage(int damage)
     {
         enemyHP -= damage;
+        playerStats player = FindObjectOfType<playerStats>();
 
         if (enemyHP <= 0 && !isDead)
         {
@@ -81,7 +105,10 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            anim.SetTrigger("isHit");
+            if (anim != null)
+            {
+                anim.SetTrigger("isHit");
+            }
             ShowFloatingText(damage.ToString());
             PlayHitVFX();
         }
@@ -89,23 +116,34 @@ public class Enemy : MonoBehaviour
 
     private void PlayHitVFX()
     {
-        GameObject hitVFXObject = Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
-        Destroy(hitVFXObject, 0.3f);
+        if (hitVFXPrefab != null)
+        {
+            GameObject hitVFXObject = Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
+            Destroy(hitVFXObject, 0.3f);
+        }
     }
 
     private IEnumerator DestroyWithDelay(float delay)
     {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
+        if (isShowingText)
+        {
+            yield return new WaitForSeconds(delay);
+            Destroy(gameObject);
+        }
     }
 
     private void ShowFloatingText(string text)
     {
-        GameObject floatingText = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
-        FloatingTextController textController = floatingText.GetComponent<FloatingTextController>();
-        textController.Init(text);
+        if (floatingTextPrefab != null)
+        {
+            GameObject floatingText = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
+            FloatingTextController textController = floatingText.GetComponent<FloatingTextController>();
+            if (textController != null)
+            {
+                textController.Init(text);
+            }
+        }
     }
-
     public void StartAttack()
     {
         anim.SetBool("isAttacking", true);
@@ -116,15 +154,46 @@ public class Enemy : MonoBehaviour
     {
         anim.SetBool("isAttacking", false);
     }
+    private void StopAttackingAndFollowing()
+    {
+        isDead = true;
+        target = null;
 
+        AI aiComponent = GetComponent<AI>();
+        if (aiComponent != null)
+        {
+            aiComponent.enabled = false;
+        }
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Static;
+        }
+    }
     private void Die()
     {
+        StopAttackingAndFollowing();
         anim.SetTrigger("isDead");
-        StartCoroutine(DestroyWithDelay(2.4f));
+        isShowingText = true;
+
+        float destroyDelay = 2.4f;
+        StartCoroutine(DestroyWithDelay(destroyDelay));
+
+        anim.enabled = false;
         playerStats player = FindObjectOfType<playerStats>();
-        if (player != null && player.playerLevel <= 4)
+        if (player != null && player.playerLevel <= 9)
         {
-            player.GainXP(5);
+            player.GainXP(xpToGrant);
         }
+    }
+    void OnDestroy()
+    {
+        Spawner.onEnemyDestroy.Invoke();
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(attackRange.transform.position, targetingRange);
     }
 }

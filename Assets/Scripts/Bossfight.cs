@@ -13,11 +13,13 @@ public class Bossfight : MonoBehaviour
     [SerializeField] private GameObject dustVFXprefab;
     [SerializeField] private GameObject lavaPrefab;
     [SerializeField] private string phase2Tag = "Phase2Position";
-
+    [SerializeField] private AudioSource groundSlam;
     private Transform phase2Position;
+    private Animator anim;
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
@@ -29,11 +31,12 @@ public class Bossfight : MonoBehaviour
         {
             phase2Position = phase2Object.transform;
         }
+        StartCoroutine(HandleBossAttack());
     }
 
     private void Update()
     {
-        if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 3)
+        if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
         {
             isPhase2 = true;
             StartPhase2();
@@ -42,6 +45,7 @@ public class Bossfight : MonoBehaviour
 
     private void StartPhase2()
     {
+        anim.SetTrigger("isLavaTime");
         if (phase2Position != null)
         {
             transform.position = phase2Position.position;
@@ -61,8 +65,20 @@ public class Bossfight : MonoBehaviour
         while (isPhase2)
         {
             GameObject lavaInstance = Instantiate(lavaPrefab, player.transform.position, Quaternion.identity);
-            Destroy(lavaInstance, 2f);
+            Destroy(lavaInstance, 3f);
             yield return new WaitForSeconds(1.5f);
+        }
+    }
+
+    private IEnumerator HandleBossAttack()
+    {
+        while (true)
+        {
+            if (enemy != null && enemy.inRange())
+            {
+                bossAttack();
+            }
+            yield return new WaitForSeconds(3f);
         }
     }
 
@@ -76,6 +92,7 @@ public class Bossfight : MonoBehaviour
 
     public void spawnGroundBreak()
     {
+        groundSlam.Play();
         GameObject gBreak = Instantiate(groundBreak, gbPosition.position, Quaternion.identity);
         Destroy(gBreak, 2.0f);
         StartCoroutine(SpawnDustVFXAfterDelay(0.2f));

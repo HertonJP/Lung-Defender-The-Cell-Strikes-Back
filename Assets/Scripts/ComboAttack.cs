@@ -75,7 +75,7 @@ public class ComboAttack : MonoBehaviour
     }
     public void PlayCombo()
     {
-        if (Input.GetButtonDown("Fire1") && !isAttacking)
+        if (Input.GetButtonDown("Fire1") && !isAttacking && Time.timeScale != 0)
         {
             isAttacking = true;
             animator.SetTrigger("" + comboCount);

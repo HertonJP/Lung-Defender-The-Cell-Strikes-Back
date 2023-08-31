@@ -10,6 +10,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentStageText;
     [SerializeField] private TextMeshProUGUI pressHereText;
     [SerializeField] private GameObject bossPrefabs;
+    [SerializeField] private AudioSource shopBGM;
+    [SerializeField] private AudioSource fightBGM;
+    [SerializeField] private AudioSource bossBGM;
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     public playerStats player;
     public Cameras cam;
@@ -17,6 +20,8 @@ public class Spawner : MonoBehaviour
     public Transform shopSpawn;
     public Transform bossfightSpawn;
     public Transform bossSpawn;
+    public SoundEffects sfx;
+    public GameObject bossObject;
 
     public int currentWave = 0;
     public int currentStage = 0;
@@ -39,6 +44,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        shopBGM.Play();
         StartCoroutine(StartWave());
     }
 
@@ -57,14 +63,21 @@ public class Spawner : MonoBehaviour
             else if (currentStage != 0 && currentStage != 3 && currentStage != 6)
             {
                 currentStage++;
+                sfx.stageClearSFX.Play();
             }
 
             yield return StartCoroutine(SpawnBasedOnStage());
         }
     }
 
+    private void playBossGrowl()
+    {
+        sfx.bossGrowlSound();
+    }
     private IEnumerator SpawnBasedOnStage()
     {
+        fightBGM.Stop();
+        bossBGM.Stop();
         int enemiesToSpawn = 0;
         int[] indicesToUse = new int[0];
 
@@ -73,24 +86,33 @@ public class Spawner : MonoBehaviour
             case 0:
             case 3:
             case 6:
+                fightBGM.Stop();
+                bossBGM.Stop();
+                shopBGM.Play();
                 pressHereText.enabled = true;
                 cam.shopCam.enabled = true;
                 cam.mainCam.enabled = false;
                 player.gameObject.transform.position = shopSpawn.transform.position;
+                player.playerHP = player.playerMaxHP;
                 break;
             case 1:
+                shopBGM.Stop();
+                fightBGM.Play();
                 pressHereText.enabled = false;
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
-                enemiesToSpawn = 5;
+                enemiesToSpawn = 10;
                 indicesToUse = new int[] { 0, 1 };
                 break;
             case 2:
-                enemiesToSpawn = 5;
+                fightBGM.Play();
+                enemiesToSpawn = 7;
                 indicesToUse = new int[] { 1, 2 };
                 break;
             case 4:
+                shopBGM.Stop();
+                fightBGM.Play();
                 pressHereText.enabled = false;
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
@@ -99,13 +121,20 @@ public class Spawner : MonoBehaviour
                 indicesToUse = new int[] { 1, 2, 3 };
                 break;
             case 5:
-                enemiesToSpawn = 5;
+                fightBGM.Play();
+                enemiesToSpawn = 4;
                 indicesToUse = new int[] { 2, 3, 4 };
                 break;
             case 7:
+                cam.shopCam.enabled = false;
+                cam.bossCam.enabled = true;
+                fightBGM.Stop();
+                shopBGM.Stop();              
                 pressHereText.enabled = false;
+                bossObject.SetActive(true);
                 player.gameObject.transform.position = bossfightSpawn.transform.position;
-                Instantiate(bossPrefabs, bossSpawn.position, Quaternion.identity);
+                Invoke("playBossGrowl", 2.0f);
+                bossBGM.Play();
                 yield break;
         }
 

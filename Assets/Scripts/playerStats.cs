@@ -29,6 +29,7 @@ public class playerStats : MonoBehaviour
     [SerializeField] private AudioSource levelUpSFX;
 
     [Header("UI & Gameplay")]
+    public GameObject gameOverPanel;
     public TalentUIManager talentUI;
     public ChooseTalentPanel chooseTalentPanel;
     public Transform shopSpawn;
@@ -47,10 +48,11 @@ public class playerStats : MonoBehaviour
     public Shake shake;
     [SerializeField] private AudioSource critSFX;
 
-    private int[] xpThresholds = { 0, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+    private int[] xpThresholds = { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
     private void Start()
     {
+        gameOverPanel.SetActive(false);
         this.gameObject.transform.position = shopSpawn.transform.position;
         canRevive = false;
         isRollout = false;
@@ -169,6 +171,8 @@ public class playerStats : MonoBehaviour
     {
         Debug.Log("mati");
         Destroy(gameObject);
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     private IEnumerator CheckForLowHealth()

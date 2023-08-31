@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275719068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.243, y: 0.297, z: 0}
+  m_LocalPosition: {x: 0.29952332, y: 0.13331896, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666682152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41, y: 0.308, z: 0}
+  m_LocalPosition: {x: 0.46652332, y: 0.14431897, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -115,7 +115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271381435896458780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.24052346, y: 0.45368087, z: 0}
+  m_LocalPosition: {x: -0.184, y: 0.29, z: 0}
   m_LocalScale: {x: 0.4285714, y: 0.4285714, z: 0.4285714}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -283,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3540408058693197929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.046666652, y: 0.37166667, z: 0}
+  m_LocalPosition: {x: 0.009856671, y: 0.20798564, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -359,7 +359,7 @@ MonoBehaviour:
   - {fileID: 6050337167234482611}
   - {fileID: 8298833212699576270}
   m_Bounds:
-    m_Center: {x: 0.0032632053, y: -0.00000047683716, z: 0}
+    m_Center: {x: 0.0032632053, y: 0, z: 0}
     m_Extent: {x: 0.337872, y: 0.30499998, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -600,7 +600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5575735367756390589}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.016132861, y: 0.03537478, z: 0}
+  m_LocalPosition: {x: 0.04039046, y: -0.12830625, z: 0}
   m_LocalScale: {x: 1, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -710,6 +710,8 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 5500894286564896549, guid: d9b73db23a35c5049acb0c71937583b9, type: 3}
   hitVFXPrefab: {fileID: 2981612518552317830, guid: ba83bc4fec4ddc741b63c0ab0d2d7e9c, type: 3}
   attackRange: {fileID: 275719068}
+  xpToGrant: 5
+  isBoss: 0
   enemyHP: 0
   targetingRange: 3
   initialAttackSpeed: 1
@@ -750,7 +752,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011964798, y: 0.3469801}
+  m_Offset: {x: -0.011964798, y: 0.18734932}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -761,7 +763,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.78463364, y: 0.64105606}
+  m_Size: {x: 0.78463364, y: 0.60466385}
   m_EdgeRadius: 0
 --- !u!114 &1217087613
 MonoBehaviour:
@@ -901,7 +903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6501681724089631451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.31166667, y: 0.19666667, z: 0}
+  m_LocalPosition: {x: -0.25514334, y: 0.032985643, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -976,7 +978,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3475042448550210620}
   m_Bounds:
-    m_Center: {x: 0.028824411, y: 0.000301674, z: 0}
+    m_Center: {x: 0.028823458, y: 0.000301674, z: 0}
     m_Extent: {x: 0.11177101, y: 0.13969836, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1040,7 +1042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9216033235131023173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.29833335, y: 0.205, z: 0}
+  m_LocalPosition: {x: 0.35485667, y: 0.041318968, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1115,7 +1117,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5813880984593966322}
   m_Bounds:
-    m_Center: {x: -0.032086954, y: -0.00044500828, z: 0}
+    m_Center: {x: -0.032086954, y: -0.00044882298, z: 0}
     m_Extent: {x: 0.111547515, y: 0.121048346, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
