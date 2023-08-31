@@ -72,12 +72,12 @@ public class Spawner : MonoBehaviour
                 yield return new WaitForSeconds(2);
                 stageClearPanel.SetActive(false);
             }
-            if(currentStage == 7)
+            else if (currentStage == 7)
             {
-                youWinPanel.SetActive(true);
-                yield return new WaitForSeconds(2);
-                youWinPanel.SetActive(false);
+                StopCoroutine(StartWave());
+                enemiesAlive = 1;
             }
+                
             yield return StartCoroutine(SpawnBasedOnStage());
         }
     }
@@ -147,7 +147,9 @@ public class Spawner : MonoBehaviour
                 player.gameObject.transform.position = bossfightSpawn.transform.position;
                 Invoke("playBossGrowl", 2.0f);
                 bossBGM.Play();
-                yield break;
+                break;
+            case 8:
+                break;
         }
 
         for (int i = 0; i < enemiesToSpawn; i++)
