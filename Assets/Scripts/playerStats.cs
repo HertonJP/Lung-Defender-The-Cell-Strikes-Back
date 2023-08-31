@@ -45,6 +45,7 @@ public class playerStats : MonoBehaviour
     public float lifestealDuration = 5f;
     public float lifestealEndTime;
     public bool isImmune = false;
+    public GameObject levelUpButton;
     public Shake shake;
     [SerializeField] private AudioSource critSFX;
 
@@ -52,6 +53,7 @@ public class playerStats : MonoBehaviour
 
     private void Start()
     {
+        levelUpButton.SetActive(false);
         gameOverPanel.SetActive(false);
         this.gameObject.transform.position = shopSpawn.transform.position;
         canRevive = false;
@@ -64,6 +66,10 @@ public class playerStats : MonoBehaviour
 
     private void Update()
     {
+        if(availableStatPoints > 0)
+        {
+            levelUpButton.SetActive(true);
+        }
         if (isLifestealActive && Time.time >= lifestealEndTime)
         {
             isLifestealActive = false;

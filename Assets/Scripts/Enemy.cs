@@ -100,6 +100,7 @@ public class Enemy : MonoBehaviour
 
         if (enemyHP <= 0 && !isDead)
         {
+            enemyHP = 0;
             isDead = true;
             Die();
         }

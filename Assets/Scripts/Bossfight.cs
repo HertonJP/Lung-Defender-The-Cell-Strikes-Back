@@ -16,11 +16,9 @@ public class Bossfight : MonoBehaviour
     [SerializeField] private AudioSource groundSlam;
     private Transform phase2Position;
     private Animator anim;
-    private Rigidbody2D rb;
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();        anim = GetComponent<Animator>();
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
@@ -37,6 +35,10 @@ public class Bossfight : MonoBehaviour
 
     private void Update()
     {
+        if (phase2Position != null)
+        {
+            transform.position = phase2Position.position;
+        }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
         {
             isPhase2 = true;
@@ -46,12 +48,8 @@ public class Bossfight : MonoBehaviour
 
     private void StartPhase2()
     {
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         anim.SetTrigger("isLavaTime");
-        if (phase2Position != null)
-        {
-            transform.position = phase2Position.position;
-        }
+        
 
         AI aiComponent = enemy.GetComponent<AI>();
         if (aiComponent != null)

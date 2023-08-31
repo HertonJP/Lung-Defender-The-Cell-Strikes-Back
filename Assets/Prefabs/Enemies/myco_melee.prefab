@@ -192,7 +192,7 @@ MonoBehaviour:
   xpToGrant: 5
   isBoss: 0
   enemyHP: 0
-  targetingRange: 3
+  targetingRange: 3.5
   initialAttackSpeed: 1
   initialEnemyHP: 20
   enemyDamagePoints: 5
