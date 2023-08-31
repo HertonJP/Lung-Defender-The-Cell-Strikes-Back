@@ -51,3 +51,6 @@ TagManager:
   - name: Hero
     uniqueID: 4199442859
     locked: 0
+  - name: effect
+    uniqueID: 2100309921
+    locked: 0
