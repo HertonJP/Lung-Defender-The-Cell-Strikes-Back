@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private AudioSource fightBGM;
     [SerializeField] private AudioSource bossBGM;
     [SerializeField] private GameObject stageClearPanel;
-    [SerializeField] private GameObject youWinPanel;
+    
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     public playerStats player;
     public Cameras cam;
@@ -46,7 +46,6 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        youWinPanel.SetActive(false);
         stageClearPanel.SetActive(false);
         shopBGM.Play();
         StartCoroutine(StartWave());
@@ -72,13 +71,15 @@ public class Spawner : MonoBehaviour
                 yield return new WaitForSeconds(2);
                 stageClearPanel.SetActive(false);
             }
-            else if (currentStage == 7)
-            {
-                StopCoroutine(StartWave());
-                enemiesAlive = 1;
-            }
-                
-            yield return StartCoroutine(SpawnBasedOnStage());
+            //else if (currentStage == 7)
+           // {
+              //  StopCoroutine(SpawnBasedOnStage());
+               // enemiesAlive = 1;
+           //}
+            
+                yield return StartCoroutine(SpawnBasedOnStage());
+              
+            
         }
     }
 
@@ -138,6 +139,7 @@ public class Spawner : MonoBehaviour
                 indicesToUse = new int[] { 3, 4 };
                 break;
             case 7:
+                enemiesAlive = 1;
                 cam.shopCam.enabled = false;
                 cam.bossCam.enabled = true;
                 fightBGM.Stop();

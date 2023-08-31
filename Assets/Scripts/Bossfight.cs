@@ -14,10 +14,12 @@ public class Bossfight : MonoBehaviour
     [SerializeField] private GameObject lavaPrefab;
     [SerializeField] private string phase2Tag = "Phase2Position";
     [SerializeField] private AudioSource groundSlam;
+    [SerializeField] private GameObject youWinPanel;
     private Transform phase2Position;
     private Animator anim;
     private void Start()
     {
+        youWinPanel.SetActive(false);
         anim = GetComponent<Animator>();
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
@@ -35,6 +37,11 @@ public class Bossfight : MonoBehaviour
 
     private void Update()
     {
+        if(enemy.enemyHP <= 0)
+        {
+            youWinPanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
         {
             enemy.transform.position = phase2Position.position;
@@ -45,15 +52,6 @@ public class Bossfight : MonoBehaviour
 
     private void StartPhase2()
     {
-        anim.SetTrigger("isLavaTime");
-        
-
-        AI aiComponent = enemy.GetComponent<AI>();
-        if (aiComponent != null)
-        {
-            aiComponent.enabled = false;
-        }
-
         StartCoroutine(SpawnLavaAtPlayer());
     }
 

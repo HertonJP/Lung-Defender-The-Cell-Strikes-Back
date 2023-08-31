@@ -28,7 +28,7 @@ public class LifestealTalent : Talent
 
             if (currentTime - lastActivatedTime >= lifestealCooldown)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.R))
                 {
                     Debug.Log("ngelifesteal");
                     lastActivatedTime = currentTime;

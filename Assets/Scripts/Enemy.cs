@@ -13,15 +13,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] public bool isBoss = false;
     public int enemyHP;
     private bool isDead = false;
-
+    private Transform phase2Position;
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] public float initialAttackSpeed = 1f;
     [SerializeField] public int initialEnemyHP = 20;
     [SerializeField] public int enemyDamagePoints = 5;
+    [SerializeField] private string phase2Tag = "Phase2Position";
     public float attackSpeed;
 
     private Animator anim;
-    private Transform target;
+    public Transform target;
     private float timeUntilFire;
     private bool isAttacking = false;
 
@@ -32,18 +33,31 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         enemyHP = initialEnemyHP;
         attackSpeed = initialAttackSpeed;
+        GameObject phase2Object = GameObject.FindWithTag(phase2Tag);
+        if (phase2Object != null)
+        {
+            phase2Position = phase2Object.transform;
+        }
     }
 
     private void Update()
     {
         if(isBoss && enemyHP <= initialEnemyHP / 2)
         {
-            anim.enabled = false;
+            anim.SetTrigger("isLavaTime");
+            
         }
         if (target == null)
         {
-            FindTarget();
-            return;
+            if(isBoss && enemyHP <= initialEnemyHP / 2)
+            {
+                target = phase2Position;
+            }
+            else
+            {
+                FindTarget();
+                return;
+            }
         }
         float distanceToTarget = Vector2.Distance(target.position, transform.position);
         if (!inRange())
@@ -96,8 +110,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         enemyHP -= damage;
-        playerStats player = FindObjectOfType<playerStats>();
-
+        playerStats player = FindObjectOfType<playerStats>();    
         if (enemyHP <= 0 && !isDead)
         {
             enemyHP = 0;

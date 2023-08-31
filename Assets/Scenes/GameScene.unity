@@ -15189,7 +15189,6 @@ MonoBehaviour:
   fightBGM: {fileID: 967499455}
   bossBGM: {fileID: 967499454}
   stageClearPanel: {fileID: 1428639792}
-  youWinPanel: {fileID: 1528028913}
   player: {fileID: 182944447}
   cam: {fileID: 967499452}
   fightSpawn: {fileID: 338488570}
@@ -51013,7 +51012,7 @@ PrefabInstance:
       objectReference: {fileID: 2107860219}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: playerMaxHP
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: attackDamage
@@ -51169,6 +51168,10 @@ PrefabInstance:
       propertyPath: bossHealthPanel
       value: 
       objectReference: {fileID: 1611311868}
+    - target: {fileID: 1428201280, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: youWinPanel
+      value: 
+      objectReference: {fileID: 1528028913}
     - target: {fileID: 309071413352820936, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
       propertyPath: m_Name
       value: multi-drug-boss
@@ -51225,5 +51228,9 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 182944447}
+    - target: {fileID: 2436906584931565984, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: youWinPanel
+      value: 
+      objectReference: {fileID: 1528028913}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}

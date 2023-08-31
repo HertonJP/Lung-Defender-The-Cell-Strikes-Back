@@ -27,7 +27,7 @@ public class ImmuneTalent : Talent
 
             if (currentTime - lastActivatedTime >= immuneCooldown)
             {
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     lastActivatedTime = currentTime;
                     yield return ActivateImmune(player);

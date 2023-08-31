@@ -70,7 +70,7 @@ public class playerStats : MonoBehaviour
         {
             levelUpButton.SetActive(true);
         }
-        if(availableStatPoints <= 0 && Time.timeScale != 0)
+        if(availableStatPoints <= 0 || Time.timeScale != 0)
         {
             levelUpButton.SetActive(false);
         }
