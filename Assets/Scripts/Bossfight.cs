@@ -61,7 +61,7 @@ public class Bossfight : MonoBehaviour
         {
             GameObject lavaInstance = Instantiate(lavaPrefab, player.transform.position, Quaternion.identity);
             Destroy(lavaInstance, 3f);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2.5f);
         }
     }
 

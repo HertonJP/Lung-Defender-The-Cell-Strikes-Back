@@ -147,5 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  gbCollider: {fileID: 4607382518078163906}
-  gbDamage: 10
+  gbDamage: 5
