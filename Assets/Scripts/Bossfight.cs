@@ -18,7 +18,7 @@ public class Bossfight : MonoBehaviour
     private Animator anim;
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();        anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {

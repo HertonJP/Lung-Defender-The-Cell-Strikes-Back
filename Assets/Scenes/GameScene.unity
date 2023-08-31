@@ -46869,6 +46869,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1028925801}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: levelUpButton
+      value: 
+      objectReference: {fileID: 2060519696}
+    - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: chooseTalentPanel
       value: 
       objectReference: {fileID: 885790179}
