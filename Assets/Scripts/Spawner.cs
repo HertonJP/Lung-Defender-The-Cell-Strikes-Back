@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private TextMeshProUGUI currentStageText;
     [SerializeField] private TextMeshProUGUI pressHereText;
-    [SerializeField] private GameObject bossPrefabs;
+    //[SerializeField] private GameObject bossPrefabs;
     [SerializeField] private AudioSource shopBGM;
     [SerializeField] private AudioSource fightBGM;
     [SerializeField] private AudioSource bossBGM;
@@ -46,6 +46,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        currentStage = 6;
         stageClearPanel.SetActive(false);
         shopBGM.Play();
         StartCoroutine(StartWave());
@@ -58,12 +59,12 @@ public class Spawner : MonoBehaviour
             yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear));
             yield return new WaitForSeconds(5);
 
-            if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear))
+            if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear) || (currentStage == 9 && isShopClear))
             {
                 isShopClear = false;
                 currentStage++;
             }
-            else if (currentStage != 0 && currentStage != 3 && currentStage != 6 && currentStage!=7)
+            else if (currentStage != 0 && currentStage != 3 && currentStage != 6)
             {
                 stageClearPanel.SetActive(true);
                 currentStage++;
@@ -71,11 +72,10 @@ public class Spawner : MonoBehaviour
                 yield return new WaitForSeconds(2);
                 stageClearPanel.SetActive(false);
             }
-            //else if (currentStage == 7)
-           // {
-              //  StopCoroutine(SpawnBasedOnStage());
-               // enemiesAlive = 1;
-           //}
+            else if ( currentStage == 7 && bossObject == null)
+            {
+                currentStage++;
+            }
             
                 yield return StartCoroutine(SpawnBasedOnStage());
               
@@ -99,6 +99,7 @@ public class Spawner : MonoBehaviour
             case 0:
             case 3:
             case 6:
+            case 9:
                 fightBGM.Stop();
                 bossBGM.Stop();
                 shopBGM.Play();
@@ -151,6 +152,16 @@ public class Spawner : MonoBehaviour
                 bossBGM.Play();
                 break;
             case 8:
+                player.gameObject.transform.position = fightSpawn.transform.position;
+                cam.bossCam.enabled = false;
+                cam.mainCam.enabled = true;
+                bossBGM.Stop();
+                fightBGM.Play();
+                pressHereText.enabled = false;
+                enemiesToSpawn = 6;
+                indicesToUse = new int[] {3, 4 };
+                break;
+            case 10:
                 break;
         }
 

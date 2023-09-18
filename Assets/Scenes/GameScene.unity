@@ -15381,7 +15381,6 @@ MonoBehaviour:
   - {fileID: 426724831}
   currentStageText: {fileID: 1177703025}
   pressHereText: {fileID: 1581567315}
-  bossPrefabs: {fileID: 309071413352820936, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
   shopBGM: {fileID: 967499456}
   fightBGM: {fileID: 967499455}
   bossBGM: {fileID: 967499454}
@@ -44008,7 +44007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1661650393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51657,11 +51656,11 @@ PrefabInstance:
       objectReference: {fileID: 69055994}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: playerMaxHP
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: attackDamage
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: gameOverPanel

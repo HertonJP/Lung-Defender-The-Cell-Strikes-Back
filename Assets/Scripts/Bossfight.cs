@@ -40,9 +40,9 @@ public class Bossfight : MonoBehaviour
     {
         if(enemy.enemyHP <= 0)
         {
-            youWinPanel.SetActive(true);
-            youWinSFX.Play();
-            Time.timeScale = 0f;
+          //  youWinPanel.SetActive(true);
+          //  youWinSFX.Play();
+           // Time.timeScale = 0f;
         }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
         {
@@ -94,7 +94,7 @@ public class Bossfight : MonoBehaviour
         Destroy(gBreak, 2.0f);
         StartCoroutine(SpawnDustVFXAfterDelay(0.2f));
     }
-
+    
     private IEnumerator SpawnDustVFXAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
