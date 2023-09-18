@@ -22,14 +22,15 @@ public class Enemy : MonoBehaviour
     public float attackSpeed;
 
     private Animator anim;
+    private Collider2D coll;
     public Transform target;
     private float timeUntilFire;
     private bool isAttacking = false;
-
     private bool isShowingText = false;
 
     private void Start()
     {
+        coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
         enemyHP = initialEnemyHP;
         attackSpeed = initialAttackSpeed;
@@ -111,7 +112,7 @@ public class Enemy : MonoBehaviour
     {
         enemyHP -= damage;
         playerStats player = FindObjectOfType<playerStats>();    
-        if (enemyHP <= 0 && !isDead)
+        if (enemyHP <= 0)
         {
             enemyHP = 0;
             isDead = true;
@@ -189,6 +190,7 @@ public class Enemy : MonoBehaviour
     }
     private void Die()
     {
+        coll.enabled = false;
         StopAttackingAndFollowing();
         anim.SetTrigger("isDead");
         isShowingText = true;
