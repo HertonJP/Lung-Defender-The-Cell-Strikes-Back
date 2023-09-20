@@ -54,3 +54,6 @@ TagManager:
   - name: effect
     uniqueID: 2100309921
     locked: 0
+  - name: batu
+    uniqueID: 703723213
+    locked: 0

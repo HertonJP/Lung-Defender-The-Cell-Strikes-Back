@@ -10,7 +10,6 @@ public class playerStats : MonoBehaviour
     public int vit = 0;
     public int agility = 0;
     public int luck = 0;
-
     [Header("Attributes")]
     public int playerMaxHP = 100;
     public int xp = 0;
@@ -138,6 +137,7 @@ public class playerStats : MonoBehaviour
 
         if (playerHP <= 0)
         {
+            playerHP = 0;
             if (canRevive)
             {
                 Debug.Log("Revived");

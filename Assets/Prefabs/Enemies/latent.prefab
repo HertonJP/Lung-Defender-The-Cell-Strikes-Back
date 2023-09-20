@@ -715,7 +715,7 @@ MonoBehaviour:
   enemyHP: 0
   targetingRange: 3.5
   initialAttackSpeed: 1
-  initialEnemyHP: 50
+  initialEnemyHP: 35
   enemyDamagePoints: 3
   phase2Tag: Phase2Position
   attackSpeed: 1

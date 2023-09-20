@@ -114,6 +114,8 @@ public class Enemy : MonoBehaviour
         playerStats player = FindObjectOfType<playerStats>();    
         if (enemyHP <= 0)
         {
+            ShowFloatingText(damage.ToString());
+            PlayHitVFX();
             enemyHP = 0;
             isDead = true;
             Die();
@@ -193,6 +195,7 @@ public class Enemy : MonoBehaviour
         coll.enabled = false;
         StopAttackingAndFollowing();
         anim.SetTrigger("isDead");
+        Debug.Log("mati");
         isShowingText = true;
 
         float destroyDelay = 2.4f;

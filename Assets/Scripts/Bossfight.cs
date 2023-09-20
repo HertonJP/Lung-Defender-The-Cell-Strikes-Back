@@ -17,9 +17,11 @@ public class Bossfight : MonoBehaviour
     [SerializeField] private GameObject youWinPanel;
     private Transform phase2Position;
     private Animator anim;
+    private Collider2D coll;
     [SerializeField] private AudioSource youWinSFX;
     private void Start()
     {
+        coll = GetComponent<Collider2D>();
         youWinPanel.SetActive(false);
         anim = GetComponent<Animator>();
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -40,18 +42,25 @@ public class Bossfight : MonoBehaviour
     {
         if(enemy.enemyHP <= 0)
         {
-          //  youWinPanel.SetActive(true);
-          //  youWinSFX.Play();
-           // Time.timeScale = 0f;
+            youWinPanel.SetActive(true);
+            youWinSFX.Play();
+            Time.timeScale = 0f;
         }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
         {
             enemy.transform.position = phase2Position.position;
             isPhase2 = true;
+            coll.enabled = false;
             StartPhase2();
+            Invoke("collActive", 1.5f);
         }
     }
 
+    
+    private void collActive()
+    {
+        coll.enabled = true;
+    }
     private void StartPhase2()
     {
         StartCoroutine(SpawnLavaAtPlayer());
@@ -63,7 +72,7 @@ public class Bossfight : MonoBehaviour
         {
             GameObject lavaInstance = Instantiate(lavaPrefab, player.transform.position, Quaternion.identity);
             Destroy(lavaInstance, 3f);
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(4f);
         }
     }
 

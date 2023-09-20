@@ -9,7 +9,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private TextMeshProUGUI currentStageText;
     [SerializeField] private TextMeshProUGUI pressHereText;
-    //[SerializeField] private GameObject bossPrefabs;
     [SerializeField] private AudioSource shopBGM;
     [SerializeField] private AudioSource fightBGM;
     [SerializeField] private AudioSource bossBGM;
@@ -46,7 +45,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        currentStage = 6;
+        currentStage = 0;
         stageClearPanel.SetActive(false);
         shopBGM.Play();
         StartCoroutine(StartWave());
@@ -59,7 +58,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear));
             yield return new WaitForSeconds(5);
 
-            if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear) || (currentStage == 9 && isShopClear))
+            if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear))
             {
                 isShopClear = false;
                 currentStage++;
@@ -91,6 +90,7 @@ public class Spawner : MonoBehaviour
     {
         fightBGM.Stop();
         bossBGM.Stop();
+        shopBGM.Stop();
         int enemiesToSpawn = 0;
         int[] indicesToUse = new int[0];
 
@@ -99,7 +99,6 @@ public class Spawner : MonoBehaviour
             case 0:
             case 3:
             case 6:
-            case 9:
                 fightBGM.Stop();
                 bossBGM.Stop();
                 shopBGM.Play();
@@ -121,7 +120,7 @@ public class Spawner : MonoBehaviour
                 break;
             case 2:
                 fightBGM.Play();
-                enemiesToSpawn = 8;
+                enemiesToSpawn = 10;
                 indicesToUse = new int[] { 1, 2 };
                 break;
             case 4:
@@ -131,12 +130,12 @@ public class Spawner : MonoBehaviour
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
-                enemiesToSpawn = 7;
+                enemiesToSpawn = 10;
                 indicesToUse = new int[] { 2, 3 };
                 break;
             case 5:
                 fightBGM.Play();
-                enemiesToSpawn = 4;
+                enemiesToSpawn = 8;
                 indicesToUse = new int[] { 3, 4 };
                 break;
             case 7:
@@ -152,16 +151,6 @@ public class Spawner : MonoBehaviour
                 bossBGM.Play();
                 break;
             case 8:
-                player.gameObject.transform.position = fightSpawn.transform.position;
-                cam.bossCam.enabled = false;
-                cam.mainCam.enabled = true;
-                bossBGM.Stop();
-                fightBGM.Play();
-                pressHereText.enabled = false;
-                enemiesToSpawn = 6;
-                indicesToUse = new int[] {3, 4 };
-                break;
-            case 10:
                 break;
         }
 
@@ -171,7 +160,7 @@ public class Spawner : MonoBehaviour
             Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
             Instantiate(enemyPrefabs[randomIndex], randomSpawnPoint.position, Quaternion.identity);
             enemiesAlive++;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2.5f);
         }
     }
 
