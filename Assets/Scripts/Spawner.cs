@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private TextMeshProUGUI currentStageText;
     [SerializeField] private TextMeshProUGUI pressHereText;
+    [SerializeField] private TextMeshProUGUI pressHereText2;
     [SerializeField] private AudioSource shopBGM;
     [SerializeField] private AudioSource fightBGM;
     [SerializeField] private AudioSource bossBGM;
@@ -104,6 +105,7 @@ public class Spawner : MonoBehaviour
                 bossBGM.Stop();
                 shopBGM.Play();
                 pressHereText.enabled = true;
+                pressHereText2.enabled = true;
                 cam.shopCam.enabled = true;
                 cam.mainCam.enabled = false;
                 player.gameObject.transform.position = shopSpawn.transform.position;
@@ -113,6 +115,7 @@ public class Spawner : MonoBehaviour
                 shopBGM.Stop();
                 fightBGM.Play();
                 pressHereText.enabled = false;
+                pressHereText2.enabled = false;
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
@@ -128,6 +131,7 @@ public class Spawner : MonoBehaviour
                 shopBGM.Stop();
                 fightBGM.Play();
                 pressHereText.enabled = false;
+                pressHereText2.enabled = false;
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
@@ -146,6 +150,7 @@ public class Spawner : MonoBehaviour
                 fightBGM.Stop();
                 shopBGM.Stop();              
                 pressHereText.enabled = false;
+                pressHereText2.enabled = false;
                 bossObject.SetActive(true);
                 player.gameObject.transform.position = bossfightSpawn.transform.position;
                 Invoke("playBossGrowl", 2.0f);

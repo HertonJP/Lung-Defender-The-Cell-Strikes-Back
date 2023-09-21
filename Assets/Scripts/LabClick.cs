@@ -3,7 +3,7 @@ using UnityEngine;
 public class LabClick : MonoBehaviour
 {
     public GameObject labPanel;
-    private float cooldownTime = 10.0f;
+    private float cooldownTime = 1.0f;
     private float nextActionTime = 0.0f;
 
     void Update()
@@ -19,6 +19,7 @@ public class LabClick : MonoBehaviour
                 {
                     nextActionTime = Time.time + cooldownTime;
                     labPanel.SetActive(true);
+                    Time.timeScale = 0f;
                 }
             }
         }

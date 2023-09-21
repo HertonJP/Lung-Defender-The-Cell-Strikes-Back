@@ -68,7 +68,7 @@ public class ComboAttack : MonoBehaviour
     public void StartCombo()
     {
         isAttacking = false;
-        if(comboCount < 3)
+        if(comboCount < 3 && Time.timeScale != 0)
         {
             comboCount++;
         }
