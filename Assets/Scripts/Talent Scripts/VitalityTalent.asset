@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: VitalityTalent
   m_EditorClassIdentifier: 
   talentName: Vitality Boost
-  talentImage: {fileID: 21300000, guid: be9601d71f7684245bfec15dd171ca06, type: 3}
+  talentImage: {fileID: 21300000, guid: cabf4fb42ca476047b3f290e3a345f4d, type: 3}
   isActive: 0

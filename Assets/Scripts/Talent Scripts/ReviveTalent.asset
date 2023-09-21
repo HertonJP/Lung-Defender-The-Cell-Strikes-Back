@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ReviveTalent
   m_EditorClassIdentifier: 
   talentName: Revive
-  talentImage: {fileID: 21300000, guid: 60526d64680f41848a8c54a548d82e54, type: 3}
+  talentImage: {fileID: 21300000, guid: d4db7ec6e2372ae4f99187deab0954d4, type: 3}
   isActive: 0

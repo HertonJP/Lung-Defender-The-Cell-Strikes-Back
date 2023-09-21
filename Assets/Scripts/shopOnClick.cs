@@ -3,13 +3,9 @@ using UnityEngine;
 public class shopOnClick : MonoBehaviour
 {
     public ChooseTalentPanel talentPanel;
-    private float cooldownTime = 10.0f;
-    private float nextActionTime = 0.0f;
 
     void Update()
     {
-        if (Time.time > nextActionTime)
-        {
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 rayPos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
@@ -17,10 +13,8 @@ public class shopOnClick : MonoBehaviour
 
                 if (hit && hit.collider.gameObject == this.gameObject)
                 {
-                    nextActionTime = Time.time + cooldownTime;
                     talentPanel.ShowPanel();
                 }
             }
         }
-    }
 }

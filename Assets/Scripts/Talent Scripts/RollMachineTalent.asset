@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RollMachineTalent
   m_EditorClassIdentifier: 
   talentName: Roll Machine
-  talentImage: {fileID: 21300000, guid: 2356870ead9902a4c8d7af33042cf66f, type: 3}
+  talentImage: {fileID: 21300000, guid: 5fd3d51aeb4209d468c93077bf991737, type: 3}
   isActive: 0
