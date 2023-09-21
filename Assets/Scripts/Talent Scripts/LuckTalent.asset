@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LuckTalent
   m_EditorClassIdentifier: 
   talentName: Luck Boost
-  talentImage: {fileID: 21300000, guid: 094c01200be94314f8e116ec4f9fece4, type: 3}
+  talentImage: {fileID: 21300000, guid: 7ed1a56b2485e8743b414e976be75fb2, type: 3}
   isActive: 0

@@ -58,6 +58,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear));
             yield return new WaitForSeconds(5);
 
+
             if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear))
             {
                 isShopClear = false;

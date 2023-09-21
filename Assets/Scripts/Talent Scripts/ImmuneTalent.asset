@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ImmuneTalent
   m_EditorClassIdentifier: 
   talentName: Immune
-  talentImage: {fileID: 21300000, guid: 3666c59d426c1034a9e283c60232c6c7, type: 3}
+  talentImage: {fileID: 21300000, guid: 2c153775413f4154296ac7f9333d45e4, type: 3}
   isActive: 0
   immuneTime: 3
   immuneCooldown: 5

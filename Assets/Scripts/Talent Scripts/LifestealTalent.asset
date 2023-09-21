@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LifestealTalent
   m_EditorClassIdentifier: 
   talentName: 
-  talentImage: {fileID: 21300000, guid: 448934dea76d0404dac294fbaec18b97, type: 3}
+  talentImage: {fileID: 21300000, guid: ffabbb84d72d6874abec2b7ed16656aa, type: 3}
   isActive: 0
   lifestealDuration: 5
   lifestealCooldown: 20

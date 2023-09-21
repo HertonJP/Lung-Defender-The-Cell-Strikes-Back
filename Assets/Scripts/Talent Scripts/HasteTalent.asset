@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HasteTalent
   m_EditorClassIdentifier: 
   talentName: Haste
-  talentImage: {fileID: 21300000, guid: 27d870fbe06ec1847a8a96ae53651593, type: 3}
+  talentImage: {fileID: 21300000, guid: 455956ced1737ad499b41b3a39df65cb, type: 3}
   isActive: 0
