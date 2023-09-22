@@ -18,7 +18,7 @@ public class groundBreak : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player") && !player.isImmune)
         {
             player.TakeDamage(gbDamage);
         }
