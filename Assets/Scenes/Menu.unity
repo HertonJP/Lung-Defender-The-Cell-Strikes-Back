@@ -181,8 +181,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Herton Julius p\n\n\nHerton Julius p\n\nJeffer Devaga\n\nSteven Jaya\n\n\nSteven
-    Jaya\n\nJeffer Devaga\n\nSteven Jaya\n\n\n  Playing!"
+  m_text: "Herton Julius P\n\n\nHerton Julius P\n\nJeffer Devaga\n\nSteven Jaya\n\n\nSteven
+    Jaya\n\nJeffer Devaga\n\nSteven Jaya\n\npixabay.com \n  \n  Playing!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
   m_sharedMaterial: {fileID: 752747900514344910, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
@@ -5404,7 +5404,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Project Manager\n\n\nGame Programmer\n\nGame Designer\n\nGame Artist\n\n\nAnimator\n\nSound
-    Engineer\n\nVisual Artist\n\n\n       Thank You For \n"
+    Engineer\n\nVisual Artist\n\n      SFX credits to\n\n       Thank You For \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
   m_sharedMaterial: {fileID: 752747900514344910, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}

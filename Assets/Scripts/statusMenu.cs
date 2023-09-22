@@ -26,7 +26,7 @@ public class statusMenu : MonoBehaviour
         maxHealth.text = player.playerMaxHP.ToString();
         attack.text = player.attackDamage.ToString();
         critRateConv = player.critChance * 100f;
-        critRate.text = critRateConv.ToString() + "%";
+        critRate.text = critRateConv.ToString("F2") + "%";
         critDamage.text = "200%";
         movementSpeed.text = player.movementSpeed.ToString();
 
