@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject projectilesPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private GameObject floatingTextPrefab;
+    [SerializeField] private GameObject floatingTextCrit;
     [SerializeField] private GameObject hitVFXPrefab;
     [SerializeField] private GameObject attackRange;
     [SerializeField] private int xpToGrant = 5;
@@ -122,11 +123,15 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            
             if (anim != null)
             {
                 anim.SetTrigger("isHit");
             }
+            
+          
             ShowFloatingText(damage.ToString());
+            
             PlayHitVFX();
         }
     }
@@ -155,6 +160,19 @@ public class Enemy : MonoBehaviour
         {
             GameObject floatingText = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
             FloatingTextController textController = floatingText.GetComponent<FloatingTextController>();
+            if (textController != null)
+            {
+                textController.Init(text);
+            }
+        }
+    }
+
+    private void ShowFloatingTextCrit(string text)
+    {
+        if (floatingTextCrit != null)
+        {
+            GameObject floatingTextCrot = Instantiate(floatingTextCrit, transform.position, Quaternion.identity);
+            FloatingTextController textController = floatingTextCrit.GetComponent<FloatingTextController>();
             if (textController != null)
             {
                 textController.Init(text);

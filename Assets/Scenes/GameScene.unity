@@ -24624,6 +24624,7 @@ MonoBehaviour:
   fightBGM: {fileID: 967499455}
   bossBGM: {fileID: 967499454}
   stageClearPanel: {fileID: 1428639792}
+  boss: {fileID: 1049058177}
   player: {fileID: 182944447}
   cam: {fileID: 967499452}
   fightSpawn: {fileID: 338488570}
@@ -26699,6 +26700,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 309071413352820936, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
   m_PrefabInstance: {fileID: 6105249881432127285}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1049058177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1428201280, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+  m_PrefabInstance: {fileID: 6105249881432127285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049058173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219fd1f55cffca246b7c2ada7fde44f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1053483498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1725810996, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
@@ -30431,6 +30443,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 702315504}
+        m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
+        m_MethodName: ResumeGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -82396,6 +82420,10 @@ PrefabInstance:
       propertyPath: walkSFX
       value: 
       objectReference: {fileID: 1913104468}
+    - target: {fileID: 3110290503495425641, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_Mass
+      value: 3.8565452
+      objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425642, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -82559,6 +82587,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1329182056, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1329182057, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
       propertyPath: healthBar
       value: 

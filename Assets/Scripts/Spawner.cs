@@ -14,7 +14,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private AudioSource fightBGM;
     [SerializeField] private AudioSource bossBGM;
     [SerializeField] private GameObject stageClearPanel;
-    
+
+    public Enemy boss;
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     public playerStats player;
     public Cameras cam;
@@ -40,8 +41,16 @@ public class Spawner : MonoBehaviour
         if (currentStage == 0 && Input.GetKeyDown("0"))
         {
             currentStage = 6;
+            player.playerMaxHP = 1000;
+            player.playerHP = 1000;
+            player.attackDamage = 50;
+            player.movementSpeed = 8f;
         }
         currentStageText.text = currentStage.ToString();
+        if( currentStage == 7 && boss.enemyHP <= 0)
+       {
+            bossBGM.Stop();
+        }
     }
     private void enemyDestroyed()
     {
@@ -50,6 +59,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 0;
         currentStage = 0;
         stageClearPanel.SetActive(false);
         shopBGM.Play();
@@ -61,7 +71,7 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear));
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(2);
             if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear))
             {
                 isShopClear = false;

@@ -15,10 +15,11 @@ public class Bossfight : MonoBehaviour
     [SerializeField] private string phase2Tag = "Phase2Position";
     [SerializeField] private AudioSource groundSlam;
     [SerializeField] private GameObject youWinPanel;
+    [SerializeField] private AudioSource youWinSFX;
     private Transform phase2Position;
     private Animator anim;
     private Collider2D coll;
-    [SerializeField] private AudioSource youWinSFX;
+    
     private void Start()
     {
         coll = GetComponent<Collider2D>();
@@ -42,8 +43,8 @@ public class Bossfight : MonoBehaviour
     {
         if(enemy.enemyHP <= 0)
         {
-            youWinPanel.SetActive(true);
             youWinSFX.Play();
+            youWinPanel.SetActive(true);
             Time.timeScale = 0f;
         }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
@@ -56,7 +57,7 @@ public class Bossfight : MonoBehaviour
         }
     }
 
-    
+
     private void collActive()
     {
         coll.enabled = true;

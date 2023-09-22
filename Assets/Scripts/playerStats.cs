@@ -53,6 +53,7 @@ public class playerStats : MonoBehaviour
 
     private void Start()
     {
+        
         levelUpButton.SetActive(false);
         gameOverPanel.SetActive(false);
         this.gameObject.transform.position = shopSpawn.transform.position;
@@ -66,7 +67,7 @@ public class playerStats : MonoBehaviour
 
     private void Update()
     {
-        if(availableStatPoints > 0)
+        if (availableStatPoints > 0)
         {
             levelUpButton.SetActive(true);
         }

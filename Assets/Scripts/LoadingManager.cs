@@ -10,7 +10,7 @@ public class LoadingManager : MonoBehaviour
     public void loadingActive()
     {
         loadingobj.SetActive(true);
-        Invoke("loadingDeactive", 4.9f);
+        Invoke("loadingDeactive", 1.95f);
     }
 
     public void loadingDeactive()
