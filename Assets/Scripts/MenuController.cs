@@ -8,11 +8,47 @@ using TMPro;
 public class MenuController : MonoBehaviour
 {
     public string sceneName;
+    public Animator transitionAnimation;
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private float defaultVolume = 1.0f;
-    public void PlayButton(string sceneName)
+
+    public TMPro.TMP_Dropdown resolutionDropdown;
+    Resolution[] resolutions;
+    private void Start()
     {
+        resolutions = Screen.resolutions;
+        resolutionDropdown.ClearOptions();
+        List<string> options = new List<string>();
+        int currentResolutionIndex = 0;
+        for(int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            options.Add(option);
+
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+    }
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+    public void PlayButton()
+    {
+        StartCoroutine(LoadScene());
+    }
+
+    IEnumerator LoadScene()
+    {
+        transitionAnimation.SetTrigger("end");
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(sceneName);
     }
     public void ExitButton()
@@ -36,5 +72,15 @@ public class MenuController : MonoBehaviour
         volumeSlider.value = defaultVolume;
         volumeTextValue.text = defaultVolume.ToString("0.0");
         VolumeApply();
+    }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
+
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
     }
 }

@@ -4,56 +4,102 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public float movementSpeed = 5f;
+    public playerStats player;
     public Rigidbody2D rb;
     public Camera cam;
-    private bool facingRight = true;
+    public Collider2D rolloutHitbox;
+    private bool facingRight = false;
+    private Animator animator;
+    private bool isRolling = false;
+    [SerializeField] private AudioSource rollSFX;
+    [SerializeField] private AudioSource walkSFX;
+
+    private float lastRollTime = 0f;
 
     Vector2 movement;
     Vector2 mousePos;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        rolloutHitbox.enabled = false;
+    }
 
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        movement.Normalize();
+
+        float currentTime = Time.time;
+
+        if (currentTime - lastRollTime >= player.rollCooldown)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && !isRolling)
+            {
+                StartRoll();
+                lastRollTime = currentTime;
+            }
+        }
+
         if ((movement.x < 0 && facingRight) || (movement.x > 0 && !facingRight))
         {
             Flip();
         }
-        if (transform.position.y >= 39)
-        {
-            transform.position = new Vector3(transform.position.x, 39, 0);
-        }
 
-        if (transform.position.y <= -39)
-        {
-            transform.position = new Vector3(transform.position.x, -39, 0);
-        }
-        if (transform.position.x >= 52)
-        {
-            transform.position = new Vector3(52, transform.position.y, 0);
-        }
-        if (transform.position.x <= -52)
-        {
-            transform.position = new Vector3(-52, transform.position.y, 0);
-        }
-
-
+        bool isMoving = movement.magnitude > 0.1f;
+        animator.SetBool("isRunning", isMoving);
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    public void playWalkSFX()
+    {
+        walkSFX.Play();
+    }
+
+    public void playRollSFX()
+    {
+        rollSFX.Play();
+    }
+
+    public void DashRoll()
+    {
+        player.movementSpeed += 15;
+    }
+
+    public void EndDashRoll()
+    {
+        player.movementSpeed -= 15;
+    }
+
+    private void StartRoll()
+    {
+        animator.SetTrigger("isRolling");
+        isRolling = true;
+
+        if (player.isRollout)
+        {
+            rolloutHitbox.enabled = true;
+        }
+    }
+
+    private void EndRoll()
+    {
+        animator.ResetTrigger("isRolling");
+        isRolling = false;
+        rolloutHitbox.enabled = false;
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * player.movementSpeed * Time.fixedDeltaTime);
 
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-
-
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.CompareTag("Border"))
         {
             rb.velocity = Vector2.zero;
@@ -62,10 +108,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Flip()
     {
-
         facingRight = !facingRight;
-
-
         Vector3 newScale = transform.localScale;
         newScale.x *= -1;
         transform.localScale = newScale;

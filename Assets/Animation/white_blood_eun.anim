@@ -67,34 +67,8 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: 21300000, guid: 68b39e28dba52c44f9e76a98899dd3d7, type: 3}
-    - {fileID: 21300000, guid: 5893d7f8d49f0f647b6c0fb61c282eb8, type: 3}
-    - {fileID: 21300000, guid: c6e2c8332ca6de74ea5a956229346b64, type: 3}
-    - {fileID: 21300000, guid: 8305ce769872d434d8ec826391d07372, type: 3}
-    - {fileID: 21300000, guid: 8fa7b4a58946f4a46b3606285e946bb3, type: 3}
-    - {fileID: 21300000, guid: a8bcc6373de70df41a8e1ce0d407602e, type: 3}
-    - {fileID: 21300000, guid: 7da95156da84e664ba370ce56d6842cd, type: 3}
-    - {fileID: 21300000, guid: 8641ebd3896bc0742a55844cea8458dc, type: 3}
-    - {fileID: 21300000, guid: 9c54af4a83c09c14fb6f2d27c2bd7faa, type: 3}
-    - {fileID: 21300000, guid: cab9f715728f6aa47a8c6b4ad092a55d, type: 3}
-    - {fileID: 21300000, guid: f2f0fa0f632ac2b42a732dc9b186798d, type: 3}
-    - {fileID: 21300000, guid: 05e0258522554f949a9eb6e88f738e0b, type: 3}
-    - {fileID: 21300000, guid: 7f141897c2cf8d7408704f00b53f075c, type: 3}
-    - {fileID: 21300000, guid: 0676548fde897084b8794cbaaedd142d, type: 3}
-    - {fileID: 21300000, guid: 4eebba22b0c08c441959a623b06c7640, type: 3}
-    - {fileID: 21300000, guid: 701d5598412977145bda2d2f3181f1e1, type: 3}
-    - {fileID: 21300000, guid: 9ce1da3a135e94c479834087ab9049f8, type: 3}
-    - {fileID: 21300000, guid: d0f6f7838a593904fa6a07e75a0db0a9, type: 3}
-    - {fileID: 21300000, guid: 474e9390d11e57548849e1b5c899404a, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -119,4 +93,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.06666667
+    functionName: playWalkSFX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.36666667
+    functionName: playWalkSFX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
