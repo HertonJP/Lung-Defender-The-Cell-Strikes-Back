@@ -25,6 +25,7 @@ public class Spawner : MonoBehaviour
     public Transform bossSpawn;
     public SoundEffects sfx;
     public GameObject bossObject;
+    public GameObject rangeBossObject;
 
     public int currentWave = 0;
     public int currentStage = 0;
