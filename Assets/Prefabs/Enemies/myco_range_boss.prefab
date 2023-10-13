@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316161119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.08, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -741,6 +741,7 @@ GameObject:
   - component: {fileID: 6587833961043104677}
   - component: {fileID: 6587833961043104678}
   - component: {fileID: 2257076530273129498}
+  - component: {fileID: 836117766}
   m_Layer: 7
   m_Name: myco_range_boss
   m_TagString: Enemy
@@ -957,10 +958,10 @@ MonoBehaviour:
   attackRange: {fileID: 1845485765}
   xpToGrant: 5
   isBoss: 1
-  enemyHP: 1500
+  enemyHP: 0
   targetingRange: 25
   initialAttackSpeed: 1
-  initialEnemyHP: 1500
+  initialEnemyHP: 100
   enemyDamagePoints: 5
   phase2Tag: Phase2PositionRange
   attackSpeed: 2
@@ -995,6 +996,22 @@ MonoBehaviour:
   knockbackForce: 0
   attackSFX: {fileID: 6587833961043104676}
   enemy: {fileID: 6587833961043104677}
+--- !u!114 &836117766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668564181347262650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6798b3e27b25b8e4ca2aa551950f82c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6587833961043104677}
+  player: {fileID: 0}
+  isPhase2: 0
+  bigProjectilePrefab: {fileID: 1388882774044121816, guid: 1c791ae3505b15e469a58b9ec1bd4101, type: 3}
 --- !u!1 &6787655174622412897
 GameObject:
   m_ObjectHideFlags: 0
