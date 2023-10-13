@@ -82982,10 +82982,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 316161119, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 182944447}
+    - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: shootInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: offsetDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: smallProjectilePrefab
+      value: 
+      objectReference: {fileID: 1388882774044121816, guid: 8eed3475bfef5d0419fa469d8b19a424, type: 3}
+    - target: {fileID: 1845485765, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481602084690133173, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3072478757513696953, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913422533630855812, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5495348250490943705, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -83033,6 +83065,10 @@ PrefabInstance:
     - target: {fileID: 6668564181347262650, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: m_Name
       value: myco_range_boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787655174622412897, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1badd01714c142d4185bd66799f87845, type: 3}
