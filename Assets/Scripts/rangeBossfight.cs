@@ -4,6 +4,7 @@ using UnityEngine;
 public class rangeBossfight : MonoBehaviour
 {
     public Enemy enemy;
+    [SerializeField] private smallProjectiles smallProjectileScript;
     public playerStats player;
 
     public bool isPhase2 = false;
@@ -11,8 +12,8 @@ public class rangeBossfight : MonoBehaviour
 
     [Header("Small Projectile Settings")]
     [SerializeField] private GameObject smallProjectilePrefab;
-    [SerializeField] private int numProjectiles = 5;
-    [SerializeField] private float spreadAngle = 60f;
+    [SerializeField] private int numProjectiles = 12;
+    [SerializeField] private float spreadAngle = 360f;
     [SerializeField] private float offsetDistance = 1f;
     [SerializeField] private float shootingSpeed = 5f;
     [SerializeField] private float shootInterval = 6f;
@@ -62,12 +63,16 @@ public class rangeBossfight : MonoBehaviour
         for (int i = 0; i < numProjectiles; i++)
         {
             float angle = i * angleStep;
-            Vector2 direction = new Vector2(Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle));
+            Vector2 direction = new Vector2(Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle)).normalized;
             Vector2 shootingPosition = (Vector2)transform.position + (direction * offsetDistance);
 
             GameObject projectile = Instantiate(smallProjectilePrefab, shootingPosition, Quaternion.identity);
-            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-            rb.velocity = direction * shootingSpeed;
+            smallProjectileScript = projectile.GetComponent<smallProjectiles>();
+
+            if (smallProjectileScript != null)
+            {
+                smallProjectileScript.SetInitialDirection(direction);
+            }
         }
     }
 

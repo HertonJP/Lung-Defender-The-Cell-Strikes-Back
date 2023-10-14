@@ -82991,8 +82991,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 182944447}
     - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: spreadAngle
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: shootInterval
-      value: 1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: shootingSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: numProjectiles
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: offsetDistance
@@ -83001,7 +83013,11 @@ PrefabInstance:
     - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: smallProjectilePrefab
       value: 
-      objectReference: {fileID: 1388882774044121816, guid: 8eed3475bfef5d0419fa469d8b19a424, type: 3}
+      objectReference: {fileID: 1388882774044121816, guid: 44579eaeefa2f4f4584b00300fea81f2, type: 3}
+    - target: {fileID: 836117766, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: smallProjectileScript
+      value: 
+      objectReference: {fileID: -1300031604435336527, guid: 44579eaeefa2f4f4584b00300fea81f2, type: 3}
     - target: {fileID: 1845485765, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: m_TagString
       value: Enemy
