@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = false;
     private Animator animator;
     private bool isRolling = false;
+    public bool isConfused = false;
+    [SerializeField] private GameObject confusionDebuff;
     [SerializeField] private AudioSource rollSFX;
     [SerializeField] private AudioSource walkSFX;
 
@@ -27,8 +29,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (!isConfused)
+        {
+            confusionDebuff.SetActive(false);
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
+        else
+        {
+            confusionDebuff.SetActive(true);
+            movement.x = -Input.GetAxisRaw("Horizontal");
+            movement.y = -Input.GetAxisRaw("Vertical");
+        }
         movement.Normalize();
 
         float currentTime = Time.time;

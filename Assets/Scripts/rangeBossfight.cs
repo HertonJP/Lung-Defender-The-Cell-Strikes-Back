@@ -5,7 +5,9 @@ public class rangeBossfight : MonoBehaviour
 {
     public Enemy enemy;
     [SerializeField] private smallProjectiles smallProjectileScript;
+    [SerializeField] private ParticleSystem phase2Particles;
     public playerStats player;
+    public PlayerMovement playerMov;
 
     public bool isPhase2 = false;
     private Collider2D col;
@@ -27,16 +29,19 @@ public class rangeBossfight : MonoBehaviour
         if (playerObject != null)
         {
             player = playerObject.GetComponent<playerStats>();
+            playerMov = playerObject.GetComponent<PlayerMovement>();
         }
 
-        StartCoroutine(ShootSmallProjectilesRepeatedly());
+        StartCoroutine(fireworkSkill());
     }
 
     private void Update()
     {
         if (enemy.enemyHP <= 0)
         {
+            enemy.enemyHP = 0;
             Destroy(this.gameObject);
+            playerMov.isConfused = false;
         }
 
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
@@ -53,7 +58,8 @@ public class rangeBossfight : MonoBehaviour
 
     private void StartPhase2()
     {
-        //buat nanti
+        phase2Particles.Play();
+        playerMov.isConfused = true;
     }
 
     private void ShootMultiple()
@@ -76,16 +82,13 @@ public class rangeBossfight : MonoBehaviour
         }
     }
 
-    private IEnumerator ShootSmallProjectilesRepeatedly()
+    private IEnumerator fireworkSkill()
     {
         while (true)
         {
-            if (isPhase2)
-            {
-                ShootMultiple();
-            }
-
+            ShootMultiple();
             yield return new WaitForSeconds(shootInterval);
         }
+        
     }
 }
