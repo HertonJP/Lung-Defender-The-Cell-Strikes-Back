@@ -388,7 +388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1477764539114334379
 Transform:
   m_ObjectHideFlags: 0
@@ -541,6 +541,7 @@ MonoBehaviour:
   projectilesPrefab: {fileID: 0}
   firingPoint: {fileID: 0}
   floatingTextPrefab: {fileID: 5500894286564896549, guid: d9b73db23a35c5049acb0c71937583b9, type: 3}
+  floatingTextCrit: {fileID: 0}
   hitVFXPrefab: {fileID: 2981612518552317830, guid: ba83bc4fec4ddc741b63c0ab0d2d7e9c, type: 3}
   attackRange: {fileID: 262704141}
   xpToGrant: 5
@@ -548,9 +549,11 @@ MonoBehaviour:
   enemyHP: 0
   targetingRange: 10
   initialAttackSpeed: 1
-  initialEnemyHP: 1000
+  initialEnemyHP: 2500
   enemyDamagePoints: 5
+  phase2Tag: Phase2Position
   attackSpeed: 1
+  target: {fileID: 0}
 --- !u!114 &2436906584931565984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +574,8 @@ MonoBehaviour:
   lavaPrefab: {fileID: 3841976145807222863, guid: 5104cd5b79e6c464ebf420e2b0674340, type: 3}
   phase2Tag: Phase2Position
   groundSlam: {fileID: 1329182056}
+  youWinPanel: {fileID: 0}
+  youWinSFX: {fileID: 0}
 --- !u!82 &1329182056
 AudioSource:
   m_ObjectHideFlags: 0
@@ -582,7 +587,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0c9fcc48bb868874789fec32e0595f21, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

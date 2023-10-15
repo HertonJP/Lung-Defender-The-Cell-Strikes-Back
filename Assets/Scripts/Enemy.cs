@@ -17,8 +17,8 @@ public class Enemy : MonoBehaviour
     private Transform phase2Position;
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] public float initialAttackSpeed = 1f;
-    [SerializeField] public int initialEnemyHP = 20;
-    [SerializeField] public int enemyDamagePoints = 5;
+    [SerializeField] public int initialEnemyHP;
+    [SerializeField] public int enemyDamagePoints;
     [SerializeField] private string phase2Tag = "Phase2Position";
     public float attackSpeed;
 
