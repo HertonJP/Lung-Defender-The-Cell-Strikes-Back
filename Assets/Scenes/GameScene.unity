@@ -8331,7 +8331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331122994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.203875, y: -208.73907, z: 11.434802}
+  m_LocalPosition: {x: -13.203875, y: -44.6, z: 11.434802}
   m_LocalScale: {x: 3.06402, y: 2.88336, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16585,7 +16585,6 @@ GameObject:
   m_Component:
   - component: {fileID: 625790647}
   - component: {fileID: 625790646}
-  - component: {fileID: 625790645}
   - component: {fileID: 625790644}
   - component: {fileID: 625790648}
   m_Layer: 0
@@ -16628,14 +16627,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &625790645
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625790643}
-  m_Enabled: 1
 --- !u!20 &625790646
 Camera:
   m_ObjectHideFlags: 0
@@ -21027,7 +21018,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710390627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LaboratoryManager, Assembly-CSharp
         m_MethodName: WBCbutton
         m_Mode: 1
@@ -22967,7 +22958,6 @@ GameObject:
   m_Component:
   - component: {fileID: 873027351}
   - component: {fileID: 873027350}
-  - component: {fileID: 873027349}
   - component: {fileID: 873027348}
   m_Layer: 0
   m_Name: Shop Camera
@@ -23009,14 +22999,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &873027349
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873027347}
-  m_Enabled: 1
 --- !u!20 &873027350
 Camera:
   m_ObjectHideFlags: 0
@@ -27676,7 +27658,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710390627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LaboratoryManager, Assembly-CSharp
         m_MethodName: MDRButton
         m_Mode: 1
@@ -67274,7 +67256,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710390627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LaboratoryManager, Assembly-CSharp
         m_MethodName: MycoRangeButton
         m_Mode: 1
@@ -69291,7 +69273,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710390627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LaboratoryManager, Assembly-CSharp
         m_MethodName: MycoMeleeButton
         m_Mode: 1
@@ -70183,7 +70165,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1705100165}
   - component: {fileID: 1705100169}
-  - component: {fileID: 1705100168}
   - component: {fileID: 1705100167}
   - component: {fileID: 1705100166}
   m_Layer: 0
@@ -70262,14 +70243,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &1705100168
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1705100164}
-  m_Enabled: 1
 --- !u!20 &1705100169
 Camera:
   m_ObjectHideFlags: 0
@@ -70420,7 +70393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1710390628}
-  - component: {fileID: 1710390627}
+  - component: {fileID: 1710390629}
   m_Layer: 0
   m_Name: Lab Manager
   m_TagString: Untagged
@@ -70428,18 +70401,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1710390627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710390626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3cd5a95ca6a6944aaec220293996f09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1710390628
 Transform:
   m_ObjectHideFlags: 0
@@ -70455,6 +70416,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710390629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710390626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b60bfba59bda6248bc3598ab0387767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CellPanel: {fileID: 370480026}
+  TBCPanel: {fileID: 70668235}
+  CellsPanels:
+  - {fileID: 327110969}
+  - {fileID: 916438033}
+  TBCsPanels:
+  - {fileID: 897103135}
+  - {fileID: 200423630}
+  - {fileID: 122619167}
+  - {fileID: 696075833}
 --- !u!1 &1712065538
 GameObject:
   m_ObjectHideFlags: 0
@@ -72654,7 +72637,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710390627}
+      - m_Target: {fileID: 1710390629}
         m_TargetAssemblyTypeName: LaboratoryManager, Assembly-CSharp
         m_MethodName: onClickTBCButton
         m_Mode: 1
@@ -76006,7 +75989,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710390627}
+      - m_Target: {fileID: 1710390629}
         m_TargetAssemblyTypeName: LaboratoryManager, Assembly-CSharp
         m_MethodName: onClickCellButton
         m_Mode: 1
@@ -76818,7 +76801,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710390627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LaboratoryManager, Assembly-CSharp
         m_MethodName: LatentButton
         m_Mode: 1
@@ -80103,7 +80086,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710390627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LaboratoryManager, Assembly-CSharp
         m_MethodName: XDRButton
         m_Mode: 1
@@ -82244,7 +82227,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710390627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LaboratoryManager, Assembly-CSharp
         m_MethodName: KillerTbutton
         m_Mode: 1
@@ -83042,6 +83025,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1584805098397176149, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.056643113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584805098397176149, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.9983945
+      objectReference: {fileID: 0}
     - target: {fileID: 2436906584931565984, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
       propertyPath: player
       value: 
@@ -83054,6 +83045,46 @@ PrefabInstance:
       propertyPath: youWinPanel
       value: 
       objectReference: {fileID: 1528028913}
+    - target: {fileID: 5182549545958268815, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000005066394
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182549545984209364, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000038743013
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182549546017557019, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000008493661
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182549547631991450, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000026822087
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660595912703388256, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.041098278
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660595912703388256, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.99915516
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933092102753499305, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.16509877
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933092102753499305, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.9862771
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857644696102880064, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.022710077
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857644696102880064, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.99974215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
 --- !u!1001 &6587833961043104673
