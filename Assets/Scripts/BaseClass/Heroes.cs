@@ -58,7 +58,11 @@ public class Heroes : MonoBehaviour
             return;
         }
 
-        
+        if(movement.horizontalMovement ==0 && movement.verticalMovement == 0)
+        {
+            animState.state = AnimationState.States.Idle;
+        }
+
         if (target == null)
         {
             FindTarget();

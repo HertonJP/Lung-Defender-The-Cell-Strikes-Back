@@ -54,8 +54,7 @@ public class Plot : MonoBehaviour
             CharactersManager.Instance.spawnedCharacters.Add(hero);
             if(CharactersManager.Instance.spawnedCharacters.Count == 1)
             {
-                CharactersManager.Instance.spawnedCharacters[0].GetComponent<Movement>().enabled = true;
-                CharactersManager.Instance.spawnedCharacters[0].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                CharactersManager.Instance.EnableCharacter();
             }
 
             characterShopButton[BuildManager.main.selectedHero].interactable = false;
