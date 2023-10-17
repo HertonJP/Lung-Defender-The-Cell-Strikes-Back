@@ -19,7 +19,7 @@ public class B_Cells : RangeHeroes
         {
             Ulti();
         }
-        if (timeUntilFire >= (1f / _attackSpeed) && target != null)
+        if (timeUntilFire >= (1f / _attackSpeed) && target != null && isIdle)
         {
             animState.state = AnimationState.States.Attack;
             Attack();

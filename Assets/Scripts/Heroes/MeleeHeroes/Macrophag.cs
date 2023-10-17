@@ -18,20 +18,28 @@ public class Macrophag : MeleeHeroes
         {
             Ulti();
         }
-        if (timeUntilFire >= (1f / _attackSpeed) && target != null)
+        if (timeUntilFire >= (1f / _attackSpeed) && target != null && isIdle)
         {
             animState.state = AnimationState.States.Attack;
             Attack();
             timeUntilFire = 0f;
         }
+        if(target!=null)
+            lastTargetPos = target.position;
     }
 
     protected override void Ulti()
     {
-        mana -= maxMana;
-        base.Ulti();
-        Instantiate(hammer,new Vector2(target.position.x,target.position.y+hammerYOffset), Quaternion.identity);
-        timeUntilFire = 0;
-        return;
+        if (isIdle)
+        {
+            mana -= maxMana;
+            base.Ulti();
+            if (target == null)
+                Instantiate(hammer, new Vector2(lastTargetPos.x, lastTargetPos.y + hammerYOffset), Quaternion.identity);
+            else
+                Instantiate(hammer, new Vector2(target.position.x, target.position.y + hammerYOffset), Quaternion.identity);
+            timeUntilFire = 0;
+            return;
+        }
     }
 }
