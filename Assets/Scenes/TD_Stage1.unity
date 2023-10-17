@@ -10381,6 +10381,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road
       objectReference: {fileID: 0}
+    - target: {fileID: 1118125209049771578, guid: c0298affa92b36f46a7f694a91a423a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0298affa92b36f46a7f694a91a423a3, type: 3}
 --- !u!1001 &1702638299758067687
@@ -10437,6 +10441,10 @@ PrefabInstance:
     - target: {fileID: 1702638299789243858, guid: a9939619af1a9694896967a458529152, type: 3}
       propertyPath: m_Name
       value: Green Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702638299789243858, guid: a9939619af1a9694896967a458529152, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9939619af1a9694896967a458529152, type: 3}
@@ -10658,6 +10666,10 @@ PrefabInstance:
     - target: {fileID: 3950729353514229393, guid: 0bf88b10fd9856a44b696f08665e03fc, type: 3}
       propertyPath: m_Name
       value: Accessories
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950729353514229393, guid: 0bf88b10fd9856a44b696f08665e03fc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bf88b10fd9856a44b696f08665e03fc, type: 3}

@@ -7,10 +7,20 @@ public class VisualRangeActivation : MonoBehaviour
     [SerializeField] private HeroRangeVisual visual;
     private void OnMouseEnter()
     {
-        visual.GetComponent<SpriteRenderer>().enabled = true;
+        EnableVisual();
     }
 
     private void OnMouseExit()
+    {
+        DisableVisual();
+    }
+
+    public void EnableVisual()
+    {
+        visual.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    public void DisableVisual()
     {
         visual.GetComponent<SpriteRenderer>().enabled = false;
     }

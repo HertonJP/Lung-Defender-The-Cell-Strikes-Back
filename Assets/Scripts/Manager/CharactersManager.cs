@@ -15,21 +15,36 @@ public class CharactersManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (spawnedCharacters.Count > 0)
+        {
+            spawnedCharacters[currIndex].GetComponent<VisualRangeActivation>().EnableVisual();
+        }
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            spawnedCharacters[currIndex].GetComponent<Movement>().enabled = false;
-            spawnedCharacters[currIndex].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            spawnedCharacters[currIndex].GetComponent<Heroes>().animState.state = AnimationState.States.Idle;
-            spawnedCharacters[currIndex].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            DisableCharacter();
             currIndex++;
-            Debug.Log(spawnedCharacters[currIndex - 1].GetComponent<Heroes>().animState.state);
             if (currIndex == spawnedCharacters.Count)
             {
                 currIndex = 0;
             }
-            spawnedCharacters[currIndex].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            spawnedCharacters[currIndex].GetComponent<Movement>().enabled = true;
+            EnableCharacter();
         }
+    }
+
+    public void EnableCharacter()
+    {
+        spawnedCharacters[currIndex].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        spawnedCharacters[currIndex].GetComponent<Movement>().enabled = true;
+        spawnedCharacters[currIndex].GetComponent<VisualRangeActivation>().EnableVisual();
+    }
+
+    private void DisableCharacter()
+    {
+        spawnedCharacters[currIndex].GetComponent<Movement>().enabled = false;
+        spawnedCharacters[currIndex].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        spawnedCharacters[currIndex].GetComponent<Heroes>().animState.state = AnimationState.States.Idle;
+        spawnedCharacters[currIndex].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        spawnedCharacters[currIndex].GetComponent<VisualRangeActivation>().DisableVisual();
     }
 }
