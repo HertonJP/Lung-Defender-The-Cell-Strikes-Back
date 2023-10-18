@@ -8,11 +8,9 @@ public class MovingProjectile : Projectiles
     // Update is called once per frame
     public virtual void Update()
     {
-        lastTargetPos = target.position;
         if (target == null)
         {
-            Vector2 direction = (lastTargetPos - transform.position).normalized;
-            transform.position += (Vector3)direction * projectilesSpeed * Time.deltaTime;
+            Destroy(gameObject);
         }
         else
         {

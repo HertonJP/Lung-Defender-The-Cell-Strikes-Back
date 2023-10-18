@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilesSpeed: 5
-  projectilesDamage: 1
+  projectilesDamage: 4
   enemies: []
 --- !u!95 &2448396248413492267
 Animator:
