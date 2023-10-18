@@ -393,16 +393,17 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 6055553121512765546}
   maxMana: 100
-  targetingRange: 3
+  targetingRange: 2.5
   attackSpeed: 1
+  <_attackSpeed>k__BackingField: 0
   mana: 0
   damage: 0
   target: {fileID: 0}
   animState: {fileID: 3882684115189283601}
   movement: {fileID: 6098115216421141114}
   hitTargets: []
-  slowDuration: 3
-  slowedSpeed: 1
+  slowDuration: 4
+  slowedSpeed: 0.2
   isUlt: 0
 --- !u!70 &2116847124551119073
 CapsuleCollider2D:

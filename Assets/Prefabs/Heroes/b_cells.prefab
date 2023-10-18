@@ -134,7 +134,7 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 8741207452223257116}
   maxMana: 100
-  targetingRange: 3
+  targetingRange: 2
   attackSpeed: 0.5
   <_attackSpeed>k__BackingField: 0
   mana: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   movement: {fileID: 3540887176920355387}
   hitTargets: []
   bonusAttSpeed: 1
-  bonusAttSpeedDuration: 10
+  bonusAttSpeedDuration: 3.5
 --- !u!114 &3906255224708693619
 MonoBehaviour:
   m_ObjectHideFlags: 0
