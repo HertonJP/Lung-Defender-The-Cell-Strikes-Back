@@ -428,8 +428,9 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 922552240667315306}
   maxMana: 100
-  targetingRange: 3
+  targetingRange: 2.5
   attackSpeed: 1
+  <_attackSpeed>k__BackingField: 0
   mana: 0
   damage: 0
   target: {fileID: 0}
@@ -440,7 +441,7 @@ MonoBehaviour:
   isUlt: 0
   ultDuration: 3
   laserShootPoint: {fileID: 458693206509365082}
-  ultInitialDamage: 0.5
+  ultInitialDamage: 0.3
   totalDamage: 0
 --- !u!114 &3188099261371495130
 MonoBehaviour:

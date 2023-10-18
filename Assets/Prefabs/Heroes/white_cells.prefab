@@ -326,8 +326,8 @@ MonoBehaviour:
   maxStamina: 100
   moveSpeed: 2
   rb: {fileID: 0}
-  staminaRegen: 0.01
-  staminaDecreaseAmount: 0.01
+  staminaRegen: 0.1
+  staminaDecreaseAmount: 0.2
 --- !u!114 &3419139601186270183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,8 +347,9 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 7805239358949292931}
   maxMana: 100
-  targetingRange: 2.5
+  targetingRange: 1.5
   attackSpeed: 0.5
+  <_attackSpeed>k__BackingField: 0
   mana: 0
   damage: 0
   target: {fileID: 0}

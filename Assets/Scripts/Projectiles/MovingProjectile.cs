@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MovingProjectile : Projectiles
 {
-
+    Vector3 lastTargetPos;
     // Update is called once per frame
     public virtual void Update()
     {
         if (target == null)
+        {
             Destroy(gameObject);
-        if (target != null)
+        }
+        else
         {
             Vector2 direction = (target.position - transform.position).normalized;
             transform.position += (Vector3)direction * projectilesSpeed * Time.deltaTime;

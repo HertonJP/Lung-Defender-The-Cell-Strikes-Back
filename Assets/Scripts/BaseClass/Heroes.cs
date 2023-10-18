@@ -17,17 +17,21 @@ public class Heroes : MonoBehaviour
     public float targetingRange = 3f;
 
     [SerializeField] private float attackSpeed = 1f;
+    [field:SerializeField]
     public float _attackSpeed { get;  set; }
 
     [SerializeField] protected int mana;
     [SerializeField] protected int damage;
     public int _damage { get; set; }
     [SerializeField] protected Transform target;
+    protected Vector3 lastTargetPos;
     protected float timeUntilFire = 2;
     public AnimationState animState;
 
     [SerializeField] Movement movement;
     [SerializeField] protected List<Collider2D> hitTargets = new();
+
+    protected bool isIdle => !(movement.horizontalMovement != 0 || movement.verticalMovement != 0);
 
     public virtual void Start()
     {
@@ -40,7 +44,7 @@ public class Heroes : MonoBehaviour
     {
         
         projectilesPrefab.GetComponent<Projectiles>()._projectilesDamage = _damage;
-
+        timeUntilFire += Time.deltaTime;
         if ((movement.horizontalMovement != 0 || movement.verticalMovement != 0) && movement.stamina > 0 && movement.enabled == true)
         {
             if (movement.horizontalMovement < 0)
@@ -54,10 +58,11 @@ public class Heroes : MonoBehaviour
             }
 
             animState.state = AnimationState.States.Walk;
-            timeUntilFire = 0;
+            
             return;
         }
-
+        if(target!=null)
+            lastTargetPos = target.position;
         if(movement.horizontalMovement ==0 && movement.verticalMovement == 0)
         {
             animState.state = AnimationState.States.Idle;
@@ -74,9 +79,6 @@ public class Heroes : MonoBehaviour
         {
             target = null;
         }
-
-        timeUntilFire += Time.deltaTime;
-
     }
 
     protected virtual void Attack()
@@ -106,7 +108,6 @@ public class Heroes : MonoBehaviour
             target = hits[0].transform;
         }
     }
-
     
     private void OnDrawGizmosSelected()
     {
