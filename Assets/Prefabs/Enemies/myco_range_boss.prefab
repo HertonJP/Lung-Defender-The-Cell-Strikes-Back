@@ -227,7 +227,7 @@ MonoBehaviour:
   - {fileID: 6951593529095857938}
   - {fileID: 4158355892462858837}
   m_Bounds:
-    m_Center: {x: -0.0049358606, y: 0.0017478466, z: 0}
+    m_Center: {x: -0.0049363375, y: 0.001748085, z: 0}
     m_Extent: {x: 1.2550148, y: 1.6981822, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 991976017208905223}
   m_Bounds:
-    m_Center: {x: -0.00007918477, y: 0.0036295354, z: 0}
+    m_Center: {x: -0.00007942319, y: 0.0036300123, z: 0}
     m_Extent: {x: 0.39981794, y: 0.3676389, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 67109347322977887}
   m_Bounds:
-    m_Center: {x: -0.0023183823, y: -0.002364248, z: 0}
+    m_Center: {x: -0.0023183823, y: -0.0023647249, z: 0}
     m_Extent: {x: 0.43348616, y: 0.36936805, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -637,7 +637,7 @@ MonoBehaviour:
   - {fileID: 6951593529095857938}
   - {fileID: 4158355892462858837}
   m_Bounds:
-    m_Center: {x: -0.007611811, y: -0.66121465, z: 0}
+    m_Center: {x: -0.0076113343, y: -0.66121465, z: 0}
     m_Extent: {x: 0.6750144, y: 0.7000163, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -826,7 +826,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07377422, y: 1.79356}
+  m_Offset: {x: -0.083105326, y: 1.5276251}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -837,7 +837,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4754841, y: 3.069481}
+  m_Size: {x: 2.0835805, y: 2.537611}
   m_EdgeRadius: 0
 --- !u!82 &6587833961043104676
 AudioSource:
@@ -1009,9 +1009,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 6587833961043104677}
+  smallProjectileScript: {fileID: 0}
+  phase2Particles: {fileID: 0}
   player: {fileID: 0}
+  playerMov: {fileID: 0}
   isPhase2: 0
-  bigProjectilePrefab: {fileID: 1388882774044121816, guid: 1c791ae3505b15e469a58b9ec1bd4101, type: 3}
+  smallProjectilePrefab: {fileID: 0}
+  numProjectiles: 12
+  spreadAngle: 360
+  offsetDistance: 1
+  shootingSpeed: 5
+  shootInterval: 6
 --- !u!1 &6787655174622412897
 GameObject:
   m_ObjectHideFlags: 0

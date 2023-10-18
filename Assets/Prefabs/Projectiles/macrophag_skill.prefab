@@ -137,5 +137,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  hammerDamage: 5
+  hammerDamage: 30
   stunDuration: 0
