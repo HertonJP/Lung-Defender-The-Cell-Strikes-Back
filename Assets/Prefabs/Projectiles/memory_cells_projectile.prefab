@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilesSpeed: 5
-  projectilesDamage: 6
+  projectilesDamage: 7
   isUlt: 0
   enemyAi: []
   duration: 0

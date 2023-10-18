@@ -403,7 +403,7 @@ MonoBehaviour:
   movement: {fileID: 6098115216421141114}
   hitTargets: []
   slowDuration: 4
-  slowedSpeed: 0.2
+  slowedSpeed: 0.6
   isUlt: 0
 --- !u!70 &2116847124551119073
 CapsuleCollider2D:

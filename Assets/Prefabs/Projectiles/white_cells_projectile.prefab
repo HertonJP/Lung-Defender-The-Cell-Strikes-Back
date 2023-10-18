@@ -169,6 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilesSpeed: 2
-  projectilesDamage: 2
+  projectilesDamage: 6
   isCrit: 0
-  critDamage: 45
+  critDamage: 60

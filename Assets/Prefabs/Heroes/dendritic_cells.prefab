@@ -441,7 +441,7 @@ MonoBehaviour:
   isUlt: 0
   ultDuration: 3
   laserShootPoint: {fileID: 458693206509365082}
-  ultInitialDamage: 0.3
+  ultInitialDamage: 0.5
   totalDamage: 0
 --- !u!114 &3188099261371495130
 MonoBehaviour:

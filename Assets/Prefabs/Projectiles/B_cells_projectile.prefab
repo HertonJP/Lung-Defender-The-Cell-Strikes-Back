@@ -169,4 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilesSpeed: 5
-  projectilesDamage: 3
+  projectilesDamage: 5
