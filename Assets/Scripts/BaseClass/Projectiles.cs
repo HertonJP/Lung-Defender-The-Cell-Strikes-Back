@@ -30,7 +30,8 @@ public class Projectiles : MonoBehaviour
 
     public virtual void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(other.gameObject.name);
+        if (other.gameObject.GetComponent<enemyHealth>() == null)
+            Debug.Log(other.gameObject.name);
         other.gameObject.GetComponent<enemyHealth>().TakeDamage(_projectilesDamage);
     }
 }

@@ -27,7 +27,6 @@ public class TD_Spawner : MonoBehaviour
 
     private void enemyDestroyed()
     {
-        Debug.Log("enemy berkurang");
         enemiesAlive--;
     }
 

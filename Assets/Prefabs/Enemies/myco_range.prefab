@@ -509,7 +509,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8978946541469228929}
   m_Bounds:
-    m_Center: {x: 0.000043302774, y: -0.00077834725, z: 0}
+    m_Center: {x: 0.000043272972, y: -0.00077837706, z: 0}
     m_Extent: {x: 0.37822998, y: 0.48662165, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -612,6 +612,7 @@ MonoBehaviour:
   projectilesPrefab: {fileID: 1388882774044121816, guid: 8eed3475bfef5d0419fa469d8b19a424, type: 3}
   firingPoint: {fileID: 1113871062}
   floatingTextPrefab: {fileID: 5500894286564896549, guid: d9b73db23a35c5049acb0c71937583b9, type: 3}
+  floatingTextCrit: {fileID: 0}
   hitVFXPrefab: {fileID: 2981612518552317830, guid: ba83bc4fec4ddc741b63c0ab0d2d7e9c, type: 3}
   attackRange: {fileID: 306422366}
   xpToGrant: 50
@@ -658,7 +659,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.014390945}
+  m_Offset: {x: -0.044005424, y: 0.02969715}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -669,7 +670,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.9758873}
+  m_Size: {x: 0.59821135, y: 0.7922124}
   m_EdgeRadius: 0
 --- !u!114 &2099792404
 MonoBehaviour:

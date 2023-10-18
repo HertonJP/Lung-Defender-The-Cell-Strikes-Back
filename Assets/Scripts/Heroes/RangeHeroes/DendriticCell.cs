@@ -26,7 +26,7 @@ public class DendriticCell : RangeHeroes
             timeUntilFire = 0;
             Ulti();
         }
-        if (timeUntilFire >= (1f / _attackSpeed) && target != null && !isUlt)
+        if (timeUntilFire >= (1f / _attackSpeed) && target != null && !isUlt && isIdle)
         {
             animState.state = AnimationState.States.Attack;
             Attack();

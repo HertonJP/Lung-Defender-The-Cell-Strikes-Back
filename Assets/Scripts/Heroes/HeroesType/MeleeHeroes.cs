@@ -18,7 +18,9 @@ public class MeleeHeroes : Heroes
 
     public void MeleeAttack()
     {
-        if(target!=null)
+        if(target!=null && isIdle)
             Instantiate(_projectilesPrefab, target.position, Quaternion.identity);
+        else if(target==null && isIdle)
+            Instantiate(_projectilesPrefab, lastTargetPos, Quaternion.identity);
     }
 }
