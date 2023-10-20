@@ -10,17 +10,29 @@ public class TD_AI : MonoBehaviour
     public float _speed { get; private set; }
     [SerializeField] private Rigidbody2D rb;
 
-    private Transform target;
+    [SerializeField] private Transform target;
     private int pathIndex = 0;
     
     public bool isSlowed = false;
     public float slowedSpeed;
     public float slowDuration;
+    public bool canCheckFlip = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        target = LevelManager.main.path[pathIndex];
+
+
+        switch (TD_Spawner.main.spawnPoint)
+        {
+            case 1:
+                target = LevelManager.main.path2[pathIndex];
+                break;
+            default:
+                target = LevelManager.main.path[pathIndex];
+                break;
+        }
+        
         _speed = speed;
     }
 
@@ -30,16 +42,29 @@ public class TD_AI : MonoBehaviour
         if(Vector2.Distance(target.position, transform.position) <= 0.1f)
         {
             pathIndex++;
+            
 
-            if(pathIndex == LevelManager.main.path.Length)
+            if(pathIndex == LevelManager.main.path.Length && TD_Spawner.main.spawnPoint==0 || pathIndex == LevelManager.main.path2.Length && TD_Spawner.main.spawnPoint !=0)
             {
                 TD_Spawner.onEnemyDestroy.Invoke();
+                LevelManager.main.EnemyDamage();
+                LevelManager.main.UpdateHealthBar();
                 Destroy(gameObject);
                 return;
             }
             else
             {
-                target = LevelManager.main.path[pathIndex];
+                switch (TD_Spawner.main.spawnPoint)
+                {
+                    case 1:
+                        target = LevelManager.main.path2[pathIndex];
+                        CheckFlip();
+                        break;
+                    default:
+                        target = LevelManager.main.path[pathIndex];
+                        CheckFlip();
+                        break;
+                }
             }
         }
 
@@ -63,5 +88,18 @@ public class TD_AI : MonoBehaviour
         _speed =  slowedSpeed;
         yield return new WaitForSeconds(duration);
         _speed = speed;
+    }
+
+    private void CheckFlip()
+    {
+        if (target.position.x < transform.position.x)
+        {
+            transform.localEulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (target.position.x >= transform.position.x)
+        {
+            transform.localEulerAngles = Vector3.zero;
+        }
+
     }
 }

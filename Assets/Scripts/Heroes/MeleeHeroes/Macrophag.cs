@@ -32,7 +32,7 @@ public class Macrophag : MeleeHeroes
     {
         if (isIdle)
         {
-            mana -= maxMana;
+            mana = 0;
             base.Ulti();
             if (target == null)
                 Instantiate(hammer, new Vector2(lastTargetPos.x, lastTargetPos.y + hammerYOffset), Quaternion.identity);

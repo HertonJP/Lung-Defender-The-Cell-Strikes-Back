@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float staminaRegen;
     [SerializeField] private float staminaDecreaseAmount;
+    [SerializeField] private Image staminaBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         stamina = Mathf.Clamp(stamina, 0, maxStamina);
+        staminaBar.fillAmount = stamina / maxStamina;
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
         if (stamina >0)

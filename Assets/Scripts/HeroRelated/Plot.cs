@@ -66,6 +66,6 @@ public class Plot : MonoBehaviour
     private bool ValidateCharacterPlacement()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        return Time.timeScale != 0 && tileMap.GetTile(tileMap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition))) != null && hit.collider == null;
+        return Time.timeScale != 0 && hit.collider == null;
     }
 }

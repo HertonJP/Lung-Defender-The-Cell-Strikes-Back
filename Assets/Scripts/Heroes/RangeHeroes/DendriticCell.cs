@@ -37,7 +37,8 @@ public class DendriticCell : RangeHeroes
         {
             if (!hasStartCoroutine)
             {
-                mana -= maxMana;
+                mana =0;
+                UpdateManaBar();
                 StartCoroutine(LaserCountDown(ultDuration));
                 hasStartCoroutine = true;
             }

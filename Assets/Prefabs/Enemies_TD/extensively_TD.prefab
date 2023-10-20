@@ -667,9 +667,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886c35a39ce4f604982466e987f93e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   <_speed>k__BackingField: 0
   rb: {fileID: 3883032563977851246}
+  target: {fileID: 0}
   isSlowed: 0
   slowedSpeed: 0
   slowDuration: 0
