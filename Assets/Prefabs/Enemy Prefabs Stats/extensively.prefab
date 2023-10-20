@@ -869,6 +869,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 90
   worth: 20
+  srList: []
+  flashMats: {fileID: 2100000, guid: d0dfd430dc4021d49b5b2174fd466771, type: 2}
+  normalMats: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  flashDuration: 0
 --- !u!114 &8327217924117789898
 MonoBehaviour:
   m_ObjectHideFlags: 0
