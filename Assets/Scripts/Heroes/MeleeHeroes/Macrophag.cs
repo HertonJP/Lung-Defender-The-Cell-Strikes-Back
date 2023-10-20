@@ -33,11 +33,13 @@ public class Macrophag : MeleeHeroes
         if (isIdle)
         {
             mana = 0;
+            UpdateManaBar();
             base.Ulti();
             if (target == null)
                 Instantiate(hammer, new Vector2(lastTargetPos.x, lastTargetPos.y + hammerYOffset), Quaternion.identity);
             else
                 Instantiate(hammer, new Vector2(target.position.x, target.position.y + hammerYOffset), Quaternion.identity);
+                
             timeUntilFire = 0;
             return;
         }

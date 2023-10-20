@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Plot : MonoBehaviour
 {
@@ -66,6 +67,6 @@ public class Plot : MonoBehaviour
     private bool ValidateCharacterPlacement()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        return Time.timeScale != 0 && hit.collider == null;
+        return Time.timeScale != 0 && hit.collider == null && !EventSystem.current.IsPointerOverGameObject();
     }
 }

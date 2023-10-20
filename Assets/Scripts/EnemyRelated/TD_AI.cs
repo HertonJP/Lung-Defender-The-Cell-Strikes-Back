@@ -21,8 +21,6 @@ public class TD_AI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         switch (TD_Spawner.main.spawnPoint)
         {
             case 1:
