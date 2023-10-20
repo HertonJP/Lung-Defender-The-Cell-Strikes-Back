@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17de270d19baac4ba680c2557c5a27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charImage: {fileID: 21300000, guid: bd9ba777e11c3194e9f69c1efc7563ef, type: 3}
+  charImage: {fileID: 21300000, guid: bbb46150c586f4c45b26be3c5029ddb5, type: 3}
   enemyMask:
     serializedVersion: 2
     m_Bits: 136
