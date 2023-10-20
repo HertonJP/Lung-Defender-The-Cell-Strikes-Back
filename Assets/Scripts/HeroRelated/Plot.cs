@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class Plot : MonoBehaviour
 {
-
-    [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private Color hoverColor;
     [SerializeField] HeroHover hover;
     [SerializeField] Tilemap tileMap;
 
@@ -55,6 +52,7 @@ public class Plot : MonoBehaviour
             if(CharactersManager.Instance.spawnedCharacters.Count == 1)
             {
                 CharactersManager.Instance.EnableCharacter();
+                CharactersManager.Instance.nextCharImage.sprite = CharactersManager.Instance.spawnedCharacters[0].GetComponent<Heroes>().charImage;
             }
 
             characterShopButton[BuildManager.main.selectedHero].interactable = false;

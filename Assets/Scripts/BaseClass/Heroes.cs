@@ -5,6 +5,7 @@ using UnityEditor;
 
 public class Heroes : MonoBehaviour
 {
+    public Sprite charImage;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject projectilesPrefab;
     [SerializeField] protected int manaIncrease;

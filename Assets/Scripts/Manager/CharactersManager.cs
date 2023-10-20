@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharactersManager : MonoBehaviour
 {
     public List<GameObject> spawnedCharacters = new();
     public static CharactersManager Instance;
     public int currIndex = 0;
+    public Image nextCharImage;
     private void Awake()
     {
         Instance = this;
@@ -29,6 +31,14 @@ public class CharactersManager : MonoBehaviour
                 currIndex = 0;
             }
             EnableCharacter();
+        }
+
+        if (spawnedCharacters.Count > 1)
+        {
+            if(currIndex+1 != spawnedCharacters.Count)
+                nextCharImage.sprite = spawnedCharacters[currIndex + 1].GetComponent<Heroes>().charImage;
+            else
+                nextCharImage.sprite = spawnedCharacters[0].GetComponent<Heroes>().charImage;
         }
     }
 
