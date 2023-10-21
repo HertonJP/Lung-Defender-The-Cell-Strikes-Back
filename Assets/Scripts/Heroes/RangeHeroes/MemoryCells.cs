@@ -38,7 +38,8 @@ public class MemoryCells : RangeHeroes
     {
         base.Attack();
         if (isUlt)
-            mana -= maxMana;
+            mana =0;
+        UpdateManaBar();
         projectile.GetComponent<AOE_Slow>().isUlt = isUlt;
         projectile.GetComponent<AOE_Slow>().duration = slowDuration;
         projectile.GetComponent<AOE_Slow>().slowedSpeed = slowedSpeed;

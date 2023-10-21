@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class TD_Spawner : MonoBehaviour
 {
+    public static TD_Spawner main;
     [SerializeField] private GameObject[] enemyPrefabs;
 
     [SerializeField] private int baseEnemies = 3;
@@ -19,11 +20,14 @@ public class TD_Spawner : MonoBehaviour
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
+    public int spawnPoint;
 
     private void Awake()
     {
+        main = this;
         onEnemyDestroy.AddListener(enemyDestroyed);
     }
+
 
     private void enemyDestroyed()
     {
@@ -32,7 +36,12 @@ public class TD_Spawner : MonoBehaviour
 
     private void Start()
     {
+        if (LevelManager.main.spawnPoint > 1)
+        {
+            spawnPoint = Random.Range(0, LevelManager.main.spawnPoint);
+        }
         StartCoroutine(StartWave());
+
     }
 
     private void Update()
@@ -61,6 +70,10 @@ public class TD_Spawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
+        if (LevelManager.main.spawnPoint > 1)
+        {
+            spawnPoint = Random.Range(0, LevelManager.main.spawnPoint);
+        }
         StartCoroutine(StartWave());
     }
 
@@ -68,7 +81,15 @@ public class TD_Spawner : MonoBehaviour
     {
         int index = Random.Range(0, enemyPrefabs.Length);
         GameObject prefabToSpawn = enemyPrefabs[index];
-        Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+        if (spawnPoint == 0)
+        {
+            Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(prefabToSpawn, LevelManager.main.startPoint2.position, Quaternion.identity);
+        }
+        
     }
 
     

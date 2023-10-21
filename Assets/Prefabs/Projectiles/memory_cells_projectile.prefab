@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4859494725505346338}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -14.748502, y: -9.656785, z: 0}
-  m_LocalScale: {x: -0.6, y: 0.6, z: 0.4}
+  m_LocalScale: {x: -0.85, y: 0.85, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2316492748955374258}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8c1b8fcf2ecd0d647b0586cd50370826, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.26632097, g: 0.057509996, b: 0.426, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,8 +127,8 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Interpolate: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &2011051256
@@ -144,7 +144,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023439601, y: -0.011721849}
+  m_Offset: {x: 0.04175204, y: -0.030035213}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -155,7 +155,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7296374, y: 0.5941391}
+  m_Size: {x: 0.6930125, y: 0.056966886}
   m_EdgeRadius: 0
 --- !u!114 &4870468904617363601
 MonoBehaviour:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilesSpeed: 5
-  projectilesDamage: 3
+  projectilesDamage: 7
   isUlt: 0
   enemyAi: []
   duration: 0

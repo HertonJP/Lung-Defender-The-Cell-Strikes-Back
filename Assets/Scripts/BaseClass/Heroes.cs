@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI;
 
 public class Heroes : MonoBehaviour
 {
+    public Sprite charImage;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject projectilesPrefab;
     [SerializeField] protected int manaIncrease;
@@ -30,13 +32,14 @@ public class Heroes : MonoBehaviour
 
     [SerializeField] Movement movement;
     [SerializeField] protected List<Collider2D> hitTargets = new();
+    [SerializeField] private Image manaBar;
 
     protected bool isIdle => !(movement.horizontalMovement != 0 || movement.verticalMovement != 0);
 
     public virtual void Start()
     {
         mana = 0;
-
+        UpdateManaBar();
         InitializeData();
     }
 
@@ -84,6 +87,8 @@ public class Heroes : MonoBehaviour
     protected virtual void Attack()
     {
         mana += manaIncrease;
+        UpdateManaBar();
+        Debug.Log(manaBar.fillAmount);
     }
 
     protected virtual void Ulti()
@@ -121,5 +126,10 @@ public class Heroes : MonoBehaviour
         _attackSpeed = attackSpeed;
         _firingPoint = firingPoint;
         _projectilesPrefab = projectilesPrefab;
+    }
+
+    public void UpdateManaBar()
+    {
+        manaBar.fillAmount =(float) mana / maxMana;
     }
 }

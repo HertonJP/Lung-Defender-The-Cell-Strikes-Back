@@ -36,7 +36,8 @@ public class NaturalKiller : RangeHeroes
     {
         base.Attack();
         if (isUlt)
-            mana -= maxMana;
+            mana =0;
+        UpdateManaBar();
         projectile.GetComponent<SingleStun>().isUlt = isUlt;
         projectile.GetComponent<SingleStun>().stunDuration = stunDuration;
         isUlt = false;

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
+    public bool canMove = false;
     public float horizontalMovement;
     public float verticalMovement;
     public float stamina;
@@ -12,6 +14,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float staminaRegen;
     [SerializeField] private float staminaDecreaseAmount;
+    [SerializeField] private Image staminaBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +26,26 @@ public class Movement : MonoBehaviour
     void Update()
     {
         stamina = Mathf.Clamp(stamina, 0, maxStamina);
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        verticalMovement = Input.GetAxisRaw("Vertical");
-        if (stamina >0)
+        staminaBar.fillAmount = stamina / maxStamina;
+
+        if (canMove)
         {
-            rb.velocity = new Vector2(horizontalMovement, verticalMovement).normalized * moveSpeed;
+            horizontalMovement = Input.GetAxisRaw("Horizontal");
+            verticalMovement = Input.GetAxisRaw("Vertical");
+            if (stamina > 0)
+            {
+                rb.velocity = new Vector2(horizontalMovement, verticalMovement).normalized * moveSpeed;
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            horizontalMovement = verticalMovement = 0;
         }
+
         
         if (horizontalMovement != 0||verticalMovement!=0)
             stamina -= staminaDecreaseAmount;

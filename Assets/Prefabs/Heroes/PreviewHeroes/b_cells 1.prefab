@@ -132,7 +132,7 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 8741207452223257116}
   maxMana: 100
-  targetingRange: 3
+  targetingRange: 2
   attackSpeed: 0.5
   <_attackSpeed>k__BackingField: 0
   mana: 0

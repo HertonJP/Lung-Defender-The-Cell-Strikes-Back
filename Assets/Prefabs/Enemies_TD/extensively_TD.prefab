@@ -618,7 +618,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.20726633, y: 0.93420565}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -629,7 +629,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2610121, y: 1.6487291}
   m_EdgeRadius: 0
 --- !u!114 &1474496461934480141
 MonoBehaviour:
@@ -643,8 +643,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501431882d5881544823a18fb2e8ce27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 2
+  HP: 18
   worth: 20
+  srList:
+  - {fileID: 5896775118482981609}
+  - {fileID: 976586623825353968}
+  - {fileID: 9067637717964388461}
+  - {fileID: 6484954073705633460}
+  - {fileID: 686288123354625994}
+  - {fileID: 6088494632940732547}
+  flashMats: {fileID: 2100000, guid: d0dfd430dc4021d49b5b2174fd466771, type: 2}
+  normalMats: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  flashDuration: 0.1
 --- !u!114 &2465998626066600674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,12 +667,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886c35a39ce4f604982466e987f93e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.48
+  speed: 2
   <_speed>k__BackingField: 0
   rb: {fileID: 3883032563977851246}
+  target: {fileID: 0}
   isSlowed: 0
   slowedSpeed: 0
   slowDuration: 0
+  canCheckFlip: 0
 --- !u!114 &3641417736931291326
 MonoBehaviour:
   m_ObjectHideFlags: 0

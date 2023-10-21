@@ -26,7 +26,7 @@ public class RangeHeroes : Heroes
         projectile.transform.rotation = _firingPoint.rotation;
         projectile.GetComponent<Projectiles>().SetTarget(target);
         attackPointRotation.SetTarget(target);
-        projectile.transform.eulerAngles += new Vector3(0, 0, 90);
+        projectile.transform.eulerAngles += new Vector3(0, 0, 85);
         base.Attack();
     }
 }

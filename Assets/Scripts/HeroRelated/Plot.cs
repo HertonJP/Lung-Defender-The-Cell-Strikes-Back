@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Plot : MonoBehaviour
 {
-
-    [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private Color hoverColor;
     [SerializeField] HeroHover hover;
     [SerializeField] Tilemap tileMap;
 
@@ -55,6 +53,7 @@ public class Plot : MonoBehaviour
             if(CharactersManager.Instance.spawnedCharacters.Count == 1)
             {
                 CharactersManager.Instance.EnableCharacter();
+                CharactersManager.Instance.nextCharImage.sprite = CharactersManager.Instance.spawnedCharacters[0].GetComponent<Heroes>().charImage;
             }
 
             characterShopButton[BuildManager.main.selectedHero].interactable = false;
@@ -68,6 +67,6 @@ public class Plot : MonoBehaviour
     private bool ValidateCharacterPlacement()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        return Time.timeScale != 0 && tileMap.GetTile(tileMap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition))) != null && hit.collider == null;
+        return Time.timeScale != 0 && hit.collider == null && !EventSystem.current.IsPointerOverGameObject();
     }
 }

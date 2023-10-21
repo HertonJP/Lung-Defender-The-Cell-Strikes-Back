@@ -36,7 +36,8 @@ public class WhiteCell : RangeHeroes
     {
         base.Attack();
         if (isUlt)
-            mana -= maxMana;
+            mana =0;
+        UpdateManaBar();
         projectile.GetComponent<DealCritDamage>().isCrit = isUlt;
         projectile.GetComponent<DealCritDamage>().critDamage = bonusAtt;
         isUlt = false;

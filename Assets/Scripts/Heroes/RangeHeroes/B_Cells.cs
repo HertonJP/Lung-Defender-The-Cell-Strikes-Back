@@ -36,9 +36,12 @@ public class B_Cells : RangeHeroes
 
     private IEnumerator AttackSpeedBonus()
     {
-        mana -= maxMana;
+        mana =0;
+        UpdateManaBar();
         _attackSpeed += bonusAttSpeed;
+        manaIncrease = 0;
         yield return new WaitForSeconds(bonusAttSpeedDuration);
         _attackSpeed -= bonusAttSpeed;
+        manaIncrease = 40;
     }
 }
