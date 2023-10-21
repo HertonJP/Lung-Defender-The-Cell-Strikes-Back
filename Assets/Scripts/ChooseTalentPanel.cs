@@ -15,6 +15,7 @@ public class ChooseTalentPanel : MonoBehaviour
     public void ShowPanel()
     {
         panel.SetActive(true);
+        Time.timeScale = 0f;
         showPanelSFX.Play();
         List<Talent> randomTalents = new List<Talent>();
         List<Talent> excludeList = new List<Talent>();
@@ -36,7 +37,7 @@ public class ChooseTalentPanel : MonoBehaviour
             talentButtons[i].onClick.AddListener(() => ChooseTalent(randomTalents[index]));
         }
 
-        Time.timeScale = 0f;
+        
     }
 
     public void ChooseTalent(Talent chosenTalent)
