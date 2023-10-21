@@ -26,11 +26,11 @@ public class Shop : MonoBehaviour
         }
     }
 
-    public void closePanel()
-    {
-        Time.timeScale = 1f;
-        ShopPanel.SetActive(false);
-    }
+    //public void closePanel()
+    //{
+    //    Time.timeScale = 1f;
+    //    ShopPanel.SetActive(false);
+    //}
 
 
     private void OnGUI()
