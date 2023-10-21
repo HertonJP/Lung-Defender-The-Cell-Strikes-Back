@@ -260,8 +260,8 @@ MonoBehaviour:
   maxStamina: 100
   moveSpeed: 2
   rb: {fileID: 0}
-  staminaRegen: 0.05
-  staminaDecreaseAmount: 0.05
+  staminaRegen: 0.02
+  staminaDecreaseAmount: 0.15
   staminaBar: {fileID: 1169730469654803935}
 --- !u!50 &3980676947819998331
 Rigidbody2D:

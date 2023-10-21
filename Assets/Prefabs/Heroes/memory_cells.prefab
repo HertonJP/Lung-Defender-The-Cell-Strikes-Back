@@ -628,8 +628,8 @@ MonoBehaviour:
   maxStamina: 100
   moveSpeed: 2
   rb: {fileID: 0}
-  staminaRegen: 1
-  staminaDecreaseAmount: 1
+  staminaRegen: 0.02
+  staminaDecreaseAmount: 0.15
   staminaBar: {fileID: 1172779143845179901}
 --- !u!114 &-8138988618929288247
 MonoBehaviour:
@@ -661,8 +661,8 @@ MonoBehaviour:
   movement: {fileID: 6098115216421141114}
   hitTargets: []
   manaBar: {fileID: 3727797216980369323}
-  slowDuration: 4
-  slowedSpeed: 0.6
+  slowDuration: 2.5
+  slowedSpeed: 0.2
   isUlt: 0
 --- !u!70 &2116847124551119073
 CapsuleCollider2D:

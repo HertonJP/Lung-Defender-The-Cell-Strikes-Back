@@ -279,8 +279,8 @@ MonoBehaviour:
   maxStamina: 100
   moveSpeed: 2
   rb: {fileID: 0}
-  staminaRegen: 1
-  staminaDecreaseAmount: 1
+  staminaRegen: 0.02
+  staminaDecreaseAmount: 0.15
   staminaBar: {fileID: 5000729844468530775}
 --- !u!114 &1031600320369415918
 MonoBehaviour:
