@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886c35a39ce4f604982466e987f93e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   <_speed>k__BackingField: 0
   rb: {fileID: 3883032563977851246, guid: 310d1aefe47649c46a5d9a3a5302344f, type: 3}
   target: {fileID: 0}

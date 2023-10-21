@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 2146771158537692955}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.78, y: 0.14, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8807589387876272946}
@@ -295,9 +295,11 @@ MonoBehaviour:
   speed: 1.36
   <_speed>k__BackingField: 0
   rb: {fileID: -7175205555474556323}
+  target: {fileID: 0}
   isSlowed: 0
   slowedSpeed: 0
   slowDuration: 0
+  canCheckFlip: 0
 --- !u!114 &2442867532899789829
 MonoBehaviour:
   m_ObjectHideFlags: 0
