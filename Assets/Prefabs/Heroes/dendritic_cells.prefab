@@ -160,7 +160,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7510883333578079162}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1152801303796413475
 BoxCollider2D:
@@ -273,6 +273,7 @@ Transform:
   - {fileID: 922552240667315306}
   - {fileID: 1873813843387522006}
   - {fileID: 458693206509365082}
+  - {fileID: 2663482438349914167}
   - {fileID: 7620296371575741130}
   - {fileID: 8339863175905836846}
   - {fileID: 6623360514408196060}
@@ -446,7 +447,7 @@ MonoBehaviour:
   isUlt: 0
   ultDuration: 3
   laserShootPoint: {fileID: 458693206509365082}
-  laserShootPoint2: {fileID: 0}
+  laserShootPoint2: {fileID: 2663482438349914167}
   ultInitialDamage: 0.5
   totalDamage: 0
 --- !u!114 &3188099261371495130
@@ -554,6 +555,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5040737352566126665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2663482438349914167}
+  m_Layer: 10
+  m_Name: LaserShootPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2663482438349914167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040737352566126665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.55, y: 1.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7510883333578079162}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5837361689284000417
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +648,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7510883333578079162}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3907613045362224430
 SpriteRenderer:
@@ -792,7 +824,7 @@ RectTransform:
   - {fileID: 7552741140180697880}
   - {fileID: 6177572782568379345}
   m_Father: {fileID: 7510883333578079162}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

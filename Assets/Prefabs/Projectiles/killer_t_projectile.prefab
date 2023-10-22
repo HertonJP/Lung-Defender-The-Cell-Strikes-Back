@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1322885628541975187}
   - component: {fileID: 443637348}
   - component: {fileID: 443637347}
-  - component: {fileID: 9015756787584505398}
+  - component: {fileID: 3812926517620591439}
   m_Layer: 9
   m_Name: killer_t_projectile
   m_TagString: Untagged
@@ -143,10 +143,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06532931, y: -0.19759291}
+  m_Offset: {x: 0.032236814, y: -0.004552588}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.509011, y: 0.4639562}
     oldSize: {x: 7.2, y: 5.4}
     newSize: {x: 7.2, y: 5.4}
     adaptiveTilingThreshold: 0.5
@@ -154,9 +154,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.349222, y: 0.04816532}
+  m_Size: {x: 1.415407, y: 0.43424597}
   m_EdgeRadius: 0
---- !u!114 &9015756787584505398
+--- !u!114 &3812926517620591439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1322885628541975186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0651bd6915483b34c9445abcb1de5065, type: 3}
+  m_Script: {fileID: 11500000, guid: 1106b4354586f444db97423bc6a04854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectilesSpeed: 5
