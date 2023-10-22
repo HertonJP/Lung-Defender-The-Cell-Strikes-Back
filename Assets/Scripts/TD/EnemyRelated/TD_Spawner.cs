@@ -8,6 +8,7 @@ public class TD_Spawner : MonoBehaviour
     public static TD_Spawner main;
     [SerializeField] private GameObject[] enemyPrefabs;
 
+    [Header("WavesData")]
     [SerializeField] private int baseEnemies = 3;
     [SerializeField] private float enemiesPerSecond = 1f;
     [SerializeField] private float timeBetweenWaves = 10f;
@@ -21,6 +22,7 @@ public class TD_Spawner : MonoBehaviour
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
     public int spawnPoint;
+    [SerializeField] private int maxWave;
 
     private void Awake()
     {
@@ -41,7 +43,6 @@ public class TD_Spawner : MonoBehaviour
             spawnPoint = Random.Range(0, LevelManager.main.spawnPoint);
         }
         StartCoroutine(StartWave());
-
     }
 
     private void Update()
@@ -70,11 +71,20 @@ public class TD_Spawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
+
         if (LevelManager.main.spawnPoint > 1)
         {
             spawnPoint = Random.Range(0, LevelManager.main.spawnPoint);
         }
-        StartCoroutine(StartWave());
+
+        if (currentWave < maxWave)
+        {
+            StartCoroutine(StartWave());
+        }
+        else
+        {
+            LevelManager.main.victoryPanel.SetActive(true);
+        }
     }
 
     private void SpawnEnemy()
@@ -91,8 +101,6 @@ public class TD_Spawner : MonoBehaviour
         }
         
     }
-
-    
 
     private IEnumerator StartWave()
     {

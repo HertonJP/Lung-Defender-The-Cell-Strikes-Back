@@ -91,7 +91,8 @@ public class Heroes : MonoBehaviour
     }
 
     protected virtual void Ulti()
-    {   
+    {
+        LevelManager.main.skillFX.StartFX();
     }
 
     private bool inRange()
