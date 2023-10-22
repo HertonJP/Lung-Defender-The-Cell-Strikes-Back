@@ -207,7 +207,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8989510947617110244}
   m_Bounds:
-    m_Center: {x: -0.0001699999, y: 0.00017666817, z: 0}
+    m_Center: {x: -0.0001699999, y: 0.00020718575, z: 0}
     m_Extent: {x: 0.12438005, y: 0.10968338, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3121962436111320407}
   m_Bounds:
-    m_Center: {x: -0.00060500205, y: -0.000071659684, z: 0}
+    m_Center: {x: -0.00060500205, y: -0.000041142106, z: 0}
     m_Extent: {x: 0.12439501, y: 0.109928355, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -650,7 +650,7 @@ Transform:
   m_GameObject: {fileID: 8651896191971413924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2544.0469, y: -1499.1224, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5106190556226431169}
@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886c35a39ce4f604982466e987f93e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   <_speed>k__BackingField: 0
   rb: {fileID: 3883032563977851246, guid: 310d1aefe47649c46a5d9a3a5302344f, type: 3}
   target: {fileID: 0}
@@ -890,7 +890,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8446658610305119600}
   m_Bounds:
-    m_Center: {x: 0.000098735094, y: 0.00000667572, z: 0}
+    m_Center: {x: -0.000023335218, y: 0.00000667572, z: 0}
     m_Extent: {x: 0.34194666, y: 0.27311334, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
