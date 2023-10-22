@@ -88,7 +88,6 @@ public class Heroes : MonoBehaviour
     {
         mana += manaIncrease;
         UpdateManaBar();
-        Debug.Log(manaBar.fillAmount);
     }
 
     protected virtual void Ulti()

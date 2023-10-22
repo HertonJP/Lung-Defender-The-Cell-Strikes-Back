@@ -33,7 +33,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: memory_cells_projectile_explo
+  m_Name: Destroy
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -92,7 +92,7 @@ AnimatorStateMachine:
     m_Position: {x: 200, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5491123443496190746}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 430, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4500874377095984253}
     m_Position: {x: 270, y: 130, z: 0}

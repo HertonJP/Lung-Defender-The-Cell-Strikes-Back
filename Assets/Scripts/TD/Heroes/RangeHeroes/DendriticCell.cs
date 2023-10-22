@@ -8,6 +8,7 @@ public class DendriticCell : RangeHeroes
     [SerializeField] private bool isUlt = false;
     [SerializeField] private float ultDuration;
     [SerializeField] private Transform laserShootPoint;
+    [SerializeField] private Transform laserShootPoint2;
     [SerializeField] private float ultInitialDamage;
     [SerializeField] private float totalDamage = 0;
     private bool hasStartCoroutine = false;
@@ -21,6 +22,9 @@ public class DendriticCell : RangeHeroes
     public override void Update()
     {
         base.Update();
+
+
+
         if (mana >= maxMana)
         {
             timeUntilFire = 0;
@@ -52,14 +56,20 @@ public class DendriticCell : RangeHeroes
                 }
                 totalDamage += (ultInitialDamage* Time.deltaTime);
                 lineRenderer.positionCount = 2;
-                lineRenderer.SetPosition(0, laserShootPoint.position);
+                if (GetComponent<SpriteRenderer>().flipX)
+                    lineRenderer.SetPosition(0, laserShootPoint2.position);
+                else
+                    lineRenderer.SetPosition(0, laserShootPoint.position);
                 lineRenderer.SetPosition(1, target.position);
                 target.GetComponent<enemyHealth>().TakeDamage(totalDamage);
             }
             else
             {
                 lineRenderer.positionCount = 1;
-                lineRenderer.SetPosition(0, laserShootPoint.position);
+                if (GetComponent<SpriteRenderer>().flipX)
+                    lineRenderer.SetPosition(0, laserShootPoint2.position);
+                else
+                    lineRenderer.SetPosition(0, laserShootPoint.position);
                 totalDamage = 0;
             }
         }
@@ -77,9 +87,11 @@ public class DendriticCell : RangeHeroes
         yield return new WaitForSeconds(duration);
         isUlt = false;
 
-        Debug.Log(mana);
         lineRenderer.positionCount = 1;
-        lineRenderer.SetPosition(0, laserShootPoint.position);
+        if (GetComponent<SpriteRenderer>().flipX)
+            lineRenderer.SetPosition(0, laserShootPoint2.position);
+        else
+            lineRenderer.SetPosition(0, laserShootPoint.position);
         totalDamage = 0;
         hasStartCoroutine = false;
         timeUntilFire = 0;

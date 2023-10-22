@@ -20,6 +20,11 @@ public class SingleStun : MovingProjectile
             other.collider.GetComponent<Stun>().isStunned = isUlt;
             isUlt = false;
         }
+
+    }
+
+    public void Destroy()
+    {
         Destroy(gameObject);
     }
 }
