@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MDRBossDrop : MonoBehaviour
 {
+    [SerializeField] private GameObject itemTextPosition;
     [SerializeField] private Inventory inven;
+    [SerializeField] private TextMeshProUGUI itemTextPrefabs;
 
-
+    private void Start()
+    {
+        GameObject inventory = GameObject.FindGameObjectWithTag("Inventory");
+        inven = inventory.GetComponent<Inventory>();
+    }
     public void mdrbossDrop()
     {
         for(int i = 1; i < 5; i++)
