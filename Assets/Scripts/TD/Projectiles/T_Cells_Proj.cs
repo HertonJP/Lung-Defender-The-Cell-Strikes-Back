@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackSpeedIncrease : MovingProjectile
+public class T_Cells_Proj : MovingProjectile
 {
     public override void Update()
     {
@@ -12,7 +12,11 @@ public class AttackSpeedIncrease : MovingProjectile
     public override void OnCollisionEnter2D(Collision2D other)
     {
         base.OnCollisionEnter2D(other);
-        Destroy(gameObject);
+        
     }
 
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }

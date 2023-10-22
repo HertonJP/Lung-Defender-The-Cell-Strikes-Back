@@ -27,6 +27,10 @@ public class AOE_Slow : MovingProjectile
             isUlt = false;
         }
 
+    }
+
+    public void Destroy()
+    {
         Destroy(gameObject);
     }
 }

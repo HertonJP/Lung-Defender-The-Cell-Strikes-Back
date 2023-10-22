@@ -82,6 +82,7 @@ public class TD_AI : MonoBehaviour
 
     public IEnumerator Slowed(float duration, float slowedSpeed)
     {
+        StartCoroutine(gameObject.GetComponent<enemyHealth>().SlowedEffect(duration));
         isSlowed = false;
         _speed =  slowedSpeed;
         yield return new WaitForSeconds(duration);

@@ -2074,7 +2074,7 @@ MonoBehaviour:
   - {fileID: 2146771158537692955, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
   - {fileID: 2146771158537692955, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
   baseEnemies: 8
-  enemiesPerSecond: 1.5
+  enemiesPerSecond: 3
   timeBetweenWaves: 1
   difficultyScalingFactor: 0.75
   spawnPoint: 0
@@ -2278,7 +2278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &524900894
 Transform:
   m_ObjectHideFlags: 0

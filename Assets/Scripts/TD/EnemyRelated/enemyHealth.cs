@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class enemyHealth : MonoBehaviour
 {
-    [SerializeField] private float HP = 2;
+    public float HP = 2;
     [SerializeField] private int worth = 20;
     [SerializeField] private List<SpriteRenderer> srList = new();
     [SerializeField] private Material flashMats;
     [SerializeField] private Material normalMats;
     [SerializeField] private float flashDuration;
+    [SerializeField] private Color slowedColor;
     private bool startedFlash = false;
     bool debugged = false;
     private bool isDestroyed = false;
@@ -40,6 +41,19 @@ public class enemyHealth : MonoBehaviour
             sr.material = normalMats;
         }
         startedFlash = false;
+    }
+
+    public IEnumerator SlowedEffect(float duration)
+    {
+        foreach(SpriteRenderer sr in srList)
+        {
+            sr.color = slowedColor;
+        }
+        yield return new WaitForSeconds(duration);
+        foreach (SpriteRenderer sr in srList)
+        {
+            sr.color = Color.white;
+        }
     }
 
 }

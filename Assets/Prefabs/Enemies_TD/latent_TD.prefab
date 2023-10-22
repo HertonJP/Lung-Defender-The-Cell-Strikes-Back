@@ -565,6 +565,7 @@ MonoBehaviour:
   flashMats: {fileID: 2100000, guid: d0dfd430dc4021d49b5b2174fd466771, type: 2}
   normalMats: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   flashDuration: 0.1
+  slowedColor: {r: 0.5764706, g: 0.47058824, b: 0.87058824, a: 1}
 --- !u!114 &-2770123487179807024
 MonoBehaviour:
   m_ObjectHideFlags: 0
