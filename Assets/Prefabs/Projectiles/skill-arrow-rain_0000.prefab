@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5837154525073794946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20.897858, y: 2.8580718, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 380661979
+  m_SortingLayer: 9
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 829d5f7f089cb0946a4c455be4995157, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,9 +121,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.120064735, y: 0.058509827}
+  m_Offset: {x: -0.22383094, y: 0.058509856}
   serializedVersion: 2
-  m_Radius: 1.2123327
+  m_Radius: 0.9010351
 --- !u!114 &6054743837360097431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,5 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1a979981292a4d99efdf135561822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies: []
   arrowDamage: 1
   nextDamageTime: 0.2

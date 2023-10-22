@@ -21,33 +21,33 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 829d5f7f089cb0946a4c455be4995157, type: 3}
-    - time: 0.16666667
+    - time: 0.11666667
       value: {fileID: 21300000, guid: 873a209900290b0459ce9bc944733100, type: 3}
-    - time: 0.33333334
+    - time: 0.15
       value: {fileID: 21300000, guid: e0d64e35ad1195c49b94f2ba7f7ce4eb, type: 3}
-    - time: 0.5
+    - time: 0.26666668
       value: {fileID: 21300000, guid: aa50a9ace1ed7c54f860b6be6a4a133e, type: 3}
-    - time: 0.6
+    - time: 0.35
       value: {fileID: 21300000, guid: 422ee1843b6f60848aa07ba9bd0a7134, type: 3}
-    - time: 0.73333335
+    - time: 0.4
       value: {fileID: 21300000, guid: f32eb8c17b42cbd4ab84408e4bca7060, type: 3}
-    - time: 0.8666667
+    - time: 0.46666667
       value: {fileID: 21300000, guid: a55f9803f1e098d4ca435dac149b321d, type: 3}
-    - time: 1
+    - time: 0.55
       value: {fileID: 21300000, guid: cd0847b7ae73a6e4d96130aafc6a7fd9, type: 3}
-    - time: 1.1166667
+    - time: 0.6333333
       value: {fileID: 21300000, guid: f05c706bda9c352418c1c5e862119f95, type: 3}
-    - time: 1.2833333
+    - time: 0.7
       value: {fileID: 21300000, guid: 6bd9ad15c3091fd4491b21d6099311ee, type: 3}
-    - time: 1.4166666
+    - time: 0.78333336
       value: {fileID: 21300000, guid: f62be9fc669d3ed46a234b3b89635b64, type: 3}
-    - time: 1.55
+    - time: 0.8666667
       value: {fileID: 21300000, guid: 412ce42598b7d844a8c87964630f3307, type: 3}
-    - time: 1.6833333
+    - time: 0.95
       value: {fileID: 21300000, guid: 5817cff2c776f16498a8c452f8598372, type: 3}
-    - time: 1.85
+    - time: 1.0166667
       value: {fileID: 21300000, guid: e56ae72b4d61be349afa79b79ad004d9, type: 3}
-    - time: 1.9833333
+    - time: 1.1
       value: {fileID: 21300000, guid: e20a383f0956fb14f9a9c22dfe9deb7c, type: 3}
     attribute: m_Sprite
     path: 
@@ -88,7 +88,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2
+    m_StopTime: 1.1166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -108,14 +108,14 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.6666667
+  - time: 0.11666667
     functionName: EnableCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.9666667
+  - time: 1.1
     functionName: DestroyArrow
     data: 
     objectReferenceParameter: {fileID: 0}
