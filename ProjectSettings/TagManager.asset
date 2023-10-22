@@ -10,6 +10,7 @@ TagManager:
   - Phase2Position
   - Phase2PositionRange
   - Object
+  - Inventory
   layers:
   - Default
   - TransparentFX
