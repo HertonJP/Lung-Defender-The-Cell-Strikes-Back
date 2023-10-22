@@ -52,7 +52,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 51ede57e42456d64692a5d9df46f9213, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,7 +112,7 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 53970
+      atime1: 65535
       atime2: 0
       atime3: 0
       atime4: 0
@@ -125,7 +125,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 1
@@ -446,6 +446,7 @@ MonoBehaviour:
   isUlt: 0
   ultDuration: 3
   laserShootPoint: {fileID: 458693206509365082}
+  laserShootPoint2: {fileID: 0}
   ultInitialDamage: 0.5
   totalDamage: 0
 --- !u!114 &3188099261371495130
