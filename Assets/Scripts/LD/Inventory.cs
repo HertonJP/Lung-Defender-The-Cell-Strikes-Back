@@ -13,5 +13,4 @@ public class Inventory : MonoBehaviour
     public int club = 0;
     public int leftarm = 0;
     public int eyeball = 0;
-    public int helmet = 0;
 }
