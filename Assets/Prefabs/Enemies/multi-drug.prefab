@@ -562,7 +562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTextPosition: {fileID: 0}
   inven: {fileID: 0}
-  itemTextPrefabs: {fileID: 8367553372009753191, guid: 63cec3ab8fe068c4ea2c546faa528bc9, type: 3}
+  itemTextPrefabs: {fileID: 3592551473301923448, guid: 63cec3ab8fe068c4ea2c546faa528bc9, type: 3}
 --- !u!1 &2236319164842853601
 GameObject:
   m_ObjectHideFlags: 0

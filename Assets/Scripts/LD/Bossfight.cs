@@ -16,6 +16,7 @@ public class Bossfight : MonoBehaviour
     [SerializeField] private AudioSource groundSlam;
     [SerializeField] private GameObject youWinPanel;
     [SerializeField] private AudioSource youWinSFX;
+    [SerializeField] private MDRBossDrop drop;
     private Transform phase2Position;
     private Animator anim;
     private Collider2D coll;
@@ -43,9 +44,12 @@ public class Bossfight : MonoBehaviour
     {
         if(enemy.enemyHP <= 0)
         {
-            youWinSFX.Play();
-            youWinPanel.SetActive(true);
-            Time.timeScale = 0f;
+            enemy.enemyHP = 0;
+            drop.mdrbossDrop();
+            Invoke("bossKilled", 0.5f);
+           // youWinSFX.Play();
+            //youWinPanel.SetActive(true);
+            //Time.timeScale = 0f;
         }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
         {
@@ -96,7 +100,10 @@ public class Bossfight : MonoBehaviour
             spawnGroundBreak();
         }
     }
-
+    private void bossKilled()
+    {
+        Time.timeScale = 0;
+    }
     public void spawnGroundBreak()
     {
         groundSlam.Play();

@@ -49,9 +49,4 @@ public class DropSystem : MonoBehaviour
     {
         inventory.eyeball += 1;
     }
-
-    public void dropHelmet()
-    {
-        inventory.helmet += 1;
-    }
 }

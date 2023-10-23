@@ -21,6 +21,7 @@ public class MDRBossDrop : MonoBehaviour
         for(int i = 1; i < 5; i++)
         {
             float randomValue = Random.Range(0f, 1f);
+            Debug.Log(randomValue);
             if (randomValue <0.05)
             {
                 GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
