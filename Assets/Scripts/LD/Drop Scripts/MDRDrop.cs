@@ -23,6 +23,8 @@ public class MDRDrop : MonoBehaviour
         {
             GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
             text.GetComponent<TextMesh>().text = "You Got " + 1 + " " + "MDR's Helmet";
+            TextMesh textMesh = text.GetComponent<TextMesh>();
+            textMesh.color = Color.magenta;
             inven.mdrhelmet += 1;
         }
         else if (randomValue > 0.5)
@@ -31,6 +33,11 @@ public class MDRDrop : MonoBehaviour
             text.GetComponent<TextMesh>().text = "You Got " + 1 + " " + "Resistant Sample";
             inven.resistantsample += 1;
         }
-        else return;
+        else
+        {
+            return;
+        }
+        inven.SaveInventory();
+
     }
 }

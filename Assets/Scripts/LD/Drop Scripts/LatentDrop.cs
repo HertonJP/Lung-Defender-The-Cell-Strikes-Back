@@ -23,17 +23,21 @@ public class LatentDrop : MonoBehaviour
         if (randomValue > 0.35 && randomValue < 0.9)
         {
             Debug.Log("drop claw");
+
             GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
             text.GetComponent<TextMesh>().text = "You Got " + 1+ " " + "Myco's Claw";
 
             inven.mycoclaw += 1;
         }
         else if (randomValue > 0.9)
-        {
+        {                 
             GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
+            TextMesh textMesh = text.GetComponent<TextMesh>();
+            textMesh.color = Color.magenta;
             text.GetComponent<TextMesh>().text = "You Got " + 1 + " " + "Scale";
             inven.scale += 1;
         }
         else return;
+        inven.SaveInventory();
     }
 }

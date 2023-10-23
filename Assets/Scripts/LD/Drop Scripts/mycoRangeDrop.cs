@@ -22,12 +22,16 @@ public class mycoRangeDrop : MonoBehaviour
         if (randomValue > 0.25 && randomValue < 0.4)
         {
             GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
+            TextMesh textMesh = text.GetComponent<TextMesh>();
+            textMesh.color = Color.magenta;
             text.GetComponent<TextMesh>().text = "You Got " + 1 + " " + "Firoblast";
-            inven.firoblast += 1;
+            inven.fibroblast += 1;
         }
         else if (randomValue > 0.4 && randomValue < 0.55)
         {
             GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
+            TextMesh textMesh = text.GetComponent<TextMesh>();
+            textMesh.color = Color.blue;
             text.GetComponent<TextMesh>().text = "You Got " + 1 + " " + "Nucleus";
             inven.nucleus += 1;
         }
@@ -38,5 +42,6 @@ public class mycoRangeDrop : MonoBehaviour
             inven.mycoclaw += 1;
         }
         else return;
+        inven.SaveInventory();
     }
 }

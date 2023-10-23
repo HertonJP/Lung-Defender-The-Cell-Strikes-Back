@@ -22,7 +22,7 @@ public class DropSystem : MonoBehaviour
 
     public void dropFiroBlast()
     {
-        inventory.firoblast += 1;
+        inventory.fibroblast += 1;
     }
 
     public void dropMdrHelmet()

@@ -23,12 +23,16 @@ public class RangeBossDrop : MonoBehaviour
             if (randomValue < 0.05)
             {
                 GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
+                TextMesh textMesh = text.GetComponent<TextMesh>();
+                textMesh.color = Color.yellow;
                 text.GetComponent<TextMesh>().text = "You Got " + 1 + " " + "Eyeball";
                 inven.eyeball += 1;
             }
             else if (randomValue > 0.05 && randomValue < 0.45)
             {
                 GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
+                TextMesh textMesh = text.GetComponent<TextMesh>();
+                textMesh.color = Color.yellow;
                 text.GetComponent<TextMesh>().text = "You Got " + 1 + " " + "Club";
                 inven.club += 1;
             }
@@ -39,6 +43,6 @@ public class RangeBossDrop : MonoBehaviour
                 inven.mdrhelmet += 1;
             }
         }
-
+        inven.SaveInventory();
     }
 }

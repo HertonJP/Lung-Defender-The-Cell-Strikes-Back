@@ -22,6 +22,8 @@ public class mycomeleeDrop : MonoBehaviour
         if (randomValue > 0.3 && randomValue < 0.5)
         {
             GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
+            TextMesh textMesh = text.GetComponent<TextMesh>();
+            textMesh.color = Color.blue;
             text.GetComponent<TextMesh>().text = "You Got " + 1 + " " + "Nucleus";
             inven.nucleus += 1;
         }
@@ -32,5 +34,6 @@ public class mycomeleeDrop : MonoBehaviour
             inven.mycoclaw += 1;
         }
         else return;
+        inven.SaveInventory();
     }
 }

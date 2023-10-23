@@ -21,6 +21,8 @@ public class XDRDrop : MonoBehaviour
         if (randomValue > 0.45 && randomValue < 0.5)
         {
             GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);
+            TextMesh textMesh = text.GetComponent<TextMesh>();
+            textMesh.color = Color.yellow;
             text.GetComponent<TextMesh>().text = "You Got " + 1 + " " + "Club";
             inven.club += 1;
         }

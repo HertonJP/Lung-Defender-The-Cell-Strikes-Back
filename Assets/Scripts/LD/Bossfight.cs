@@ -20,7 +20,8 @@ public class Bossfight : MonoBehaviour
     private Transform phase2Position;
     private Animator anim;
     private Collider2D coll;
-    
+    private bool hasDroppedLoot = false;
+
     private void Start()
     {
         coll = GetComponent<Collider2D>();
@@ -42,12 +43,12 @@ public class Bossfight : MonoBehaviour
 
     private void Update()
     {
-        if(enemy.enemyHP <= 0)
+        if(enemy.enemyHP <= 0 && !hasDroppedLoot)
         {
             enemy.enemyHP = 0;
             drop.mdrbossDrop();
-            Invoke("bossKilled", 0.5f);
-           // youWinSFX.Play();
+            hasDroppedLoot = true;
+            // youWinSFX.Play();
             //youWinPanel.SetActive(true);
             //Time.timeScale = 0f;
         }
@@ -100,10 +101,7 @@ public class Bossfight : MonoBehaviour
             spawnGroundBreak();
         }
     }
-    private void bossKilled()
-    {
-        Time.timeScale = 0;
-    }
+    
     public void spawnGroundBreak()
     {
         groundSlam.Play();
