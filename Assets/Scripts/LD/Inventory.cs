@@ -14,34 +14,4 @@ public class Inventory : MonoBehaviour
     public int leftarm = 0;
     public int eyeball = 0;
     public int helmet = 0;
-
-    private void Start()
-    {
-        LoadInventory();
-    }
-
-    public void SaveInventory()
-    {
-        GameManager.Instance.SaveItems("ResistantSample", resistantsample);
-        GameManager.Instance.SaveItems("MDRHelmet", mdrhelmet);
-        GameManager.Instance.SaveItems("Nucleus", nucleus);
-        GameManager.Instance.SaveItems("Fibroblast", firoblast);
-        GameManager.Instance.SaveItems("LeftArm", leftarm);
-        GameManager.Instance.SaveItems("Scale", scale);
-        GameManager.Instance.SaveItems("Club", club);
-        GameManager.Instance.SaveItems("Eyeball", eyeball);
-        GameManager.Instance.SaveItems("MycoClaw", mycoclaw);
-    }
-
-    public void LoadInventory()
-    {
-        nucleus = PlayerPrefs.GetInt("Nucleus");
-        mdrhelmet = PlayerPrefs.GetInt("MDRHelmet");
-        firoblast = PlayerPrefs.GetInt("Fibroblast");
-        leftarm = PlayerPrefs.GetInt("LeftArm");
-        scale = PlayerPrefs.GetInt("Scale");
-        club = PlayerPrefs.GetInt("Club");
-        eyeball = PlayerPrefs.GetInt("Eyeball");
-        mycoclaw = PlayerPrefs.GetInt("MycoClaw");
-    }
 }

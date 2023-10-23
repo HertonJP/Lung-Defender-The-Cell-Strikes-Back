@@ -31,6 +31,5 @@ public class LatentDrop : MonoBehaviour
             inven.scale += 1;
         }
         else return;
-        inven.SaveInventory();
     }
 }

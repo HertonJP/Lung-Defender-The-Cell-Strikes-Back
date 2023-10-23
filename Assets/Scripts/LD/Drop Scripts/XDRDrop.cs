@@ -19,14 +19,11 @@ public class XDRDrop : MonoBehaviour
         if (randomValue > 0.45 && randomValue < 0.5)
         {
             inven.club += 1;
-            inven.SaveInventory();
         }
         else if (randomValue > 0.5)
         {
             inven.resistantsample += 1;
-            inven.SaveInventory();
         }
         else return;
-        inven.SaveInventory();
     }
 }

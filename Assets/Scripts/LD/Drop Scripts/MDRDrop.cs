@@ -26,6 +26,5 @@ public class MDRDrop : MonoBehaviour
             inven.resistantsample += 1;
         }
         else return;
-        inven.SaveInventory();
     }
 }

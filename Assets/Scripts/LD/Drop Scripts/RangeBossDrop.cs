@@ -31,6 +31,6 @@ public class RangeBossDrop : MonoBehaviour
                 inven.helmet += 1;
             }
         }
-        inven.SaveInventory();
+
     }
 }
