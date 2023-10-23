@@ -28,4 +28,9 @@ public class MacrophagHammer : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void PlaySFX()
+    {
+        GetComponent<AudioSource>().Play();
+    }
 }

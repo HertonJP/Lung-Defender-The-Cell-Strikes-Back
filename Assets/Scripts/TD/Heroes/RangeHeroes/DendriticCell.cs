@@ -79,6 +79,7 @@ public class DendriticCell : RangeHeroes
     protected override void Ulti()
     {
         isUlt = true;
+        GetComponent<AudioSource>().Play();
         base.Ulti();
     }
 

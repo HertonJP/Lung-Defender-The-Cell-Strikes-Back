@@ -27,4 +27,10 @@ public class LandAOEProjectile : Projectiles
     {
         Destroy(gameObject);
     }
+
+    public void PlaySFX()
+    {
+       source.clip = attackClip;
+       source.Play();
+    }
 }

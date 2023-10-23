@@ -19,4 +19,9 @@ public class T_Cells_Proj : MovingProjectile
     {
         Destroy(gameObject);
     }
+
+    public void PlaySFX()
+    {
+        source.Play();
+    }
 }

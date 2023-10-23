@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Header("TD Save")]
     public int lastUnlockedTDLevel = 0;
+
     [HideInInspector]
     public string lastTDLevelPlayerPrefs = "TDLevelPlayerPrefs";
 
@@ -47,7 +48,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (SceneManager.GetActiveScene().name == "Lobby")
+        {
+            if(Time.timeScale == 0)
+            {    
+                Time.timeScale = 1;
+            }
+        }
     }
 
     public void UpdateLastUnlockedTDLevel()

@@ -29,6 +29,7 @@ public class B_Cells : RangeHeroes
 
     protected override void Ulti()
     {
+        GetComponent<AudioSource>().Play();
         StartCoroutine(AttackSpeedBonus());
         base.Ulti();
 
@@ -36,7 +37,7 @@ public class B_Cells : RangeHeroes
 
     private IEnumerator AttackSpeedBonus()
     {
-        mana =0;
+        mana = 0;
         UpdateManaBar();
         _attackSpeed += bonusAttSpeed;
         manaIncrease = 0;

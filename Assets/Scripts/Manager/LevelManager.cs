@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     public int maxHealth;
     public int currHealth;
     public int spawnPoint;
+    [Header("Health UI")]
     [SerializeField] private Image healthBar;
     [SerializeField] private TMP_Text currHealthText;
 
@@ -28,11 +29,12 @@ public class LevelManager : MonoBehaviour
     public Vignette vignette;
     public float vignetteIntensity;
 
-    [Header("UI")]
+    [Header("Panel UI")]
     public GameObject pausePanel;
     public GameObject victoryPanel;
     public GameObject losePanel;
 
+    [SerializeField]private bool isPaused = false;
     private void Awake()
     {
         main = this;
@@ -41,6 +43,21 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         //check if curr health <=0 show gameover\
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+            if (isPaused)
+            {
+                pausePanel.SetActive(true);
+                Time.timeScale = 0;
+            }               
+            else
+            {
+                pausePanel.SetActive(false);
+                Time.timeScale = 1;
+            }     
+        }
 
         if(currHealth<= 30)
         {
@@ -51,6 +68,10 @@ public class LevelManager : MonoBehaviour
         {
             Time.timeScale = 0;
             losePanel.SetActive(true);
+        }
+        else if(currHealth>0 && !isPaused)
+        {
+            Time.timeScale = 1;
         }
     }
 

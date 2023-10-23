@@ -27,4 +27,14 @@ public class SingleStun : MovingProjectile
     {
         Destroy(gameObject);
     }
+
+    public void PlaySFX()
+    {
+        if (isUlt)
+            source.clip = skillClip;
+        else
+            source.clip = attackClip;
+
+        source.Play();
+    }
 }

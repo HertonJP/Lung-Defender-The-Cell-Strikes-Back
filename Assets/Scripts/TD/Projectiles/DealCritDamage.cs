@@ -21,4 +21,14 @@ public class DealCritDamage : MovingProjectile
     {
         Destroy(gameObject);
     }
+
+    public void PlaySFX()
+    {
+        if (isCrit)
+            source.clip = skillClip;
+        else
+            source.clip = attackClip;
+
+        source.Play();
+    }
 }

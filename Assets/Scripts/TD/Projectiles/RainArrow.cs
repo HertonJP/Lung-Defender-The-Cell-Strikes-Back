@@ -57,4 +57,9 @@ public class RainArrow : MonoBehaviour
     {
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
     }
+
+    public void PlaySFX()
+    {
+        GetComponent<AudioSource>().Play();
+    }
 }
