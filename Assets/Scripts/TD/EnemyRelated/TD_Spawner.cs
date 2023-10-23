@@ -84,6 +84,8 @@ public class TD_Spawner : MonoBehaviour
         else
         {
             LevelManager.main.victoryPanel.SetActive(true);
+            GameManager.Instance.lastUnlockedTDLevel++;
+            PlayerPrefs.SetInt(GameManager.Instance.lastTDLevelPlayerPrefs, GameManager.Instance.lastUnlockedTDLevel);
         }
     }
 

@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 26991558}
   - component: {fileID: 26991557}
   m_Layer: 5
-  m_Name: White Blood Button
+  m_Name: 'White Blood '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,7 +361,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 26991560}
   m_OnClick:
     m_PersistentCalls:
@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 230677851}
   - component: {fileID: 230677850}
   m_Layer: 5
-  m_Name: Naturaal Killer Button
+  m_Name: 'Naturaal Killer '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1511,7 +1511,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 230677853}
   m_OnClick:
     m_PersistentCalls:
@@ -2104,7 +2104,7 @@ GameObject:
   - component: {fileID: 282117957}
   - component: {fileID: 282117956}
   m_Layer: 5
-  m_Name: Memory Button
+  m_Name: MemoryCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2194,7 +2194,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 282117959}
   m_OnClick:
     m_PersistentCalls:
@@ -3876,7 +3876,7 @@ GameObject:
   - component: {fileID: 655306143}
   - component: {fileID: 655306142}
   m_Layer: 5
-  m_Name: B Button
+  m_Name: B Cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3966,7 +3966,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 655306145}
   m_OnClick:
     m_PersistentCalls:
@@ -4183,7 +4183,7 @@ GameObject:
   - component: {fileID: 738207235}
   - component: {fileID: 738207234}
   m_Layer: 5
-  m_Name: Macrophag Button
+  m_Name: Macrophag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4273,7 +4273,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 738207237}
   m_OnClick:
     m_PersistentCalls:
@@ -5265,7 +5265,7 @@ GameObject:
   - component: {fileID: 989596877}
   - component: {fileID: 989596876}
   m_Layer: 5
-  m_Name: Dendritic Button
+  m_Name: 'Dendritic '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5355,7 +5355,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 989596879}
   m_OnClick:
     m_PersistentCalls:
@@ -6574,7 +6574,7 @@ RectTransform:
   - {fileID: 1462491776}
   - {fileID: 258529793}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6647,7 +6647,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1104984348
 GameObject:
@@ -7969,7 +7969,7 @@ RectTransform:
   - {fileID: 1435699640}
   - {fileID: 225555393}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10278,7 +10278,7 @@ GameObject:
   - component: {fileID: 1925029332}
   - component: {fileID: 1925029331}
   m_Layer: 5
-  m_Name: Killer T Button
+  m_Name: Killer T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10368,7 +10368,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1925029334}
   m_OnClick:
     m_PersistentCalls:
