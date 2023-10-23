@@ -22,7 +22,7 @@ public class CharactersManager : MonoBehaviour
             spawnedCharacters[currIndex].GetComponent<VisualRangeActivation>().EnableVisual();
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && spawnedCharacters.Count>1)
         {
             DisableCharacter();
             currIndex++;

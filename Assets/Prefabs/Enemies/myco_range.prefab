@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 2220991417698291595}
   - component: {fileID: 2099792404}
   - component: {fileID: 2099792403}
+  - component: {fileID: 1906027688}
   m_Layer: 7
   m_Name: myco_range
   m_TagString: Enemy
@@ -659,7 +660,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.044005424, y: 0.02969715}
+  m_Offset: {x: -0.008698136, y: 0.5263531}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -670,7 +671,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59821135, y: 0.7922124}
+  m_Size: {x: 0.6688259, y: 0.8157506}
   m_EdgeRadius: 0
 --- !u!114 &2099792404
 MonoBehaviour:
@@ -784,6 +785,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1906027688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836033705582561711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5beee1a3aaac81c4bb19db8e3c897f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemTextPosition: {fileID: 0}
+  inven: {fileID: 0}
+  itemTextPrefabs: {fileID: 3592551473301923448, guid: 63cec3ab8fe068c4ea2c546faa528bc9, type: 3}
 --- !u!1 &6268602195123292946
 GameObject:
   m_ObjectHideFlags: 0

@@ -700,6 +700,7 @@ GameObject:
   - component: {fileID: 7303351770207415257}
   - component: {fileID: 3028165314586737108}
   - component: {fileID: 5703167009900793045}
+  - component: {fileID: 898906380}
   m_Layer: 7
   m_Name: extensively
   m_TagString: Enemy
@@ -956,6 +957,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &898906380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023954019641036969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b99b8659f035c45a47134d2e15e18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemTextPosition: {fileID: 0}
+  inven: {fileID: 0}
+  itemTextPrefabs: {fileID: 3592551473301923448, guid: 63cec3ab8fe068c4ea2c546faa528bc9, type: 3}
 --- !u!1 &6088494632940732550
 GameObject:
   m_ObjectHideFlags: 0

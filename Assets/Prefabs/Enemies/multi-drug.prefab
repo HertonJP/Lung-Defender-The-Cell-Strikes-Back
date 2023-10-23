@@ -292,6 +292,7 @@ GameObject:
   - component: {fileID: 586541354553142940}
   - component: {fileID: 2045801327373284629}
   - component: {fileID: 7565655403188796883}
+  - component: {fileID: 868017266}
   m_Layer: 7
   m_Name: multi-drug
   m_TagString: Enemy
@@ -547,6 +548,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &868017266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146771158537692955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc48d52f9f66dc84a9344d55696331b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemTextPosition: {fileID: 0}
+  inven: {fileID: 0}
+  itemTextPrefabs: {fileID: 3592551473301923448, guid: 63cec3ab8fe068c4ea2c546faa528bc9, type: 3}
 --- !u!1 &2236319164842853601
 GameObject:
   m_ObjectHideFlags: 0
