@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public string lastTDLevelPlayerPrefs = "TDLevelPlayerPrefs";
 
+    public List<string> itemsPlayerPrefs = new();
     public List<string> buttonPlayerPrefs = new();
     public string firstChar;
 
