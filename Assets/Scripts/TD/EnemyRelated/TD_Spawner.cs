@@ -16,13 +16,17 @@ public class TD_Spawner : MonoBehaviour
 
     public static UnityEvent onEnemyDestroy = new UnityEvent();
 
-    private int currentWave = 1;
-    private float timeSinceLastSpawn;
-    private int enemiesAlive;
-    private int enemiesLeftToSpawn;
-    private bool isSpawning = false;
+    [SerializeField] private int currentWave = 1;
+    [SerializeField] private float timeSinceLastSpawn;
+    [SerializeField] private int enemiesAlive;
+    [SerializeField] private int enemiesLeftToSpawn;
+    [SerializeField] private bool isSpawning = false;
     public int spawnPoint;
     [SerializeField] private int maxWave;
+
+    [Header("Wave Count UI")]
+    [SerializeField] TMPro.TMP_Text currWaveText;
+    [SerializeField] TMPro.TMP_Text maxWaveText;
 
     private void Awake()
     {
@@ -38,6 +42,9 @@ public class TD_Spawner : MonoBehaviour
 
     private void Start()
     {
+        maxWaveText.text = maxWave.ToString();
+        currWaveText.text = currentWave.ToString();
+        isSpawning = false;
         if (LevelManager.main.spawnPoint > 1)
         {
             spawnPoint = Random.Range(0, LevelManager.main.spawnPoint);
@@ -71,6 +78,7 @@ public class TD_Spawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
+        currWaveText.text = currentWave.ToString();
 
         if (LevelManager.main.spawnPoint > 1)
         {
@@ -83,6 +91,7 @@ public class TD_Spawner : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 0;
             LevelManager.main.victoryPanel.SetActive(true);
             GameManager.Instance.lastUnlockedTDLevel++;
             PlayerPrefs.SetInt(GameManager.Instance.lastTDLevelPlayerPrefs, GameManager.Instance.lastUnlockedTDLevel);

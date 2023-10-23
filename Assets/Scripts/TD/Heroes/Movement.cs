@@ -15,11 +15,14 @@ public class Movement : MonoBehaviour
     [SerializeField] private float staminaRegen;
     [SerializeField] private float staminaDecreaseAmount;
     [SerializeField] private Image staminaBar;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip walkClip;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         stamina = maxStamina;
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,8 @@ public class Movement : MonoBehaviour
             if (stamina > 0)
             {
                 rb.velocity = new Vector2(horizontalMovement, verticalMovement).normalized * moveSpeed;
+                source.clip = walkClip;
+                source.Play();
             }
             else
             {

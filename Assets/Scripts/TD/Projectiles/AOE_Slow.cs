@@ -33,4 +33,14 @@ public class AOE_Slow : MovingProjectile
     {
         Destroy(gameObject);
     }
+
+    public void PlaySFX()
+    {
+        if (isUlt)
+            source.clip = skillClip;
+        else
+            source.clip = attackClip;
+
+        source.Play();
+    }
 }

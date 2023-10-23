@@ -19,4 +19,10 @@ public class AttackSpeedIncrease : MovingProjectile
     {
         Destroy(gameObject);
     }
+
+    public void PlaySFX()
+    {
+        source.clip = attackClip;
+        source.Play();
+    }
 }

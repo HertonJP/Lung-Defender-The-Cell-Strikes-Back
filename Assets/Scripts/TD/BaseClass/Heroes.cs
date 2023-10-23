@@ -33,7 +33,6 @@ public class Heroes : MonoBehaviour
     [SerializeField] Movement movement;
     [SerializeField] protected List<Collider2D> hitTargets = new();
     [SerializeField] private Image manaBar;
-
     protected bool isIdle => !(movement.horizontalMovement != 0 || movement.verticalMovement != 0);
 
     public virtual void Start()

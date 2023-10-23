@@ -7,6 +7,9 @@ public class Projectiles : MonoBehaviour
     protected Transform target;
     [SerializeField] protected float projectilesSpeed = 5f;
     [SerializeField] protected int projectilesDamage = 1;
+    [SerializeField] protected AudioSource source;
+    [SerializeField] protected AudioClip skillClip;
+    [SerializeField] protected AudioClip attackClip;
     public int _projectilesDamage { get; set; }
 
     private void Start()

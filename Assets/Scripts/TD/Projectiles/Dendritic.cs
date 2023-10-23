@@ -19,4 +19,10 @@ public class Dendritic : MovingProjectile
     {
         Destroy(gameObject);
     }
+
+    public void PlaySFX()
+    {
+        source.clip = attackClip;
+        source.Play();
+    }
 }
