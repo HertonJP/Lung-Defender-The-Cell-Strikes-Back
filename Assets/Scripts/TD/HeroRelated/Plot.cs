@@ -14,18 +14,23 @@ public class Plot : MonoBehaviour
 
     [SerializeField] private List<Button> characterShopButton;
 
+    private void Start()
+    {
+        foreach(string s in GameManager.Instance.buttonPlayerPrefs)
+        {
+            if(PlayerPrefs.HasKey(s) && PlayerPrefs.GetInt(s) == 1)
+            {
+                FindButtonByName(s);
+            }
+        }
+    }
+
+
     private void Update()
     {
         if (Input.GetMouseButtonUp(0))
         {
             PlaceCharacter();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            BuildManager.main.ResetSelectedHero();
-            HeroHover.Instance.ResetPreviewHero();
-            hero = null;
         }
     }
 
@@ -68,5 +73,17 @@ public class Plot : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         return Time.timeScale != 0 && hit.collider == null && !EventSystem.current.IsPointerOverGameObject();
+    }
+
+    private void FindButtonByName(string name)
+    {
+        Button found = characterShopButton.Find(x => x.name.Contains(name));
+        if (found != null)
+            found.interactable = true;
+        else
+        {
+            Debug.LogError("Button Not Found");
+            return;
+        }
     }
 }

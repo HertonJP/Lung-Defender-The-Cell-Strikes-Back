@@ -44,6 +44,7 @@ public class TD_AI : MonoBehaviour
 
             if(pathIndex == LevelManager.main.path.Length && TD_Spawner.main.spawnPoint==0 || pathIndex == LevelManager.main.path2.Length && TD_Spawner.main.spawnPoint !=0)
             {
+                LevelManager.main.StartCoroutine(LevelManager.main.EnemyEnterEffect());
                 TD_Spawner.onEnemyDestroy.Invoke();
                 LevelManager.main.EnemyDamage();
                 LevelManager.main.UpdateHealthBar();

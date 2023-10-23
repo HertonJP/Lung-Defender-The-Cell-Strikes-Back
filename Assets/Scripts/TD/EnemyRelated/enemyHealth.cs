@@ -12,7 +12,6 @@ public class enemyHealth : MonoBehaviour
     [SerializeField] private float flashDuration;
     [SerializeField] private Color slowedColor;
     private bool startedFlash = false;
-    bool debugged = false;
     private bool isDestroyed = false;
     public void TakeDamage(float damage)
     {
