@@ -24,11 +24,20 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        foreach(string s in itemsPlayerPrefs)
+        {
+            if (!PlayerPrefs.HasKey(s))
+            {
+                PlayerPrefs.SetInt(s, 0);
+            }
+        }
+
         if(PlayerPrefs.HasKey(lastTDLevelPlayerPrefs))
             lastUnlockedTDLevel = PlayerPrefs.GetInt(lastTDLevelPlayerPrefs);
         ValidateButtonPlayerPrefs();
@@ -61,6 +70,14 @@ public class GameManager : MonoBehaviour
             else
                 PlayerPrefs.SetInt(s, 1);
         }
+
+        foreach(string s in itemsPlayerPrefs)
+        {
+            if (PlayerPrefs.HasKey(s))
+            {
+                PlayerPrefs.SetInt(s, 0);
+            }
+        }
     }
 
     private void ValidateButtonPlayerPrefs()
@@ -77,5 +94,18 @@ public class GameManager : MonoBehaviour
     public void GoTDScene()
     {
         SceneManager.LoadScene(3);
+    }
+
+    public void SaveItems(string name, int itemCount)
+    {
+        string found = itemsPlayerPrefs.Find(x => x.Contains(name));
+        if(found == null)
+        {
+            Debug.Log("wrong item name");
+        }
+        else
+        {
+            PlayerPrefs.SetInt(found, itemCount);
+        }
     }
 }

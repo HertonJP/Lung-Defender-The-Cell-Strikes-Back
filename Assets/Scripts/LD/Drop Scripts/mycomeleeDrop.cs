@@ -26,5 +26,6 @@ public class mycomeleeDrop : MonoBehaviour
             inven.mycoclaw += 1;
         }
         else return;
+        inven.SaveInventory();
     }
 }

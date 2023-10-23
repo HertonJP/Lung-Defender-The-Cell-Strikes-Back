@@ -32,6 +32,6 @@ public class MDRBossDrop : MonoBehaviour
                 inven.nucleus += 1;
             }
         }
-        
+        inven.SaveInventory();
     }
 }
