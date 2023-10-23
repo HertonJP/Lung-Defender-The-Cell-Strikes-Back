@@ -75,3 +75,6 @@ TagManager:
   - name: Enemies
     uniqueID: 380661979
     locked: 0
+  - name: Faces
+    uniqueID: 4213993723
+    locked: 0
