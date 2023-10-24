@@ -11,6 +11,10 @@ TagManager:
   - Phase2PositionRange
   - Object
   - Inventory
+  - Door
+  - TD
+  - LabTD
+  - Crafting
   layers:
   - Default
   - TransparentFX
