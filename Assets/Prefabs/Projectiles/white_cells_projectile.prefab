@@ -172,8 +172,8 @@ MonoBehaviour:
   projectilesSpeed: 2
   projectilesDamage: 6
   source: {fileID: 4320260218087746161}
-  skillClip: {fileID: 0}
-  attackClip: {fileID: 0}
+  skillClip: {fileID: 8300000, guid: c8251c131bfe9c64c8d6f385fa8d3167, type: 3}
+  attackClip: {fileID: 8300000, guid: aa82fb217fc754345941597e82f38560, type: 3}
   isCrit: 0
   critDamage: 60
 --- !u!82 &4320260218087746161
@@ -186,7 +186,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: aa82fb217fc754345941597e82f38560, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

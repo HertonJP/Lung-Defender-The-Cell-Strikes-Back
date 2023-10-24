@@ -173,8 +173,8 @@ MonoBehaviour:
   projectilesSpeed: 5
   projectilesDamage: 7
   source: {fileID: 335422687647432634}
-  skillClip: {fileID: 0}
-  attackClip: {fileID: 0}
+  skillClip: {fileID: 8300000, guid: 46765e492e659c54bb12e8cd1d69233c, type: 3}
+  attackClip: {fileID: 8300000, guid: c77a5b6bb0644054f98b577629e83e7b, type: 3}
   isUlt: 0
   enemyAi: []
   duration: 0
