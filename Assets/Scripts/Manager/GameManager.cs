@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
         foreach (string s in itemsPlayerPrefs)
         {
-            if (PlayerPrefs.HasKey(s))
+            if (!PlayerPrefs.HasKey(s))
                 PlayerPrefs.SetInt(s, 0);
         }
     }
@@ -91,6 +91,9 @@ public class GameManager : MonoBehaviour
         {
             if (!PlayerPrefs.HasKey(s))
                 PlayerPrefs.SetInt(s, 0);
+
+            if (s == firstChar)
+                PlayerPrefs.SetInt(s, 1);
         }
     }
 

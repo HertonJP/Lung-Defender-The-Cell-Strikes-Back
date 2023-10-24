@@ -19,7 +19,6 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("a");
         LoadInventory();
     }
 

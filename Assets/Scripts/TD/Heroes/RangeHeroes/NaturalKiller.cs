@@ -29,7 +29,7 @@ public class NaturalKiller : RangeHeroes
     protected override void Ulti()
     {
         isUlt = true;
-       
+
     }
 
     protected override void Attack()
@@ -39,6 +39,8 @@ public class NaturalKiller : RangeHeroes
         {
             mana = 0;
             base.Ulti();
+            projectile.GetComponent<SingleStun>().source.clip = projectile.GetComponent<SingleStun>().skillClip;
+            projectile.GetComponent<SingleStun>().source.Play();
         }
            
         UpdateManaBar();

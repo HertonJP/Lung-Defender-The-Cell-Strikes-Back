@@ -13,6 +13,10 @@ public class DendriticCell : RangeHeroes
     [SerializeField] private float totalDamage = 0;
     private bool hasStartCoroutine = false;
     private Transform lastTarget;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip skillClip;
+
+    private Transform currTarget;
     public override void Start()
     {
         base.Start();
@@ -38,6 +42,10 @@ public class DendriticCell : RangeHeroes
 
         if (isUlt)
         {
+            if (target == null)
+            {
+                Debug.Log("here");
+            }
             if (!hasStartCoroutine)
             {
                 mana =0;
@@ -48,6 +56,8 @@ public class DendriticCell : RangeHeroes
 
             if (target != null)
             {
+                source.clip = skillClip;
+                source.Play();
                 if (target != lastTarget)
                 {
                     totalDamage = 0;

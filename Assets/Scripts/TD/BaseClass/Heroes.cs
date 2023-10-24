@@ -33,6 +33,7 @@ public class Heroes : MonoBehaviour
     [SerializeField] Movement movement;
     [SerializeField] protected List<Collider2D> hitTargets = new();
     [SerializeField] private Image manaBar;
+    RaycastHit2D[] hits;
     protected bool isIdle => !(movement.horizontalMovement != 0 || movement.verticalMovement != 0);
 
     public virtual void Start()
@@ -69,10 +70,10 @@ public class Heroes : MonoBehaviour
         {
             animState.state = AnimationState.States.Idle;
         }
-
+        FindTarget();
         if (target == null)
         {
-            FindTarget();
+            
             animState.state = AnimationState.States.Idle;
             return;
         }
@@ -101,16 +102,11 @@ public class Heroes : MonoBehaviour
 
     protected void FindTarget()
     {
-        hitTargets.Clear();
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, transform.position, 0f, enemyMask);
-        foreach(RaycastHit2D r in hits)
-        {
-            hitTargets.Add(r.collider);
-        }
-        if(hits.Length > 0)
-        {
+        hits = Physics2D.CircleCastAll(transform.position, targetingRange, transform.position, 0f, enemyMask);
+        if (hits.Length <= 0)
+            return;
+        else
             target = hits[0].transform;
-        }
     }
     
     private void OnDrawGizmosSelected()

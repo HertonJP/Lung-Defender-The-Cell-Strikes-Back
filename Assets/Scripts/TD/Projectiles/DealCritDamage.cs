@@ -6,6 +6,7 @@ public class DealCritDamage : MovingProjectile
 {
     public bool isCrit = false;
     public int critDamage;
+
     public override void Update()
     {
         base.Update();
@@ -23,15 +24,5 @@ public class DealCritDamage : MovingProjectile
     public void Destroy()
     {
         Destroy(gameObject);
-    }
-
-    public void PlaySFX()
-    {
-        if (isCrit)
-            source.clip = skillClip;
-        else
-            source.clip = attackClip;
-
-        source.Play();
     }
 }

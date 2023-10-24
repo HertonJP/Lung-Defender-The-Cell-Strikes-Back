@@ -473,6 +473,8 @@ MonoBehaviour:
   laserShootPoint2: {fileID: 2663482438349914167}
   ultInitialDamage: 0.5
   totalDamage: 0
+  source: {fileID: -5503427211537964754}
+  skillClip: {fileID: 8300000, guid: 09f41894df779b246828e8e0952a8e45, type: 3}
 --- !u!114 &3188099261371495130
 MonoBehaviour:
   m_ObjectHideFlags: 0

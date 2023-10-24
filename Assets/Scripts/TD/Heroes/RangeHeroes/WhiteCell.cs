@@ -39,12 +39,16 @@ public class WhiteCell : RangeHeroes
         {
             mana = 0;
             LevelManager.main.skillFX.StartFX();
+            Debug.Log(projectile.GetComponent<DealCritDamage>().skillClip);
+            projectile.GetComponent<DealCritDamage>().source.clip = projectile.GetComponent<DealCritDamage>().skillClip;
+            projectile.GetComponent<DealCritDamage>().source.Play();
         }
            
         
         UpdateManaBar();
         projectile.GetComponent<DealCritDamage>().isCrit = isUlt;
         projectile.GetComponent<DealCritDamage>().critDamage = bonusAtt;
+        
         isUlt = false;
     }
 }

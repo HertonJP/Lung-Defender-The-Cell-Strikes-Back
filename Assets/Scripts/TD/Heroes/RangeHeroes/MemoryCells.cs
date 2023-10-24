@@ -31,6 +31,7 @@ public class MemoryCells : RangeHeroes
     protected override void Ulti()
     {
         isUlt = true;
+
     }
 
     protected override void Attack()
@@ -40,6 +41,8 @@ public class MemoryCells : RangeHeroes
         {
             mana = 0;
             base.Ulti();
+            projectile.GetComponent<AOE_Slow>().source.clip = projectile.GetComponent<AOE_Slow>().skillClip;
+            projectile.GetComponent<AOE_Slow>().source.Play();
         }
            
         UpdateManaBar();
