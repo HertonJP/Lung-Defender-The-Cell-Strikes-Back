@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
             verticalMovement = Input.GetAxisRaw("Vertical");
             if (stamina > 0)
             {
-                rb.velocity = new Vector2(horizontalMovement, verticalMovement).normalized * moveSpeed;
+                
                 source.clip = walkClip;
                 source.Play();
             }
@@ -56,5 +56,11 @@ public class Movement : MonoBehaviour
             stamina -= staminaDecreaseAmount;
         else if(horizontalMovement==0&&verticalMovement==0)
             stamina += staminaRegen;
+    }
+
+    private void FixedUpdate()
+    {
+        if(stamina>0)
+            rb.velocity = new Vector2(horizontalMovement, verticalMovement).normalized * moveSpeed;
     }
 }

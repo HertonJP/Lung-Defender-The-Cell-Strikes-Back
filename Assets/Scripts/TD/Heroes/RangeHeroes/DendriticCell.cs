@@ -62,7 +62,7 @@ public class DendriticCell : RangeHeroes
                 else
                     lineRenderer.SetPosition(0, laserShootPoint.position);
 
-                lineRenderer.SetPosition(1, target.position);
+                lineRenderer.SetPosition(1, new Vector3(target.position.x, target.position.y+.5f,target.position.z));
                 target.GetComponent<enemyHealth>().TakeDamage(totalDamage);
             }
             else

@@ -98,6 +98,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+    public void GoLDScene()
+    {
+        SceneManager.LoadScene(2);
+    }
 
     public void SaveItems(string name, int itemCount)
     {
