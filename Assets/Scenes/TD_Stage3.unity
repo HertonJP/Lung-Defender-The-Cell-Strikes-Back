@@ -2197,7 +2197,7 @@ MonoBehaviour:
   enemiesLeftToSpawn: 0
   isSpawning: 0
   spawnPoint: 0
-  maxWave: 0
+  maxWave: 5
   currWaveText: {fileID: 2084369183}
   maxWaveText: {fileID: 1402634370}
 --- !u!4 &452229734

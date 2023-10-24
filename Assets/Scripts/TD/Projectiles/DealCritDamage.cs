@@ -13,7 +13,10 @@ public class DealCritDamage : MovingProjectile
     public override void OnCollisionEnter2D(Collision2D other)
     {
         if (isCrit)
+        {
             _projectilesDamage = critDamage;
+        }
+           
         base.OnCollisionEnter2D(other);
        
     }

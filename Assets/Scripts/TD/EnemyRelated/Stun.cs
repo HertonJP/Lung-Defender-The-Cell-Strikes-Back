@@ -6,6 +6,7 @@ public class Stun : MonoBehaviour
 {
     public bool isStunned = false;
     public float duration;
+    public GameObject confuseEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class Stun : MonoBehaviour
     {
         if (isStunned)
         {
+            
             StartCoroutine(StunCoroutine());
         }
     }
@@ -24,8 +26,10 @@ public class Stun : MonoBehaviour
     private IEnumerator StunCoroutine()
     {
         isStunned = false;
+        confuseEffect.SetActive(true);
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(duration);
+        confuseEffect.SetActive(false);
         GetComponent<Rigidbody2D>().constraints = ~RigidbodyConstraints2D.FreezeAll;
     }
 }

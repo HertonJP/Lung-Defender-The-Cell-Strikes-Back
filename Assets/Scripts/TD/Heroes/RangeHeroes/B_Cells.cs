@@ -32,7 +32,6 @@ public class B_Cells : RangeHeroes
         GetComponent<AudioSource>().Play();
         StartCoroutine(AttackSpeedBonus());
         base.Ulti();
-
     }
 
     private IEnumerator AttackSpeedBonus()

@@ -81,9 +81,7 @@ public class GameManager : MonoBehaviour
         foreach (string s in itemsPlayerPrefs)
         {
             if (PlayerPrefs.HasKey(s))
-            {
                 PlayerPrefs.SetInt(s, 0);
-            }
         }
     }
 
@@ -92,9 +90,7 @@ public class GameManager : MonoBehaviour
         foreach (string s in buttonPlayerPrefs)
         {
             if (!PlayerPrefs.HasKey(s))
-            {
                 PlayerPrefs.SetInt(s, 0);
-            }
         }
     }
 
@@ -107,12 +103,8 @@ public class GameManager : MonoBehaviour
     {
         string found = itemsPlayerPrefs.Find(x => x.Contains(name));
         if (found == null)
-        {
             Debug.Log("wrong item name");
-        }
         else
-        {
             PlayerPrefs.SetInt(found, itemCount);
-        }
     }
 }

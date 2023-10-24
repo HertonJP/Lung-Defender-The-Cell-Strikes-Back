@@ -2117,7 +2117,7 @@ GameObject:
   - component: {fileID: 282117957}
   - component: {fileID: 282117956}
   m_Layer: 5
-  m_Name: MemoryCell
+  m_Name: Memory Cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8374,7 +8374,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -151.19998, y: 285.99997}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 370.547, y: 53.412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434912873
 MonoBehaviour:

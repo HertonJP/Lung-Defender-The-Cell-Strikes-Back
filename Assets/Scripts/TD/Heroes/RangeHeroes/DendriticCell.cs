@@ -23,13 +23,12 @@ public class DendriticCell : RangeHeroes
     {
         base.Update();
 
-
-
         if (mana >= maxMana)
         {
             timeUntilFire = 0;
             Ulti();
         }
+
         if (timeUntilFire >= (1f / _attackSpeed) && target != null && !isUlt && isIdle)
         {
             animState.state = AnimationState.States.Attack;
@@ -54,22 +53,27 @@ public class DendriticCell : RangeHeroes
                     totalDamage = 0;
                     lastTarget = target;
                 }
+
                 totalDamage += (ultInitialDamage* Time.deltaTime);
                 lineRenderer.positionCount = 2;
+
                 if (GetComponent<SpriteRenderer>().flipX)
                     lineRenderer.SetPosition(0, laserShootPoint2.position);
                 else
                     lineRenderer.SetPosition(0, laserShootPoint.position);
+
                 lineRenderer.SetPosition(1, target.position);
                 target.GetComponent<enemyHealth>().TakeDamage(totalDamage);
             }
             else
             {
                 lineRenderer.positionCount = 1;
+
                 if (GetComponent<SpriteRenderer>().flipX)
                     lineRenderer.SetPosition(0, laserShootPoint2.position);
                 else
                     lineRenderer.SetPosition(0, laserShootPoint.position);
+
                 totalDamage = 0;
             }
         }
@@ -89,10 +93,12 @@ public class DendriticCell : RangeHeroes
         isUlt = false;
 
         lineRenderer.positionCount = 1;
+
         if (GetComponent<SpriteRenderer>().flipX)
             lineRenderer.SetPosition(0, laserShootPoint2.position);
         else
             lineRenderer.SetPosition(0, laserShootPoint.position);
+
         totalDamage = 0;
         hasStartCoroutine = false;
         timeUntilFire = 0;
