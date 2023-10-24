@@ -78,3 +78,6 @@ TagManager:
   - name: Faces
     uniqueID: 4213993723
     locked: 0
+  - name: Fore
+    uniqueID: 2452702385
+    locked: 0
