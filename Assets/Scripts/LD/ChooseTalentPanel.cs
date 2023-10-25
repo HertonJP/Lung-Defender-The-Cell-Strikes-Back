@@ -36,8 +36,6 @@ public class ChooseTalentPanel : MonoBehaviour
             talentButtons[i].onClick.RemoveAllListeners();
             talentButtons[i].onClick.AddListener(() => ChooseTalent(randomTalents[index]));
         }
-
-        
     }
 
     public void ChooseTalent(Talent chosenTalent)
