@@ -1712,14 +1712,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mycoClawText: {fileID: 369952911}
-  mdrHelmetText: {fileID: 1637556720}
-  leftArmText: {fileID: 426490130}
-  eyeBallText: {fileID: 1919608766}
-  scaleText: {fileID: 307525932}
-  resistantSampleText: {fileID: 1486469576}
-  fibroBlastText: {fileID: 1833416661}
-  nucleusText: {fileID: 374314015}
-  clubText: {fileID: 1130384283}
+  mdrHelmetText: {fileID: 307525932}
+  leftArmText: {fileID: 374314015}
+  eyeBallText: {fileID: 1130384283}
+  scaleText: {fileID: 1919608766}
+  resistantSampleText: {fileID: 1833416661}
+  fibroBlastText: {fileID: 426490130}
+  nucleusText: {fileID: 1637556720}
+  clubText: {fileID: 1486469576}
 --- !u!224 &148132297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2174,7 +2174,8 @@ MonoBehaviour:
   - Naturaal Killer
   - B Cell
   - Memory Cell
-  firstChar: B Cell
+  firstChar: White Blood
+  updater: {fileID: 148132296}
 --- !u!1 &206342290
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,7 +3713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1150, y: 0}
+  m_AnchoredPosition: {x: 7, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400185960
@@ -6721,12 +6722,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 854036637}
   isPaused: 0
   gameOverPanel: {fileID: 0}
   pauseSFX: {fileID: 1071060803}
   gameOverSFX: {fileID: 0}
-  inventoryUI: {fileID: 0}
+  inventoryUI: {fileID: 148132295}
 --- !u!1 &701823833
 GameObject:
   m_ObjectHideFlags: 0
@@ -7034,6 +7035,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
+      propertyPath: updater
+      value: 
+      objectReference: {fileID: 148132296}
     - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
       propertyPath: targetChar
       value: Natural Killer
@@ -35223,6 +35228,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
+      propertyPath: updater
+      value: 
+      objectReference: {fileID: 148132296}
+    - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
       propertyPath: targetChar
       value: Memory Cell
       objectReference: {fileID: 0}
@@ -38214,7 +38223,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000000059604645, y: 0.18671393}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -38225,7 +38234,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.8, y: 2.58}
+  m_Size: {x: 3.044889, y: 2.206572}
   m_EdgeRadius: 0
 --- !u!114 &1217207599
 MonoBehaviour:
@@ -38472,12 +38481,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239196903}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 830.0707, y: 573.1233, z: -7.766036}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1664848256}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1242204605
 GameObject:
@@ -39111,6 +39120,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
+      propertyPath: updater
+      value: 
+      objectReference: {fileID: 148132296}
     - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
       propertyPath: targetChar
       value: Dendritic
@@ -40000,6 +40013,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetChar: Killer T
+  craftButton: {fileID: 0}
+  updater: {fileID: 148132296}
 --- !u!1 &1468147195
 GameObject:
   m_ObjectHideFlags: 0
@@ -41229,6 +41244,7 @@ Transform:
   - {fileID: 676924580}
   - {fileID: 905128111}
   - {fileID: 334242853}
+  - {fileID: 1239196905}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41413,7 +41429,7 @@ GameObject:
   - component: {fileID: 1707722565}
   - component: {fileID: 1707722564}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Craft Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43903,6 +43919,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
+      propertyPath: updater
+      value: 
+      objectReference: {fileID: 148132296}
+    - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
       propertyPath: targetChar
       value: B Cell
       objectReference: {fileID: 0}
@@ -44696,6 +44716,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
+      propertyPath: updater
+      value: 
+      objectReference: {fileID: 148132296}
     - target: {fileID: 4157866566267152914, guid: 5232d6a8a32b700459d0bfec4f7f4895, type: 3}
       propertyPath: targetChar
       value: Macrophag

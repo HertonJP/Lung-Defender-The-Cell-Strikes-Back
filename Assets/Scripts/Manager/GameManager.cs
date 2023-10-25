@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public List<string> itemsPlayerPrefs = new();
     public List<string> buttonPlayerPrefs = new();
     public string firstChar;
+    public InventoryUpdater updater;
 
     private void Awake()
     {
@@ -48,6 +49,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            foreach (string s in itemsPlayerPrefs)
+            {
+                if (PlayerPrefs.HasKey(s))
+                {
+                    PlayerPrefs.SetInt(s, 100);
+                }
+            }
+            updater.UpdateAllText();
+        }
+
         if (SceneManager.GetActiveScene().name == "Lobby")
         {
             if (Time.timeScale == 0)
@@ -80,9 +93,11 @@ public class GameManager : MonoBehaviour
 
         foreach (string s in itemsPlayerPrefs)
         {
-            if (!PlayerPrefs.HasKey(s))
+            if (PlayerPrefs.HasKey(s))
                 PlayerPrefs.SetInt(s, 0);
         }
+
+        updater.UpdateAllText();
     }
 
     private void ValidateButtonPlayerPrefs()
@@ -113,5 +128,10 @@ public class GameManager : MonoBehaviour
             Debug.Log("wrong item name");
         else
             PlayerPrefs.SetInt(found, itemCount);
+    }
+
+    public void UpdateInvenUIText()
+    {
+        updater.UpdateAllText();
     }
 }

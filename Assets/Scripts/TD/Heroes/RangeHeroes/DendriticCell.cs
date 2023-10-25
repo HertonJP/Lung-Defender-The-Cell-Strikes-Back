@@ -46,10 +46,7 @@ public class DendriticCell : RangeHeroes
         {
             if(laserCollider.laserTarget.Count>0)
                 currTarget = laserCollider.laserTarget[0].transform;
-            //if (currTarget == null)
-            //{
-            //    Debug.Log("here");
-            //}
+
             if (!hasStartCoroutine)
             {
                 mana =0;

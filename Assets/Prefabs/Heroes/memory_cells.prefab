@@ -634,7 +634,7 @@ MonoBehaviour:
   staminaDecreaseAmount: 0.15
   staminaBar: {fileID: 1172779143845179901}
   source: {fileID: -3864083322066250013}
-  walkClip: {fileID: 8300000, guid: 3f1c53b6a72829449bc024068e87a09f, type: 3}
+  walkClip: {fileID: 8300000, guid: 25cc784955eaa5e4cb24cbc1d220ab9b, type: 3}
 --- !u!114 &-8138988618929288247
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -42,7 +42,6 @@ public class Movement : MonoBehaviour
                     source.Play();
             }
 
-
             if (stamina > 0)
             {
                 source.clip = walkClip;
@@ -62,6 +61,7 @@ public class Movement : MonoBehaviour
         
         if (horizontalMovement != 0||verticalMovement!=0)
             stamina -= staminaDecreaseAmount;
+
         else if (horizontalMovement == 0 && verticalMovement == 0)
         {
             if (source.isPlaying)
