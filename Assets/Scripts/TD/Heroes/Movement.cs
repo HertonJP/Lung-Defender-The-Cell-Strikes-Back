@@ -35,14 +35,22 @@ public class Movement : MonoBehaviour
         {
             horizontalMovement = Input.GetAxisRaw("Horizontal");
             verticalMovement = Input.GetAxisRaw("Vertical");
+
+            if (horizontalMovement != 0 || verticalMovement != 0)
+            {
+                if (!source.isPlaying)
+                    source.Play();
+            }
+
+
             if (stamina > 0)
             {
-                
                 source.clip = walkClip;
-                source.Play();
             }
             else
             {
+                if (source.isPlaying)
+                    source.Stop();
                 rb.velocity = Vector2.zero;
             }
         }
@@ -54,8 +62,13 @@ public class Movement : MonoBehaviour
         
         if (horizontalMovement != 0||verticalMovement!=0)
             stamina -= staminaDecreaseAmount;
-        else if(horizontalMovement==0&&verticalMovement==0)
+        else if (horizontalMovement == 0 && verticalMovement == 0)
+        {
+            if (source.isPlaying)
+                source.Stop();
             stamina += staminaRegen;
+        }
+            
     }
 
     private void FixedUpdate()

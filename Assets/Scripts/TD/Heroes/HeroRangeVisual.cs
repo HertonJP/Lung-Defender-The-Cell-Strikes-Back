@@ -8,6 +8,7 @@ public class HeroRangeVisual : MonoBehaviour
     void Start()
     {
         hero = GetComponentInParent<Heroes>();
-        transform.localScale = new Vector2(hero.targetingRange * 6.68f, hero.targetingRange * 6.68f);
+        transform.localScale = new Vector2(hero.targetingRange * 5f, hero.targetingRange * 5f);
     }
+
 }

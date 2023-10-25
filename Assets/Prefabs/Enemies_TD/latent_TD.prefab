@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: -2770123487179807024}
   m_Layer: 3
   m_Name: latent_TD
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010265827, y: 0.34562624}
+  m_Offset: {x: -0.034449592, y: 0.4139724}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -502,7 +502,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.58251095, y: 0.5277579}
+  m_Size: {x: 0.8792684, y: 0.8204884}
   m_EdgeRadius: 0
 --- !u!50 &1382104192099030005
 Rigidbody2D:
