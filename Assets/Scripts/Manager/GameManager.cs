@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public List<string> buttonPlayerPrefs = new();
     public string firstChar;
     public InventoryUpdater updater;
-
+    public int targetStageLD;
     private void Awake()
     {
         if (Instance != null && Instance != this)
