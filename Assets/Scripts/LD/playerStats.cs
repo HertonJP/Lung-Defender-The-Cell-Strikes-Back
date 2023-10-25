@@ -51,6 +51,11 @@ public class playerStats : MonoBehaviour
 
     private int[] xpThresholds = { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
+    private bool startedFlash = false;
+    [SerializeField] private float flashDuration;
+    [SerializeField] private Material flashMaterial;
+    private Material normalMats;
+
     private void Start()
     {
         
@@ -63,6 +68,7 @@ public class playerStats : MonoBehaviour
         playerHP = playerMaxHP;
         StartCoroutine(CheckForLowHealth());
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+        normalMats = GetComponent<SpriteRenderer>().material;
     }
 
     private void Update()
@@ -128,6 +134,8 @@ public class playerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        StartCoroutine(Flash());
+
         if (UnityEngine.Random.Range(0f, 1f) < evasionChance)
         {
             Debug.Log("Miss");
@@ -231,5 +239,14 @@ public class playerStats : MonoBehaviour
             }
             availableStatPoints--;
         }
+    }
+
+    private IEnumerator Flash()
+    {
+        startedFlash = true;
+        GetComponent<SpriteRenderer>().material = flashMaterial;
+        yield return new WaitForSeconds(flashDuration);
+        GetComponent<SpriteRenderer>().material = normalMats;
+        startedFlash = false;
     }
 }

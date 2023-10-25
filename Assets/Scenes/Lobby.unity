@@ -831,13 +831,10 @@ MonoBehaviour:
   m_text: 'A type of white blood cell that can identify and destroy cells infected
     by viruses or tumors.
 
-    
 
-    
-
-    Although they are more commonly associated
-    with responses to cancer cells, they can also play a role in fighting bacterial
-    infections, including TB.'
+    Although they are more commonly associated with responses
+    to cancer cells, they can also play a role in fighting bacterial infections,
+    including TB.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
   m_sharedMaterial: {fileID: 752747900514344910, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
@@ -2632,7 +2629,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1931876533}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 182944438, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_Size.y
@@ -2651,6 +2648,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425640, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 125548055}
+    - target: {fileID: 3110290503495425640, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: rollSFX
       value: 
       objectReference: {fileID: 1071060803}
@@ -2660,11 +2661,11 @@ PrefabInstance:
       objectReference: {fileID: 1071060803}
     - target: {fileID: 3110290503495425640, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425642, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425642, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_LocalScale.x
@@ -2676,15 +2677,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425642, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5500002
+      value: -2.87
       objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425642, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5500001
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425642, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425642, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2717,6 +2718,10 @@ PrefabInstance:
     - target: {fileID: 3110290503495425643, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_SortingLayer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110290503495425643, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3110290503495425643, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: m_SortingLayerID
@@ -6145,13 +6150,9 @@ MonoBehaviour:
   m_text: 'A type of white blood cell that ''remembers'' pathogens they''ve encountered
     before.
 
-    
 
-    
-
-    They play a crucial role in long-term immune responses
-    and can provide quicker and stronger protection if the same infection occurs
-    again.'
+    They play a crucial role in long-term immune responses and can
+    provide quicker and stronger protection if the same infection occurs again.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
   m_sharedMaterial: {fileID: 752747900514344910, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
@@ -6291,23 +6292,23 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1931876533}
     m_Modifications:
     - target: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.975322
+      value: -1.5553217
       objectReference: {fileID: 0}
     - target: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9671823
+      value: 3.1171823
       objectReference: {fileID: 0}
     - target: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6315,15 +6316,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -36055,7 +36056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000020027, y: 0}
+  m_AnchoredPosition: {x: -16, y: 0}
   m_SizeDelta: {x: 788.7744, y: 523.2219}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787683828
@@ -36081,12 +36082,9 @@ MonoBehaviour:
   m_text: 'A type of white blood cell that has the ability to recognize and eliminate
     cells infected by bacteria or viruses.
 
-    
 
-    
-
-    They possess mechanisms
-    to directly destroy cells infected with tuberculosis.'
+    They possess mechanisms to directly
+    destroy cells infected with tuberculosis.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
   m_sharedMaterial: {fileID: 752747900514344910, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
@@ -40983,7 +40981,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 25cc784955eaa5e4cb24cbc1d220ab9b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3f1c53b6a72829449bc024068e87a09f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -41076,7 +41074,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071060792}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57a5a9f36f68e9f46b659362b352d2c0, type: 3}
   m_Name: 
@@ -41084,11 +41082,6 @@ MonoBehaviour:
   moveSpeed: 5
   rollSFX: {fileID: 1071060803}
   walkSFX: {fileID: 1071060803}
---- !u!4 &1071060814 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3110290503495425642, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
-  m_PrefabInstance: {fileID: 172636139}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1078999034
 GameObject:
   m_ObjectHideFlags: 0
@@ -41861,7 +41854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165656228}
   - component: {fileID: 1165656227}
-  - component: {fileID: 1165656226}
+  - component: {fileID: 1165656229}
   m_Layer: 0
   m_Name: cannon
   m_TagString: Untagged
@@ -41869,20 +41862,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1165656226
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1165656225}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.9081182
-  m_Height: 3.880989
-  m_Direction: 1
-  m_Center: {x: -0.03237629, y: -0.02590108, z: 0}
 --- !u!212 &1165656227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41950,6 +41929,22 @@ Transform:
   m_Father: {fileID: 247714003}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1165656229
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165656225}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000024579234, y: 0.12516913}
+  serializedVersion: 2
+  m_Radius: 1.709218
 --- !u!1 &1166781066
 GameObject:
   m_ObjectHideFlags: 0
@@ -42529,6 +42524,11 @@ Transform:
   m_Father: {fileID: 247714003}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1186930478 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1002932622469097329, guid: 1037b25c50d66eb48b1a69c6a6b338f8, type: 3}
+  m_PrefabInstance: {fileID: 476918631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1210876062
 GameObject:
   m_ObjectHideFlags: 0
@@ -42980,7 +42980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b59ab9a67c3cc44daa2482db195669a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
+  panel: {fileID: 577484094}
 --- !u!1 &1218098614
 GameObject:
   m_ObjectHideFlags: 0
@@ -43153,12 +43153,9 @@ MonoBehaviour:
   m_text: 'A type of white blood cell that has the ability to engulf and digest microorganisms,
     including TB bacteria.
 
-    
 
-    
-
-    They work by trapping and digesting
-    bacteria around their vicinity, thus having an effective area of attack.'
+    They work by trapping and digesting bacteria around
+    their vicinity, thus having an effective area of attack.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
   m_sharedMaterial: {fileID: 752747900514344910, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
@@ -49070,12 +49067,9 @@ MonoBehaviour:
   m_text: 'A type of white blood cell that produces antibodies as part of the humoral
     immune response.
 
-    
 
-    
-
-    They can recognize and target TB bacteria
-    by generating antibodies that specifically aim to disrupt these bacteria.'
+    They can recognize and target TB bacteria by generating
+    antibodies that specifically aim to disrupt these bacteria.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
   m_sharedMaterial: {fileID: 752747900514344910, guid: d753ae8b565f36347b89e8e7ee2c7418, type: 2}
@@ -51448,12 +51442,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1071060814}
   - {fileID: 1163126325}
   - {fileID: 1141937432}
   - {fileID: 1151855659}
+  - {fileID: 1186930478}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1951828160
 GameObject:

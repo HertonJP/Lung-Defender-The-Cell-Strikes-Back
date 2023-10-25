@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.EventSystems;
 
 public class ComboAttack : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class ComboAttack : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !isAttacking && Time.timeScale != 0)
+        if (Input.GetButtonDown("Fire1") && !isAttacking && Time.timeScale != 0 )
         {
             Debug.Log("dalem input");
             isAttacking = true;

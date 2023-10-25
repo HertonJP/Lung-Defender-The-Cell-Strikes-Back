@@ -73096,7 +73096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1669600983
 RectTransform:
   m_ObjectHideFlags: 0
@@ -87453,6 +87453,14 @@ PrefabInstance:
       propertyPath: attackDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: flashDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
+      propertyPath: flashMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: d0dfd430dc4021d49b5b2174fd466771, type: 2}
     - target: {fileID: 308435568753722842, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
       propertyPath: gameOverPanel
       value: 

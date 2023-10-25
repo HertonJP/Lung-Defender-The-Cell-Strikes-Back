@@ -31,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isConfused)
         {
-            confusionDebuff.SetActive(false);
+            if(confusionDebuff!=null)
+                confusionDebuff.SetActive(false);
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
         }
