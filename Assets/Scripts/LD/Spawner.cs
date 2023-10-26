@@ -52,7 +52,11 @@ public class Spawner : MonoBehaviour
             
         }
         if( currentStage == 7 && boss.enemyHP <= 0)
-       {
+        {
+            bossBGM.Stop();
+        }
+        if(currentStage == 9 && rangeBoss.enemyHP <= 0)
+        {
             bossBGM.Stop();
         }
     }
@@ -73,14 +77,14 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear));
+            yield return new WaitUntil(() => enemiesAlive == 0 && (currentStage != 0 || isShopClear) && (currentStage != 3 || isShopClear) && (currentStage != 6 || isShopClear) && (currentStage != 8 || isShopClear) && (currentStage != 10 || isShopClear));
             yield return new WaitForSeconds(2);
-            if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear))
+            if ((currentStage == 0 && isShopClear) || (currentStage == 3 && isShopClear) || (currentStage == 6 && isShopClear) || (currentStage == 8 && isShopClear) || (currentStage == 10 && isShopClear))
             {
                 isShopClear = false;
                 currentStage++;
             }
-            else if (currentStage != 0 && currentStage != 3 && currentStage != 6)
+            else if (currentStage != 0 && currentStage != 3 && currentStage != 6 && currentStage != 8 && currentStage != 10)
             {
 
                 currentStage++;
@@ -88,9 +92,17 @@ public class Spawner : MonoBehaviour
                 yield return new WaitForSeconds(2);
 
             }
-            else if ( currentStage == 7 && bossObject == null)
+            else if ( currentStage == 7)
             {
-                currentStage++;
+                lobbyPanel.SetActive(true);
+                Time.timeScale = 0f;
+                yield return new WaitForSeconds(2);
+            }
+            else if(currentStage == 9)
+            {
+                lobbyPanel.SetActive(true);
+                Time.timeScale = 0f;
+                yield return new WaitForSeconds(2);
             }
             if(currentStage == 2)
             {
@@ -135,6 +147,7 @@ public class Spawner : MonoBehaviour
             case 6:
             case 8:
             case 10:
+                isShopClear = false;
                 fightBGM.Stop();
                 bossBGM.Stop();
                 shopBGM.Play();
@@ -170,12 +183,12 @@ public class Spawner : MonoBehaviour
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
                 enemiesToSpawn = 10;
-                indicesToUse = new int[] { 0, 3 };
+                indicesToUse = new int[] { 1, 3 };
                 break;
             case 5:
                 fightBGM.Play();
                 enemiesToSpawn = 8;
-                indicesToUse = new int[] { 0, 3 };
+                indicesToUse = new int[] { 1, 3 };
                 break;
             case 7:
                 enemiesAlive = 1;

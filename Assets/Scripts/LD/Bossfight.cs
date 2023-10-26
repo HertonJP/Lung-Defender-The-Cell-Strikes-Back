@@ -48,9 +48,9 @@ public class Bossfight : MonoBehaviour
             enemy.enemyHP = 0;
             drop.mdrbossDrop();
             hasDroppedLoot = true;
-            // youWinSFX.Play();
-            //youWinPanel.SetActive(true);
-            //Time.timeScale = 0f;
+             youWinSFX.Play();
+            youWinPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
         {

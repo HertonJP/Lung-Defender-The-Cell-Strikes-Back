@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class rangeBossfight : MonoBehaviour
 {
+    private bool hasDroppedLoot = false;
     public Enemy enemy;
     [SerializeField] private smallProjectiles smallProjectileScript;
     [SerializeField] private ParticleSystem phase2Particles;
+    [SerializeField] private RangeBossDrop drop;
+    [SerializeField] private GameObject youWinPanel;
+    [SerializeField] private AudioSource youWinSFX;
     public playerStats player;
     public PlayerMovement playerMov;
 
@@ -37,11 +41,14 @@ public class rangeBossfight : MonoBehaviour
 
     private void Update()
     {
-        if (enemy.enemyHP <= 0)
+        if (enemy.enemyHP <= 0 && !hasDroppedLoot)
         {
             enemy.enemyHP = 0;
-            Destroy(this.gameObject);
-            playerMov.isConfused = false;
+            drop.rangebossDrop();
+            hasDroppedLoot = true;
+            youWinSFX.Play();
+            youWinPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
 
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
