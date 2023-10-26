@@ -610,7 +610,7 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 7805239358949292931}
   maxMana: 100
-  targetingRange: 1.5
+  targetingRange: 2.5
   attackSpeed: 0.5
   <_attackSpeed>k__BackingField: 0
   mana: 0
@@ -663,7 +663,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.64
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -759,7 +759,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.541
   m_Pitch: 1
   Loop: 0
   Mute: 0

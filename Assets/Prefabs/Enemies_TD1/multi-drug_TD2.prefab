@@ -797,7 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886c35a39ce4f604982466e987f93e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   <_speed>k__BackingField: 0
   rb: {fileID: -2971291014357737396}
   target: {fileID: 0}
@@ -820,12 +820,12 @@ MonoBehaviour:
   HP: 12
   worth: 20
   srList:
-  - {fileID: 510650192290030368, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
-  - {fileID: 1705898759499456774, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
-  - {fileID: 2271559169171961179, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
-  - {fileID: 5176203687983562872, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
-  - {fileID: 2236319164842853630, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
-  - {fileID: 2236319166063029995, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
+  - {fileID: 8993445012444296253}
+  - {fileID: 7815296559118038555}
+  - {fileID: 7232534940446368326}
+  - {fileID: 4326977267449026405}
+  - {fileID: 2021788184862181010}
+  - {fileID: 5781612373694194094}
   flashMats: {fileID: 2100000, guid: d0dfd430dc4021d49b5b2174fd466771, type: 2}
   normalMats: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   flashDuration: 0.1
