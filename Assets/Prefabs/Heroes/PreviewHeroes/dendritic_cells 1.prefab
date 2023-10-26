@@ -351,6 +351,8 @@ MonoBehaviour:
   staminaRegen: 0.01
   staminaDecreaseAmount: 0.01
   staminaBar: {fileID: 0}
+  source: {fileID: 0}
+  walkClip: {fileID: 0}
 --- !u!61 &-743690334001982026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -397,7 +399,7 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 922552240667315306}
   maxMana: 100
-  targetingRange: 2.5
+  targetingRange: 3
   attackSpeed: 1
   <_attackSpeed>k__BackingField: 0
   mana: 0
@@ -411,8 +413,12 @@ MonoBehaviour:
   isUlt: 0
   ultDuration: 3
   laserShootPoint: {fileID: 458693206509365082}
+  laserShootPoint2: {fileID: 0}
   ultInitialDamage: 0.5
   totalDamage: 0
+  source: {fileID: 0}
+  skillClip: {fileID: 0}
+  laserCollider: {fileID: 0}
 --- !u!1 &5837361689284000417
 GameObject:
   m_ObjectHideFlags: 0

@@ -3155,10 +3155,10 @@ MonoBehaviour:
   - {fileID: 6822203519786885611, guid: eaeb24f22f179ac4c862c78accf17c50, type: 3}
   - {fileID: 4428590141512288418, guid: 14e746478d895104684828dfa14359d7, type: 3}
   - {fileID: 9081126150401139692, guid: 46a421a9d53fb9e4a8dd4fd64fda9b3a, type: 3}
-  baseEnemies: 8
+  baseEnemies: 4
   enemiesPerSecond: 0.5
   timeBetweenWaves: 2
-  difficultyScalingFactor: 0.75
+  difficultyScalingFactor: 1.5
   currentWave: 1
   timeSinceLastSpawn: 0
   enemiesAlive: 0
@@ -9685,7 +9685,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ca8c6a41358a551458f1758abad5c1ef, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.37
+  m_Volume: 0.256
   m_Pitch: 1
   Loop: 1
   Mute: 0

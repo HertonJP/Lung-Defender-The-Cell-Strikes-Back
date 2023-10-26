@@ -169,13 +169,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e525006dd9a111479dd56f04160a4b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilesSpeed: 2
-  projectilesDamage: 6
+  projectilesSpeed: 2.2
+  projectilesDamage: 10
   source: {fileID: 4320260218087746161}
   skillClip: {fileID: 8300000, guid: c8251c131bfe9c64c8d6f385fa8d3167, type: 3}
   attackClip: {fileID: 8300000, guid: aa82fb217fc754345941597e82f38560, type: 3}
   isCrit: 0
-  critDamage: 60
+  critDamage: 55
 --- !u!82 &4320260218087746161
 AudioSource:
   m_ObjectHideFlags: 0
