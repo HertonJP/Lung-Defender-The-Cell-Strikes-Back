@@ -116,8 +116,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
-    public void GoLDScene()
+    public void GoLDScene(int stage)
     {
+        targetStageLD = stage;
         SceneManager.LoadScene(2);
     }
 

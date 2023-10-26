@@ -5,6 +5,11 @@ using System;
 
 public class playerStats : MonoBehaviour
 {
+    public bool strTalent = false;
+    public bool agiTalent = false;
+    public bool vitTalent = false;
+    public bool luckTalent = false;
+    public bool cheat = false;
     [Header("Stats")]
     public int strength = 0;
     public int vit = 0;
@@ -248,5 +253,18 @@ public class playerStats : MonoBehaviour
         yield return new WaitForSeconds(flashDuration);
         GetComponent<SpriteRenderer>().material = normalMats;
         startedFlash = false;
+    }
+
+    public void SavePlayerStats()
+    {
+        PlayerPrefs.SetInt("Str", strength);
+        PlayerPrefs.SetInt("Vit", vit);
+        PlayerPrefs.SetInt("Agi", agility);
+        PlayerPrefs.SetInt("Luck", luck);
+        PlayerPrefs.SetInt("MaxHP", playerMaxHP);
+        PlayerPrefs.SetInt("Level", playerLevel);
+        PlayerPrefs.SetFloat("CritCh", critChance);
+        PlayerPrefs.SetInt("Attack", attackDamage);
+        PlayerPrefs.SetFloat("Speed", movementSpeed);
     }
 }

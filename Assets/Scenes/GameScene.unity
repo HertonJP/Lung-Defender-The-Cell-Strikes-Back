@@ -11432,6 +11432,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 182944447}
+        m_TargetAssemblyTypeName: playerStats, Assembly-CSharp
+        m_MethodName: SavePlayerStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &410130446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13174,6 +13186,18 @@ MonoBehaviour:
           m_StringArgument: GameScene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 967499457}
+        m_TargetAssemblyTypeName: resetStatsTalents, Assembly-CSharp
+        m_MethodName: resetAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &463466212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14286,6 +14310,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 182944447}
+        m_TargetAssemblyTypeName: playerStats, Assembly-CSharp
+        m_MethodName: SavePlayerStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22007,6 +22043,18 @@ MonoBehaviour:
           m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 967499457}
+        m_TargetAssemblyTypeName: resetStatsTalents, Assembly-CSharp
+        m_MethodName: resetAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &751481776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26736,6 +26784,7 @@ GameObject:
   - component: {fileID: 967499456}
   - component: {fileID: 967499455}
   - component: {fileID: 967499454}
+  - component: {fileID: 967499457}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -26773,6 +26822,7 @@ MonoBehaviour:
   bossBGM: {fileID: 967499454}
   lobbyPanel: {fileID: 1528028913}
   boss: {fileID: 1049058177}
+  rangeBoss: {fileID: 0}
   player: {fileID: 182944447}
   cam: {fileID: 967499452}
   fightSpawn: {fileID: 338488570}
@@ -26781,7 +26831,8 @@ MonoBehaviour:
   bossSpawn: {fileID: 804644246}
   sfx: {fileID: 967499453}
   bossObject: {fileID: 1049058173}
-  rangeBossObject: {fileID: 0}
+  rangeBossObject: {fileID: 6587833961043104674}
+  rangebossSpawn: {fileID: 1648679438}
   currentWave: 0
   currentStage: 0
   isShopClear: 0
@@ -27135,6 +27186,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &967499457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967499449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcd3fa9fdf5c6c43827822870d53bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 182944447}
 --- !u!1 &970985866
 GameObject:
   m_ObjectHideFlags: 0
@@ -29964,6 +30028,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 182944447}
+        m_TargetAssemblyTypeName: playerStats, Assembly-CSharp
+        m_MethodName: SavePlayerStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40470,6 +40546,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Menu
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 967499457}
+        m_TargetAssemblyTypeName: resetStatsTalents, Assembly-CSharp
+        m_MethodName: resetAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1473662065
@@ -68212,6 +68300,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 182944447}
+        m_TargetAssemblyTypeName: playerStats, Assembly-CSharp
+        m_MethodName: SavePlayerStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1553492123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71778,7 +71878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648679437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.8, y: -226.6, z: 0}
+  m_LocalPosition: {x: -21.4, y: -227.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84542,6 +84642,18 @@ MonoBehaviour:
           m_StringArgument: GameScene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 967499457}
+        m_TargetAssemblyTypeName: resetStatsTalents, Assembly-CSharp
+        m_MethodName: resetAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2051293513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87622,11 +87734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5495348250490943705, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.7
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5495348250490943705, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -209.2
       objectReference: {fileID: 0}
     - target: {fileID: 5495348250490943705, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: m_LocalPosition.z

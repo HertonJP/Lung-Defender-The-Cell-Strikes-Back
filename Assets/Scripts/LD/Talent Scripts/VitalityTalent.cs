@@ -10,5 +10,6 @@ public class VitalityTalent : Talent
         player.vit += 5;
         player.playerMaxHP += 50;
         player.playerHP += 50;
+        player.vitTalent = true;
     }
 }
