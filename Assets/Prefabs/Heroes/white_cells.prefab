@@ -607,11 +607,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 136
   projectilesPrefab: {fileID: 4229806264970405664, guid: 76b7bc3e97f5d3045ae09f50524f645f, type: 3}
-  manaIncrease: 40
+  manaIncrease: 15
   firingPoint: {fileID: 7805239358949292931}
   maxMana: 100
   targetingRange: 2.5
-  attackSpeed: 0.5
+  attackSpeed: 0.9
   <_attackSpeed>k__BackingField: 0
   mana: 0
   damage: 0
