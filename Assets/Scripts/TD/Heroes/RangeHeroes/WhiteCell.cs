@@ -30,16 +30,25 @@ public class WhiteCell : RangeHeroes
     protected override void Ulti()
     {
         isUlt = true;
-        base.Ulti();
+        
     }
     protected override void Attack()
     {
         base.Attack();
         if (isUlt)
-            mana =0;
+        {
+            mana = 0;
+            LevelManager.main.skillFX.StartFX();
+            Debug.Log(projectile.GetComponent<DealCritDamage>().skillClip);
+            projectile.GetComponent<DealCritDamage>().source.clip = projectile.GetComponent<DealCritDamage>().skillClip;
+            projectile.GetComponent<DealCritDamage>().source.Play();
+        }
+           
+        
         UpdateManaBar();
         projectile.GetComponent<DealCritDamage>().isCrit = isUlt;
         projectile.GetComponent<DealCritDamage>().critDamage = bonusAtt;
+        
         isUlt = false;
     }
 }

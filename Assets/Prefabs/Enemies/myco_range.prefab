@@ -616,7 +616,7 @@ MonoBehaviour:
   floatingTextCrit: {fileID: 0}
   hitVFXPrefab: {fileID: 2981612518552317830, guid: ba83bc4fec4ddc741b63c0ab0d2d7e9c, type: 3}
   attackRange: {fileID: 306422366}
-  xpToGrant: 50
+  xpToGrant: 10
   isBoss: 0
   enemyHP: 0
   targetingRange: 15

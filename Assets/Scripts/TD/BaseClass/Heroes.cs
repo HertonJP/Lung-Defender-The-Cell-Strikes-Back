@@ -33,6 +33,7 @@ public class Heroes : MonoBehaviour
     [SerializeField] Movement movement;
     [SerializeField] protected List<Collider2D> hitTargets = new();
     [SerializeField] private Image manaBar;
+    
     protected bool isIdle => !(movement.horizontalMovement != 0 || movement.verticalMovement != 0);
 
     public virtual void Start()
@@ -40,11 +41,12 @@ public class Heroes : MonoBehaviour
         mana = 0;
         UpdateManaBar();
         InitializeData();
+       
     }
 
     public virtual void Update()
     {
-        
+
         projectilesPrefab.GetComponent<Projectiles>()._projectilesDamage = _damage;
         timeUntilFire += Time.deltaTime;
         if ((movement.horizontalMovement != 0 || movement.verticalMovement != 0) && movement.stamina > 0 && movement.enabled == true)
@@ -63,12 +65,12 @@ public class Heroes : MonoBehaviour
             
             return;
         }
+
         if(target!=null)
             lastTargetPos = target.position;
+
         if(movement.horizontalMovement ==0 && movement.verticalMovement == 0)
-        {
             animState.state = AnimationState.States.Idle;
-        }
 
         if (target == null)
         {
@@ -101,16 +103,9 @@ public class Heroes : MonoBehaviour
 
     protected void FindTarget()
     {
-        hitTargets.Clear();
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, transform.position, 0f, enemyMask);
-        foreach(RaycastHit2D r in hits)
-        {
-            hitTargets.Add(r.collider);
-        }
-        if(hits.Length > 0)
-        {
+        RaycastHit2D[] hits  = Physics2D.CircleCastAll(transform.position, targetingRange, transform.position, 0f, enemyMask);
+        if(hits.Length>0)
             target = hits[0].transform;
-        }
     }
     
     private void OnDrawGizmosSelected()

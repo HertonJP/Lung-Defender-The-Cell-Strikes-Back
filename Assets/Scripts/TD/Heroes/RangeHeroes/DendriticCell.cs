@@ -13,6 +13,11 @@ public class DendriticCell : RangeHeroes
     [SerializeField] private float totalDamage = 0;
     private bool hasStartCoroutine = false;
     private Transform lastTarget;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip skillClip;
+    [SerializeField] private ColliderRange laserCollider;
+
+    private Transform currTarget;
     public override void Start()
     {
         base.Start();
@@ -23,13 +28,13 @@ public class DendriticCell : RangeHeroes
     {
         base.Update();
 
-
-
         if (mana >= maxMana)
         {
             timeUntilFire = 0;
+            laserCollider.EnableCollider();
             Ulti();
         }
+
         if (timeUntilFire >= (1f / _attackSpeed) && target != null && !isUlt && isIdle)
         {
             animState.state = AnimationState.States.Attack;
@@ -39,6 +44,9 @@ public class DendriticCell : RangeHeroes
 
         if (isUlt)
         {
+            if(laserCollider.laserTarget.Count>0)
+                currTarget = laserCollider.laserTarget[0].transform;
+
             if (!hasStartCoroutine)
             {
                 mana =0;
@@ -47,29 +55,36 @@ public class DendriticCell : RangeHeroes
                 hasStartCoroutine = true;
             }
 
-            if (target != null)
+            if (currTarget != null)
             {
-                if (target != lastTarget)
+                source.clip = skillClip;
+                source.Play();
+                if (currTarget != lastTarget)
                 {
                     totalDamage = 0;
-                    lastTarget = target;
+                    lastTarget = currTarget;
                 }
+
                 totalDamage += (ultInitialDamage* Time.deltaTime);
                 lineRenderer.positionCount = 2;
+
                 if (GetComponent<SpriteRenderer>().flipX)
                     lineRenderer.SetPosition(0, laserShootPoint2.position);
                 else
                     lineRenderer.SetPosition(0, laserShootPoint.position);
-                lineRenderer.SetPosition(1, target.position);
-                target.GetComponent<enemyHealth>().TakeDamage(totalDamage);
+
+                lineRenderer.SetPosition(1, new Vector3(currTarget.position.x, currTarget.position.y+.5f,currTarget.position.z));
+                currTarget.GetComponent<enemyHealth>().TakeDamage(totalDamage);
             }
             else
             {
                 lineRenderer.positionCount = 1;
+
                 if (GetComponent<SpriteRenderer>().flipX)
                     lineRenderer.SetPosition(0, laserShootPoint2.position);
                 else
                     lineRenderer.SetPosition(0, laserShootPoint.position);
+
                 totalDamage = 0;
             }
         }
@@ -87,12 +102,14 @@ public class DendriticCell : RangeHeroes
     {
         yield return new WaitForSeconds(duration);
         isUlt = false;
-
+        laserCollider.DisableCollider();
         lineRenderer.positionCount = 1;
+
         if (GetComponent<SpriteRenderer>().flipX)
             lineRenderer.SetPosition(0, laserShootPoint2.position);
         else
             lineRenderer.SetPosition(0, laserShootPoint.position);
+
         totalDamage = 0;
         hasStartCoroutine = false;
         timeUntilFire = 0;

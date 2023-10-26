@@ -172,8 +172,8 @@ MonoBehaviour:
   projectilesSpeed: 5
   projectilesDamage: 9
   source: {fileID: 4649468904822781942}
-  skillClip: {fileID: 0}
-  attackClip: {fileID: 0}
+  skillClip: {fileID: 8300000, guid: 55994ced9bcf2fc47bbf9bac6ef04438, type: 3}
+  attackClip: {fileID: 8300000, guid: 8d87331aab3fb62419ee30ab8c8240b7, type: 3}
   isUlt: 0
   stunDuration: 5
 --- !u!82 &4649468904822781942
@@ -186,9 +186,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8d87331aab3fb62419ee30ab8c8240b7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.59
   m_Pitch: 1
   Loop: 0
   Mute: 0

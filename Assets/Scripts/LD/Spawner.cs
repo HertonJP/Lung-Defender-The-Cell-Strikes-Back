@@ -7,15 +7,15 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private Transform[] spawnPoints;
-    [SerializeField] private TextMeshProUGUI currentStageText;
     [SerializeField] private TextMeshProUGUI pressHereText;
     [SerializeField] private TextMeshProUGUI pressHereText2;
     [SerializeField] private AudioSource shopBGM;
     [SerializeField] private AudioSource fightBGM;
     [SerializeField] private AudioSource bossBGM;
-    [SerializeField] private GameObject stageClearPanel;
+    [SerializeField] private GameObject lobbyPanel;
 
     public Enemy boss;
+    public Enemy rangeBoss;
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     public playerStats player;
     public Cameras cam;
@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
     public SoundEffects sfx;
     public GameObject bossObject;
     public GameObject rangeBossObject;
+    public Transform rangebossSpawn;
 
     public int currentWave = 0;
     public int currentStage = 0;
@@ -39,15 +40,17 @@ public class Spawner : MonoBehaviour
     }
     private void Update()
     {
-        if (currentStage == 0 && Input.GetKeyDown("0"))
+        if (currentStage == 0 || currentStage == 3 || currentStage == 6 || currentStage == 8 || currentStage == 10 )
         {
-            currentStage = 6;
-            player.playerMaxHP = 1000;
-            player.playerHP = 1000;
-            player.attackDamage = 50;
-            player.movementSpeed = 8f;
+            if (Input.GetKeyDown("0"))
+            {
+                player.playerMaxHP = 1000;
+                player.playerHP = 1000;
+                player.attackDamage = 50;
+                player.movementSpeed = 8f;
+            }
+            
         }
-        currentStageText.text = currentStage.ToString();
         if( currentStage == 7 && boss.enemyHP <= 0)
        {
             bossBGM.Stop();
@@ -60,9 +63,8 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 0;
-        currentStage = 0;
-        stageClearPanel.SetActive(false);
+        currentStage = GameManager.Instance.targetStageLD;
+        Time.timeScale = 0f;
         shopBGM.Play();
         StartCoroutine(StartWave());
     }
@@ -80,17 +82,34 @@ public class Spawner : MonoBehaviour
             }
             else if (currentStage != 0 && currentStage != 3 && currentStage != 6)
             {
-                stageClearPanel.SetActive(true);
+
                 currentStage++;
                 sfx.stageClearSFX.Play();
                 yield return new WaitForSeconds(2);
-                stageClearPanel.SetActive(false);
+
             }
             else if ( currentStage == 7 && bossObject == null)
             {
                 currentStage++;
             }
-            
+            if(currentStage == 2)
+            {
+                lobbyPanel.SetActive(true);
+                Time.timeScale = 0f;
+                yield return new WaitForSeconds(2);
+            }
+            if(currentStage == 5)
+            {
+                lobbyPanel.SetActive(true);
+                Time.timeScale = 0f;
+                yield return new WaitForSeconds(2);
+            }
+            if(currentStage == 11)
+            {
+                lobbyPanel.SetActive(true);
+                Time.timeScale = 0f;
+                yield return new WaitForSeconds(2);
+            }
                 yield return StartCoroutine(SpawnBasedOnStage());
               
             
@@ -114,6 +133,8 @@ public class Spawner : MonoBehaviour
             case 0:
             case 3:
             case 6:
+            case 8:
+            case 10:
                 fightBGM.Stop();
                 bossBGM.Stop();
                 shopBGM.Play();
@@ -132,13 +153,13 @@ public class Spawner : MonoBehaviour
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
-                enemiesToSpawn = 10;
+                enemiesToSpawn = 12;
                 indicesToUse = new int[] { 0, 1 };
                 break;
             case 2:
                 fightBGM.Play();
-                enemiesToSpawn = 10;
-                indicesToUse = new int[] { 1, 2 };
+                enemiesToSpawn = 15;
+                indicesToUse = new int[] { 0, 1 };
                 break;
             case 4:
                 shopBGM.Stop();
@@ -149,12 +170,12 @@ public class Spawner : MonoBehaviour
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
                 enemiesToSpawn = 10;
-                indicesToUse = new int[] { 2, 3 };
+                indicesToUse = new int[] { 0, 3 };
                 break;
             case 5:
                 fightBGM.Play();
                 enemiesToSpawn = 8;
-                indicesToUse = new int[] { 3, 4 };
+                indicesToUse = new int[] { 0, 3 };
                 break;
             case 7:
                 enemiesAlive = 1;
@@ -169,7 +190,30 @@ public class Spawner : MonoBehaviour
                 Invoke("playBossGrowl", 2.0f);
                 bossBGM.Play();
                 break;
-            case 8:
+            case 9:
+                enemiesAlive = 1;
+                cam.bossCam.enabled = false;
+                cam.shopCam.enabled = false;
+                cam.mainCam.enabled = false;
+                cam.RangeBossCam.enabled = true;
+                fightBGM.Stop();
+                shopBGM.Stop();
+                pressHereText.enabled = false;
+                pressHereText2.enabled = false;
+                rangeBossObject.SetActive(true);
+                player.gameObject.transform.position = rangebossSpawn.transform.position;
+                bossBGM.Play();
+                break;
+            case 11:
+                shopBGM.Stop();
+                fightBGM.Play();
+                pressHereText.enabled = false;
+                pressHereText2.enabled = false;
+                player.gameObject.transform.position = fightSpawn.transform.position;
+                cam.mainCam.enabled = true;
+                cam.shopCam.enabled = false;
+                enemiesToSpawn = 12;
+                indicesToUse = new int[] { 2, 4 };
                 break;
         }
 

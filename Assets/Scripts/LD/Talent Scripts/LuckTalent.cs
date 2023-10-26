@@ -9,5 +9,6 @@ public class LuckTalent : Talent
     {
         player.luck += 5;
         player.critChance += 0.125f;
+        player.luckTalent = true;
     }
 }

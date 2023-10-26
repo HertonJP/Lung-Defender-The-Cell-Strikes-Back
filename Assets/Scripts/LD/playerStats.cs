@@ -5,6 +5,11 @@ using System;
 
 public class playerStats : MonoBehaviour
 {
+    public bool strTalent = false;
+    public bool agiTalent = false;
+    public bool vitTalent = false;
+    public bool luckTalent = false;
+    public bool cheat = false;
     [Header("Stats")]
     public int strength = 0;
     public int vit = 0;
@@ -51,6 +56,11 @@ public class playerStats : MonoBehaviour
 
     private int[] xpThresholds = { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
 
+    private bool startedFlash = false;
+    [SerializeField] private float flashDuration;
+    [SerializeField] private Material flashMaterial;
+    private Material normalMats;
+
     private void Start()
     {
         
@@ -63,6 +73,7 @@ public class playerStats : MonoBehaviour
         playerHP = playerMaxHP;
         StartCoroutine(CheckForLowHealth());
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+        normalMats = GetComponent<SpriteRenderer>().material;
     }
 
     private void Update()
@@ -128,6 +139,8 @@ public class playerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        StartCoroutine(Flash());
+
         if (UnityEngine.Random.Range(0f, 1f) < evasionChance)
         {
             Debug.Log("Miss");
@@ -231,5 +244,27 @@ public class playerStats : MonoBehaviour
             }
             availableStatPoints--;
         }
+    }
+
+    private IEnumerator Flash()
+    {
+        startedFlash = true;
+        GetComponent<SpriteRenderer>().material = flashMaterial;
+        yield return new WaitForSeconds(flashDuration);
+        GetComponent<SpriteRenderer>().material = normalMats;
+        startedFlash = false;
+    }
+
+    public void SavePlayerStats()
+    {
+        PlayerPrefs.SetInt("Str", strength);
+        PlayerPrefs.SetInt("Vit", vit);
+        PlayerPrefs.SetInt("Agi", agility);
+        PlayerPrefs.SetInt("Luck", luck);
+        PlayerPrefs.SetInt("MaxHP", playerMaxHP);
+        PlayerPrefs.SetInt("Level", playerLevel);
+        PlayerPrefs.SetFloat("CritCh", critChance);
+        PlayerPrefs.SetInt("Attack", attackDamage);
+        PlayerPrefs.SetFloat("Speed", movementSpeed);
     }
 }

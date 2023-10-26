@@ -11,6 +11,10 @@ TagManager:
   - Phase2PositionRange
   - Object
   - Inventory
+  - Door
+  - TD
+  - LabTD
+  - Crafting
   layers:
   - Default
   - TransparentFX
@@ -77,4 +81,7 @@ TagManager:
     locked: 0
   - name: Faces
     uniqueID: 4213993723
+    locked: 0
+  - name: Fore
+    uniqueID: 2452702385
     locked: 0

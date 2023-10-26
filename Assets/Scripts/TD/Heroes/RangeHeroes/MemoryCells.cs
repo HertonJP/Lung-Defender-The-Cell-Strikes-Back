@@ -31,14 +31,20 @@ public class MemoryCells : RangeHeroes
     protected override void Ulti()
     {
         isUlt = true;
-        base.Ulti();
+
     }
 
     protected override void Attack()
     {
         base.Attack();
         if (isUlt)
-            mana =0;
+        {
+            mana = 0;
+            base.Ulti();
+            projectile.GetComponent<AOE_Slow>().source.clip = projectile.GetComponent<AOE_Slow>().skillClip;
+            projectile.GetComponent<AOE_Slow>().source.Play();
+        }
+           
         UpdateManaBar();
         projectile.GetComponent<AOE_Slow>().isUlt = isUlt;
         projectile.GetComponent<AOE_Slow>().duration = slowDuration;

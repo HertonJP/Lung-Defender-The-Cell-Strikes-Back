@@ -29,14 +29,20 @@ public class NaturalKiller : RangeHeroes
     protected override void Ulti()
     {
         isUlt = true;
-        base.Ulti();
+
     }
 
     protected override void Attack()
     {
         base.Attack();
         if (isUlt)
-            mana =0;
+        {
+            mana = 0;
+            base.Ulti();
+            projectile.GetComponent<SingleStun>().source.clip = projectile.GetComponent<SingleStun>().skillClip;
+            projectile.GetComponent<SingleStun>().source.Play();
+        }
+           
         UpdateManaBar();
         projectile.GetComponent<SingleStun>().isUlt = isUlt;
         projectile.GetComponent<SingleStun>().stunDuration = stunDuration;

@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public List<string> itemsPlayerPrefs = new();
     public List<string> buttonPlayerPrefs = new();
     public string firstChar;
-
+    public InventoryUpdater updater;
+    public int targetStageLD;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -48,6 +49,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            foreach (string s in itemsPlayerPrefs)
+            {
+                if (PlayerPrefs.HasKey(s))
+                {
+                    PlayerPrefs.SetInt(s, 100);
+                }
+            }
+            updater.UpdateAllText();
+        }
+
         if (SceneManager.GetActiveScene().name == "Lobby")
         {
             if (Time.timeScale == 0)
@@ -81,10 +94,10 @@ public class GameManager : MonoBehaviour
         foreach (string s in itemsPlayerPrefs)
         {
             if (PlayerPrefs.HasKey(s))
-            {
                 PlayerPrefs.SetInt(s, 0);
-            }
         }
+
+        updater.UpdateAllText();
     }
 
     private void ValidateButtonPlayerPrefs()
@@ -92,9 +105,10 @@ public class GameManager : MonoBehaviour
         foreach (string s in buttonPlayerPrefs)
         {
             if (!PlayerPrefs.HasKey(s))
-            {
                 PlayerPrefs.SetInt(s, 0);
-            }
+
+            if (s == firstChar)
+                PlayerPrefs.SetInt(s, 1);
         }
     }
 
@@ -102,17 +116,23 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+    public void GoLDScene(int stage)
+    {
+        targetStageLD = stage;
+        SceneManager.LoadScene(2);
+    }
 
     public void SaveItems(string name, int itemCount)
     {
         string found = itemsPlayerPrefs.Find(x => x.Contains(name));
         if (found == null)
-        {
             Debug.Log("wrong item name");
-        }
         else
-        {
             PlayerPrefs.SetInt(found, itemCount);
-        }
+    }
+
+    public void UpdateInvenUIText()
+    {
+        updater.UpdateAllText();
     }
 }

@@ -14,6 +14,8 @@ public class PauseController : MonoBehaviour
     public GameObject gameOverPanel;
     public AudioSource pauseSFX;
     public AudioSource gameOverSFX;
+    public GameObject inventoryUI;
+    private bool invenUIOpen = false;
 
     private void Start()
     {
@@ -34,6 +36,22 @@ public class PauseController : MonoBehaviour
                 PauseGame();
             }
         }
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (!inventoryUI.activeInHierarchy)
+            {
+                inventoryUI.SetActive(true);
+                Time.timeScale = 0;
+            }     
+            else if (inventoryUI.activeInHierarchy)
+            {
+                inventoryUI.SetActive(false);
+                if(!pauseMenu.activeInHierarchy)
+                    Time.timeScale = 1;
+            }
+
+        }
+
     }
 
     //public void tutorGame()
@@ -54,7 +72,8 @@ public class PauseController : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        if(!inventoryUI.activeInHierarchy)
+            Time.timeScale = 1f;
         isPaused = false;
     }
     public void BackButton(string sceneName)
@@ -67,6 +86,12 @@ public class PauseController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ReturnLobbyButton()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Lobby");
     }
 
     public void gameOver()
