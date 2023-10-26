@@ -58,8 +58,8 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 0;
-        currentStage = 0;
+        currentStage = GameManager.Instance.targetStageLD;
+        Time.timeScale = 0f;
         shopBGM.Play();
         StartCoroutine(StartWave());
     }
@@ -88,6 +88,12 @@ public class Spawner : MonoBehaviour
                 currentStage++;
             }
             if(currentStage == 2)
+            {
+                lobbyPanel.SetActive(true);
+                Time.timeScale = 0f;
+                yield return new WaitForSeconds(2);
+            }
+            if(currentStage == 5)
             {
                 lobbyPanel.SetActive(true);
                 Time.timeScale = 0f;
@@ -135,13 +141,13 @@ public class Spawner : MonoBehaviour
                 player.gameObject.transform.position = fightSpawn.transform.position;
                 cam.mainCam.enabled = true;
                 cam.shopCam.enabled = false;
-                enemiesToSpawn = 10;
+                enemiesToSpawn = 12;
                 indicesToUse = new int[] { 0, 1 };
                 break;
             case 2:
                 fightBGM.Play();
-                enemiesToSpawn = 10;
-                indicesToUse = new int[] { 1, 2 };
+                enemiesToSpawn = 15;
+                indicesToUse = new int[] { 0, 1 };
                 break;
             case 4:
                 shopBGM.Stop();

@@ -11,5 +11,6 @@ public class AgilityTalent : Talent
     {
         player.agility += 5;
         player.movementSpeed += 2.5f;
+        player.agiTalent = true;
     }
 }

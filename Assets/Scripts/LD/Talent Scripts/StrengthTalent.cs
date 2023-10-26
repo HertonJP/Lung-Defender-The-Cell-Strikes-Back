@@ -10,5 +10,6 @@ public class StrengthTalent : Talent
     {
         player.strength += 5;
         player.attackDamage += 5;
+        player.strTalent = true;
     }
 }
