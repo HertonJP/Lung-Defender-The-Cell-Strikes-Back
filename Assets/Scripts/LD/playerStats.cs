@@ -9,6 +9,7 @@ public class playerStats : MonoBehaviour
     public bool agiTalent = false;
     public bool vitTalent = false;
     public bool luckTalent = false;
+    public bool cheat = false;
     [Header("Stats")]
     public int strength = 0;
     public int vit = 0;
