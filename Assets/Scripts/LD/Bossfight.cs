@@ -7,6 +7,7 @@ public class Bossfight : MonoBehaviour
     public playerStats player;
 
     private bool isPhase2 = false;
+    private bool hasWin = false;
 
     [SerializeField] private Transform gbPosition;
     [SerializeField] private GameObject groundBreak;
@@ -48,9 +49,12 @@ public class Bossfight : MonoBehaviour
             enemy.enemyHP = 0;
             drop.mdrbossDrop();
             hasDroppedLoot = true;
-             youWinSFX.Play();
-            youWinPanel.SetActive(true);
-            Time.timeScale = 0f;
+            
+        }
+        if (enemy.enemyHP <= 0 && !hasWin)
+        {
+            enemy.enemyHP = 0;
+            Invoke("Die", 1.5f);
         }
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
         {
@@ -72,6 +76,13 @@ public class Bossfight : MonoBehaviour
         StartCoroutine(SpawnLavaAtPlayer());
     }
 
+    private void Die()
+    {
+        youWinSFX.Play();
+        youWinPanel.SetActive(true);
+        hasWin = true;
+        Time.timeScale = 1f;
+    }
     private IEnumerator SpawnLavaAtPlayer()
     {
         while (isPhase2)

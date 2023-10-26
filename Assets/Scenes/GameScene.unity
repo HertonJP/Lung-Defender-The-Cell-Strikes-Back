@@ -26676,7 +26676,7 @@ MonoBehaviour:
   bossBGM: {fileID: 967499454}
   lobbyPanel: {fileID: 1528028913}
   boss: {fileID: 1049058177}
-  rangeBoss: {fileID: 0}
+  rangeBoss: {fileID: 6587833961043104675}
   player: {fileID: 182944447}
   cam: {fileID: 967499452}
   fightSpawn: {fileID: 338488570}

@@ -113,13 +113,21 @@ public class Enemy : MonoBehaviour
     {
         enemyHP -= damage;
         playerStats player = FindObjectOfType<playerStats>();    
-        if (enemyHP <= 0)
+        if (enemyHP <= 0 && !isBoss)
         {
             ShowFloatingText(damage.ToString());
             PlayHitVFX();
             enemyHP = 0;
             isDead = true;
             Die();
+        }
+        if(enemyHP <= 0 && isBoss)
+        {
+            ShowFloatingText(damage.ToString());
+            PlayHitVFX();
+            enemyHP = 0;
+            isDead = true;
+            BossDie();
         }
         else
         {
@@ -206,6 +214,23 @@ public class Enemy : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             rb.bodyType = RigidbodyType2D.Static;
+        }
+    }
+
+    private void BossDie()
+    {
+        coll.enabled = false;
+        StopAttackingAndFollowing();
+        anim.SetTrigger("isDead");
+        Debug.Log("mati");
+        isShowingText = true;
+
+        float destroyDelay = 3.4f;
+        StartCoroutine(DestroyWithDelay(destroyDelay));
+        playerStats player = FindObjectOfType<playerStats>();
+        if (player != null && player.playerLevel <= 14)
+        {
+            player.GainXP(xpToGrant);
         }
     }
     private void Die()
