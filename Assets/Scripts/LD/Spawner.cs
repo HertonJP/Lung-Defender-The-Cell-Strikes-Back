@@ -7,13 +7,12 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private Transform[] spawnPoints;
-    [SerializeField] private TextMeshProUGUI currentStageText;
     [SerializeField] private TextMeshProUGUI pressHereText;
     [SerializeField] private TextMeshProUGUI pressHereText2;
     [SerializeField] private AudioSource shopBGM;
     [SerializeField] private AudioSource fightBGM;
     [SerializeField] private AudioSource bossBGM;
-    [SerializeField] private GameObject stageClearPanel;
+    [SerializeField] private GameObject lobbyPanel;
 
     public Enemy boss;
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -47,7 +46,6 @@ public class Spawner : MonoBehaviour
             player.attackDamage = 50;
             player.movementSpeed = 8f;
         }
-        currentStageText.text = currentStage.ToString();
         if( currentStage == 7 && boss.enemyHP <= 0)
        {
             bossBGM.Stop();
@@ -62,7 +60,6 @@ public class Spawner : MonoBehaviour
     {
         Time.timeScale = 0;
         currentStage = 0;
-        stageClearPanel.SetActive(false);
         shopBGM.Play();
         StartCoroutine(StartWave());
     }
@@ -80,15 +77,21 @@ public class Spawner : MonoBehaviour
             }
             else if (currentStage != 0 && currentStage != 3 && currentStage != 6)
             {
-                stageClearPanel.SetActive(true);
+
                 currentStage++;
                 sfx.stageClearSFX.Play();
                 yield return new WaitForSeconds(2);
-                stageClearPanel.SetActive(false);
+
             }
             else if ( currentStage == 7 && bossObject == null)
             {
                 currentStage++;
+            }
+            if(currentStage == 2)
+            {
+                lobbyPanel.SetActive(true);
+                Time.timeScale = 0f;
+                yield return new WaitForSeconds(2);
             }
             
                 yield return StartCoroutine(SpawnBasedOnStage());

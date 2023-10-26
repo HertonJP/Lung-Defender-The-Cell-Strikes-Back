@@ -88,6 +88,12 @@ public class PauseController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void ReturnLobbyButton()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Lobby");
+    }
+
     public void gameOver()
     {
         gameOverPanel.SetActive(true);
