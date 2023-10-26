@@ -133,7 +133,7 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 8741207452223257116}
   maxMana: 100
-  targetingRange: 2
+  targetingRange: 3.2
   attackSpeed: 0.5
   <_attackSpeed>k__BackingField: 0
   mana: 0
@@ -210,6 +210,8 @@ MonoBehaviour:
   staminaRegen: 0.01
   staminaDecreaseAmount: 0.01
   staminaBar: {fileID: 0}
+  source: {fileID: 0}
+  walkClip: {fileID: 0}
 --- !u!50 &3980676947819998331
 Rigidbody2D:
   serializedVersion: 4

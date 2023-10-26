@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilesSpeed: 5
-  projectilesDamage: 1
+  projectilesDamage: 8
   source: {fileID: -296334712552625203}
   skillClip: {fileID: 8300000, guid: ef052657a8454384a970e353ea59d648, type: 3}
   attackClip: {fileID: 8300000, guid: aa270e055b6a0dd4b9a74a2a80e08782, type: 3}

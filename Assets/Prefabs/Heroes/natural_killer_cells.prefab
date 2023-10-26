@@ -349,7 +349,7 @@ MonoBehaviour:
   maxStamina: 100
   moveSpeed: 2
   rb: {fileID: 0}
-  staminaRegen: 0.02
+  staminaRegen: 0.08
   staminaDecreaseAmount: 0.15
   staminaBar: {fileID: 4712663319393594841}
   source: {fileID: -5452512336310734095}
@@ -371,7 +371,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 136
   projectilesPrefab: {fileID: 8578207023019650014, guid: aecd369183f7b8447a825d26a8a9dc7f, type: 3}
-  manaIncrease: 40
+  manaIncrease: 30
   firingPoint: {fileID: 8526960823157325130}
   maxMana: 100
   targetingRange: 4

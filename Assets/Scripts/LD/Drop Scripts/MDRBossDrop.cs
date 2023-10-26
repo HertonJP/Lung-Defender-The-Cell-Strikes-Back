@@ -25,7 +25,7 @@ public class MDRBossDrop : MonoBehaviour
 
     private IEnumerator DropItemsWithDelay()
     {
-        for (int i = 1; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             
             float randomValue = Random.Range(0f, 1f);

@@ -17,9 +17,15 @@ public class RangeBossDrop : MonoBehaviour
     }
     public void rangebossDrop()
     {
-        for (int i = 1; i < 5; i++)
+        StartCoroutine(DropItemsWithDelay()); 
+    }
+
+    private IEnumerator DropItemsWithDelay()
+    {
+        for (int i = 0; i < 5; i++)
         {
             float randomValue = Random.Range(0f, 1f);
+            yield return new WaitForSeconds(0.5f);
             if (randomValue < 0.05)
             {
                 GameObject text = Instantiate(itemTextPrefabs, itemTextPosition.transform.position, Quaternion.identity);

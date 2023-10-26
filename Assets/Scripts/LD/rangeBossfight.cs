@@ -3,9 +3,14 @@ using UnityEngine;
 
 public class rangeBossfight : MonoBehaviour
 {
+    private bool hasDroppedLoot = false;
+    private bool hasWin = false;
     public Enemy enemy;
     [SerializeField] private smallProjectiles smallProjectileScript;
     [SerializeField] private ParticleSystem phase2Particles;
+    [SerializeField] private RangeBossDrop drop;
+    [SerializeField] private GameObject youWinPanel;
+    [SerializeField] private AudioSource youWinSFX;
     public playerStats player;
     public PlayerMovement playerMov;
 
@@ -37,11 +42,17 @@ public class rangeBossfight : MonoBehaviour
 
     private void Update()
     {
-        if (enemy.enemyHP <= 0)
+        if (enemy.enemyHP <= 0 && !hasDroppedLoot)
         {
             enemy.enemyHP = 0;
-            Destroy(this.gameObject);
+            drop.rangebossDrop();
+            hasDroppedLoot = true;  
+        }
+        if (enemy.enemyHP <= 0 && !hasWin)
+        {
             playerMov.isConfused = false;
+            enemy.enemyHP = 0;
+            Invoke("Die", 1.5f);
         }
 
         if (enemy != null && !isPhase2 && enemy.enemyHP <= enemy.initialEnemyHP / 2)
@@ -62,6 +73,13 @@ public class rangeBossfight : MonoBehaviour
         playerMov.isConfused = true;
     }
 
+    private void Die()
+    {
+        youWinSFX.Play();
+        youWinPanel.SetActive(true);
+        hasWin = true;
+        Time.timeScale = 1f;
+    }
     private void ShootMultiple()
     {
         float angleStep = spreadAngle / numProjectiles;

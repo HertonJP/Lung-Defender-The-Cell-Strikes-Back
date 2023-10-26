@@ -316,6 +316,8 @@ MonoBehaviour:
   staminaRegen: 0.01
   staminaDecreaseAmount: 0.01
   staminaBar: {fileID: 0}
+  source: {fileID: 0}
+  walkClip: {fileID: 0}
 --- !u!61 &4587370739094073429
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -362,7 +364,7 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 6055553121512765546}
   maxMana: 100
-  targetingRange: 2.5
+  targetingRange: 3
   attackSpeed: 1
   <_attackSpeed>k__BackingField: 0
   mana: 0
