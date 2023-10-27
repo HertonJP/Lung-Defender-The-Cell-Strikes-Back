@@ -120,7 +120,7 @@ public class Spawner : MonoBehaviour
             {
                 //lobbyPanel.SetActive(true);
                 Time.timeScale = 1f;
-                yield return new WaitForSeconds(2);
+                //yield return new WaitForSeconds(2);
             }
             else if(currentStage == 12)
             {
