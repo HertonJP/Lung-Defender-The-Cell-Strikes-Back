@@ -94,6 +94,7 @@ public class PauseController : MonoBehaviour
         SceneManager.LoadScene("Lobby");
     }
 
+
     public void gameOver()
     {
         gameOverPanel.SetActive(true);

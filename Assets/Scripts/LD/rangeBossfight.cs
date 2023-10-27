@@ -75,7 +75,7 @@ public class rangeBossfight : MonoBehaviour
 
     private void Die()
     {
-        youWinSFX.Play();
+        //youWinSFX.Play();
         youWinPanel.SetActive(true);
         hasWin = true;
         Time.timeScale = 1f;
