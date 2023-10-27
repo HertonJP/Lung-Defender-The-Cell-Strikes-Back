@@ -118,8 +118,11 @@ public class GameManager : MonoBehaviour
     }
     public void GoLDScene(int stage)
     {
-        targetStageLD = stage;
+        Debug.Log("here");
+        //targetStageLD = stage;
         SceneManager.LoadScene(2);
+        
+        //updater = GameObject.FindAnyObjectByType<InventoryUpdater>();
     }
 
     public void SaveItems(string name, int itemCount)
