@@ -63,6 +63,16 @@ public class playerStats : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.GetInt("xp", xp);
+        PlayerPrefs.GetInt("Str", strength);
+        PlayerPrefs.GetInt("Vit", vit);
+        PlayerPrefs.GetInt("Agi", agility);
+        PlayerPrefs.GetInt("Luck", luck);
+        PlayerPrefs.GetInt("MaxHP", playerMaxHP);
+        PlayerPrefs.GetInt("Level", playerLevel);
+        PlayerPrefs.GetFloat("CritCh", critChance);
+        PlayerPrefs.GetInt("Attack", attackDamage);
+        PlayerPrefs.GetFloat("Speed", movementSpeed);
         levelUpButton.SetActive(false);
         gameOverPanel.SetActive(false);
         this.gameObject.transform.position = shopSpawn.transform.position;
@@ -256,6 +266,7 @@ public class playerStats : MonoBehaviour
 
     public void SavePlayerStats()
     {
+        PlayerPrefs.SetInt("xp", xp);
         PlayerPrefs.SetInt("Str", strength);
         PlayerPrefs.SetInt("Vit", vit);
         PlayerPrefs.SetInt("Agi", agility);

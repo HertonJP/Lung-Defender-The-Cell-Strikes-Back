@@ -84609,6 +84609,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6587833961043104677, guid: 1badd01714c142d4185bd66799f87845, type: 3}
+      propertyPath: initialEnemyHP
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 6668564181347262650, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: m_Name
       value: myco_range_boss
