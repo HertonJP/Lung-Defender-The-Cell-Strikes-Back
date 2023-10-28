@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public List<string> itemsPlayerPrefs = new();
     public List<string> buttonPlayerPrefs = new();
+    public List<string> playerStatsPlayerPrefs = new();
     public string firstChar;
     public InventoryUpdater updater;
     public int targetStageLD;
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey(lastTDLevelPlayerPrefs))
             lastUnlockedTDLevel = PlayerPrefs.GetInt(lastTDLevelPlayerPrefs);
+        else
+            lastUnlockedTDLevel = 0;
         ValidateButtonPlayerPrefs();
         UpdateLastUnlockedTDLevel();
     }
@@ -95,6 +98,11 @@ public class GameManager : MonoBehaviour
         {
             if (PlayerPrefs.HasKey(s))
                 PlayerPrefs.SetInt(s, 0);
+        }
+
+        foreach( string s in playerStatsPlayerPrefs)
+        {
+            PlayerPrefs.DeleteKey(s);
         }
 
         updater.UpdateAllText();

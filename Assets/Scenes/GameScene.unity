@@ -28111,6 +28111,7 @@ GameObject:
   - component: {fileID: 1061779232}
   - component: {fileID: 1061779234}
   - component: {fileID: 1061779233}
+  - component: {fileID: 1061779235}
   m_Layer: 5
   m_Name: Pause Panel
   m_TagString: Untagged
@@ -28185,6 +28186,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061779231}
   m_CullTransparentMesh: 1
+--- !u!114 &1061779235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061779231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e5869aa06ae4a4699f432fb87afd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strText: {fileID: 0}
+  maxhealthText: {fileID: 0}
+  attackText: {fileID: 0}
+  speedText: {fileID: 0}
+  vitText: {fileID: 0}
+  agiText: {fileID: 0}
+  luckText: {fileID: 0}
+  attributeText: {fileID: 0}
 --- !u!1 &1065742870
 GameObject:
   m_ObjectHideFlags: 0

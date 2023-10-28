@@ -436,6 +436,18 @@ MonoBehaviour:
   - Naturaal Killer
   - B Cell
   - Memory Cell
+  playerStatsPlayerPrefs:
+  - Xp
+  - Str
+  - Vit
+  - Agi
+  - Luck
+  - MaxHP
+  - Level
+  - CritChance
+  - Attack
+  - Speed
+  - StatPoints
   firstChar: White Blood
   updater: {fileID: 2108148628078189714, guid: 29e5b1625fa96b14cb57bcf28da478f8, type: 3}
   targetStageLD: 0
@@ -5408,6 +5420,8 @@ MonoBehaviour:
   volumeTextValue: {fileID: 172583354}
   volumeSlider: {fileID: 203891409}
   defaultVolume: 1
+  loadButton: {fileID: 1541746837}
+  disableLoad: 0
   resolutionDropdown: {fileID: 2095133315}
 --- !u!82 &1821951863
 AudioSource:
