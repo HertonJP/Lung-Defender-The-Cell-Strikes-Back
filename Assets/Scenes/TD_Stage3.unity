@@ -2402,10 +2402,10 @@ MonoBehaviour:
   - {fileID: 7355451093731504134, guid: dd4e719bf8e7d044eb5cf606645e07c4, type: 3}
   - {fileID: 4428590141512288418, guid: 14e746478d895104684828dfa14359d7, type: 3}
   - {fileID: 9081126150401139692, guid: 46a421a9d53fb9e4a8dd4fd64fda9b3a, type: 3}
-  baseEnemies: 8
-  enemiesPerSecond: 3
+  baseEnemies: 6
+  enemiesPerSecond: 0.5
   timeBetweenWaves: 1
-  difficultyScalingFactor: 0.75
+  difficultyScalingFactor: 1
   currentWave: 1
   timeSinceLastSpawn: 0
   enemiesAlive: 0
