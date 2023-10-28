@@ -359,8 +359,8 @@ MonoBehaviour:
   - {fileID: 6050337167234482611}
   - {fileID: 8298833212699576270}
   m_Bounds:
-    m_Center: {x: 0.0032632053, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.337872, y: 0.30499998, z: 0}
+    m_Center: {x: 0.0032632053, y: -0.000000059604645, z: 0}
+    m_Extent: {x: 0.33787197, y: 0.30499998, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -626,6 +626,7 @@ GameObject:
   - component: {fileID: 1421212822998402280}
   - component: {fileID: 1217087613}
   - component: {fileID: 2782989587001257767}
+  - component: {fileID: 432424970}
   m_Layer: 7
   m_Name: latent
   m_TagString: Enemy
@@ -642,7 +643,7 @@ Transform:
   m_GameObject: {fileID: 5753659029274312806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.45212, y: 1.9092147, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2893863457955884111}
@@ -711,7 +712,7 @@ MonoBehaviour:
   floatingTextCrit: {fileID: 0}
   hitVFXPrefab: {fileID: 2981612518552317830, guid: ba83bc4fec4ddc741b63c0ab0d2d7e9c, type: 3}
   attackRange: {fileID: 275719068}
-  xpToGrant: 30
+  xpToGrant: 5
   isBoss: 0
   enemyHP: 0
   targetingRange: 3.5
@@ -755,7 +756,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012109518, y: 0.1883961}
+  m_Offset: {x: -0.015063256, y: 0.3625486}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -766,7 +767,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.493649, y: 0.39322877}
+  m_Size: {x: 0.43930346, y: 0.5587355}
   m_EdgeRadius: 0
 --- !u!114 &1217087613
 MonoBehaviour:
@@ -880,6 +881,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &432424970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753659029274312806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa2975e589d62440a41d18d1f29b5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemTextPosition: {fileID: 0}
+  inven: {fileID: 0}
+  itemTextPrefabs: {fileID: 3592551473301923448, guid: 63cec3ab8fe068c4ea2c546faa528bc9, type: 3}
 --- !u!1 &6501681724089631451
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +998,7 @@ MonoBehaviour:
   - {fileID: 3475042448550210620}
   m_Bounds:
     m_Center: {x: 0.028824411, y: 0.000301674, z: 0}
-    m_Extent: {x: 0.11177101, y: 0.13969836, z: 0}
+    m_Extent: {x: 0.111771, y: 0.13969836, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1120,8 +1136,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5813880984593966322}
   m_Bounds:
-    m_Center: {x: -0.032086954, y: -0.00044500828, z: 0}
-    m_Extent: {x: 0.111547515, y: 0.121048346, z: 0}
+    m_Center: {x: -0.032087438, y: -0.00044500828, z: 0}
+    m_Extent: {x: 0.11154751, y: 0.121048346, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

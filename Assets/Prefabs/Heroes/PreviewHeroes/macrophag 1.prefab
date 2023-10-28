@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 227238762396973639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.3}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4418885023139964830}
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925fc14a005f4804c948477e87139ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charImage: {fileID: 0}
   enemyMask:
     serializedVersion: 2
     m_Bits: 8
@@ -110,7 +111,7 @@ MonoBehaviour:
   manaIncrease: 40
   firingPoint: {fileID: 0}
   maxMana: 100
-  targetingRange: 1.5
+  targetingRange: 2.5
   attackSpeed: 0.5
   <_attackSpeed>k__BackingField: 0
   mana: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
   animState: {fileID: 8652756764502317727}
   movement: {fileID: 2801977842138650930}
   hitTargets: []
+  manaBar: {fileID: 0}
   hammer: {fileID: 5376445860212299701, guid: 0f8838b2fff45f54c832c581bb3196fb, type: 3}
   hammerYOffset: 1.75
 --- !u!95 &2285040309283291760
@@ -192,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c73d1125aa4b3488109dc3d82b50f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
   horizontalMovement: 0
   verticalMovement: 0
   stamina: 0
@@ -200,6 +203,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   staminaRegen: 0.01
   staminaDecreaseAmount: 0.01
+  staminaBar: {fileID: 0}
+  source: {fileID: 0}
+  walkClip: {fileID: 0}
 --- !u!61 &-7877521450286974405
 BoxCollider2D:
   m_ObjectHideFlags: 0
