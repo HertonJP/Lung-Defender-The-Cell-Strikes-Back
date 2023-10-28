@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  arrowDamage: 5
-  nextDamageTime: 0.5
+  arrowDamage: 8
+  nextDamageTime: 0.8
 --- !u!82 &-8890809408379091100
 AudioSource:
   m_ObjectHideFlags: 0

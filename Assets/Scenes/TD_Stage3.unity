@@ -639,7 +639,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 92428405}
   m_OnClick:
     m_PersistentCalls:
@@ -2396,11 +2396,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 6023954019641036969, guid: 310d1aefe47649c46a5d9a3a5302344f, type: 3}
-  - {fileID: 6023954019641036969, guid: 310d1aefe47649c46a5d9a3a5302344f, type: 3}
-  - {fileID: 2146771158537692955, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
-  - {fileID: 2146771158537692955, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
-  - {fileID: 2146771158537692955, guid: ca518a4529fc13e44887958ee2f768a4, type: 3}
+  - {fileID: 1278163971757873377, guid: b430a28ccc49e174da05ef4364c55901, type: 3}
+  - {fileID: 1278163971757873377, guid: b430a28ccc49e174da05ef4364c55901, type: 3}
+  - {fileID: 6822203519786885611, guid: eaeb24f22f179ac4c862c78accf17c50, type: 3}
+  - {fileID: 7355451093731504134, guid: dd4e719bf8e7d044eb5cf606645e07c4, type: 3}
+  - {fileID: 4428590141512288418, guid: 14e746478d895104684828dfa14359d7, type: 3}
+  - {fileID: 9081126150401139692, guid: 46a421a9d53fb9e4a8dd4fd64fda9b3a, type: 3}
   baseEnemies: 8
   enemiesPerSecond: 3
   timeBetweenWaves: 1
@@ -2555,7 +2556,7 @@ MonoBehaviour:
   - {fileID: 1681758908}
   - {fileID: 2033812010}
   path2: []
-  enemyDamage: 10
+  enemyDamage: 20
   maxHealth: 100
   currHealth: 0
   spawnPoint: 0
@@ -2822,7 +2823,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 535166339}
   m_OnClick:
     m_PersistentCalls:
@@ -3953,7 +3954,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 880029175}
   m_OnClick:
     m_PersistentCalls:
@@ -4984,7 +4985,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1040113278}
   m_OnClick:
     m_PersistentCalls:
@@ -7659,7 +7660,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1555179911}
   m_OnClick:
     m_PersistentCalls:
@@ -10130,7 +10131,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1932544647}
   m_OnClick:
     m_PersistentCalls:
@@ -10661,7 +10662,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 2061737874}
   m_OnClick:
     m_PersistentCalls:

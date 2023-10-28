@@ -737,7 +737,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 136
   projectilesPrefab: {fileID: 4859494725505346338, guid: 3fba1507ddf314f4c9375a908df7862f, type: 3}
-  manaIncrease: 15
+  manaIncrease: 25
   firingPoint: {fileID: 6055553121512765546}
   maxMana: 100
   targetingRange: 3
@@ -750,7 +750,7 @@ MonoBehaviour:
   movement: {fileID: 6098115216421141114}
   hitTargets: []
   manaBar: {fileID: 3727797216980369323}
-  slowDuration: 2.5
+  slowDuration: 3
   slowedSpeed: 0.2
   isUlt: 0
 --- !u!70 &2116847124551119073
