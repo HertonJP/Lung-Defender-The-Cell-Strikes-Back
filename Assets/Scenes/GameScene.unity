@@ -84365,6 +84365,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1428201280, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
+      propertyPath: initialEnemyHP
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428201280, guid: 20b480daff0b4c14a977bc2b241a2dee, type: 3}
       propertyPath: floatingTextCrit
       value: 
       objectReference: {fileID: 5500894286564896549, guid: 3cb4e7955da1e5942b377612b6127cb0, type: 3}
@@ -84611,7 +84615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6587833961043104677, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: initialEnemyHP
-      value: 2000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6668564181347262650, guid: 1badd01714c142d4185bd66799f87845, type: 3}
       propertyPath: m_Name
