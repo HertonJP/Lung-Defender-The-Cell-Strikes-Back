@@ -2412,7 +2412,7 @@ MonoBehaviour:
   enemiesLeftToSpawn: 0
   isSpawning: 0
   spawnPoint: 0
-  maxWave: 5
+  maxWave: 7
   currWaveText: {fileID: 2084369183}
   maxWaveText: {fileID: 1402634370}
 --- !u!4 &452229734
@@ -2607,7 +2607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnedCharacters: []
   currIndex: 0
-  nextCharImage: {fileID: 882876679}
+  nextCharImage: {fileID: 44633267}
 --- !u!114 &452229744
 MonoBehaviour:
   m_ObjectHideFlags: 0

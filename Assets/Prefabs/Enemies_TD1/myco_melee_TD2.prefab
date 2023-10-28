@@ -411,7 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStunned: 0
   duration: 0
-  confuseEffect: {fileID: 7085024494739434899, guid: 6d0a171bb2269454883147d773dccf61, type: 3}
+  confuseEffect: {fileID: 1261688742823946169}
 --- !u!1 &4489785594545224883
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +816,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Confusion Debuff
       objectReference: {fileID: 0}
+    - target: {fileID: 6832948924677817673, guid: 3c8a1038b16e04348ae5f0e2a94464c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6832948924677817676, guid: 3c8a1038b16e04348ae5f0e2a94464c2, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -874,6 +878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c8a1038b16e04348ae5f0e2a94464c2, type: 3}
+--- !u!1 &1261688742823946169 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6832948924677817673, guid: 3c8a1038b16e04348ae5f0e2a94464c2, type: 3}
+  m_PrefabInstance: {fileID: 5715606559970452208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1261688742823946172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6832948924677817676, guid: 3c8a1038b16e04348ae5f0e2a94464c2, type: 3}

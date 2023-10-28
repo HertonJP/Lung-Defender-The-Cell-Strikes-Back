@@ -302,11 +302,11 @@ public class playerStats : MonoBehaviour
         vit = PlayerPrefs.GetInt("Vit", 0);
         agility = PlayerPrefs.GetInt("Agi", 0);
         luck = PlayerPrefs.GetInt("Luck", 0);
-        playerMaxHP = PlayerPrefs.GetInt("MaxHP", 100);
+        playerMaxHP = PlayerPrefs.GetInt("MaxHP", 150);
         playerLevel = PlayerPrefs.GetInt("Level", 1);
-        critChance = PlayerPrefs.GetFloat("CritChance", .05f);
-        attackDamage = PlayerPrefs.GetInt("Attack", 5);
-        movementSpeed = PlayerPrefs.GetFloat("Speed", 5f);
+        critChance = PlayerPrefs.GetFloat("CritChance", .1f);
+        attackDamage = PlayerPrefs.GetInt("Attack", 10);
+        movementSpeed = PlayerPrefs.GetFloat("Speed", 6.5f);
         availableStatPoints = PlayerPrefs.GetInt("StatPoints", 0);
         Debug.Log("Stats Loaded");
     }
