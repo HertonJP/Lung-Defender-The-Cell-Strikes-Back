@@ -67,6 +67,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        player.gameObject.transform.position = shopSpawn.transform.position;
         currentStage = GameManager.Instance.targetStageLD;
         Time.timeScale = 0f;
         shopBGM.Play();
