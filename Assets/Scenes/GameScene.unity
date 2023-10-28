@@ -27721,30 +27721,6 @@ MonoBehaviour:
   itemTextPosition: {fileID: 0}
   inven: {fileID: 0}
   itemTextPrefabs: {fileID: 3592551473301923448, guid: 63cec3ab8fe068c4ea2c546faa528bc9, type: 3}
---- !u!1 &1053483498 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1725810996, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
-  m_PrefabInstance: {fileID: 3110290503677648089}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1053483502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053483498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185e46e9408a4cd4f9d698518e42bfc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats: {fileID: 182944447}
-  hitboxCollider: {fileID: 1053483503}
---- !u!61 &1053483503 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 1725810998, guid: d443d026ef527a84e838f71d0cc13f9d, type: 3}
-  m_PrefabInstance: {fileID: 3110290503677648089}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1057081775
 GameObject:
   m_ObjectHideFlags: 0
