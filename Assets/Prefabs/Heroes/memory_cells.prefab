@@ -751,7 +751,7 @@ MonoBehaviour:
   hitTargets: []
   manaBar: {fileID: 3727797216980369323}
   slowDuration: 3
-  slowedSpeed: 0.2
+  slowedSpeed: 0.6
   isUlt: 0
 --- !u!70 &2116847124551119073
 CapsuleCollider2D:

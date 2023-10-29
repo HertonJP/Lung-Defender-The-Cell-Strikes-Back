@@ -16,7 +16,12 @@ public class Plot : MonoBehaviour
 
     private void Start()
     {
-        foreach(string s in GameManager.Instance.buttonPlayerPrefs)
+        if (hover == null)
+        {
+            hover = FindFirstObjectByType<HeroHover>();
+
+        }
+        foreach (string s in GameManager.Instance.buttonPlayerPrefs)
         {
             if(PlayerPrefs.HasKey(s) && PlayerPrefs.GetInt(s) == 1)
             {
