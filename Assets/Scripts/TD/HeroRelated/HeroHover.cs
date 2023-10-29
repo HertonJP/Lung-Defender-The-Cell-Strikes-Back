@@ -33,7 +33,7 @@ public class HeroHover : MonoBehaviour
         instance = this;
         spriteRenderer = GetComponent<SpriteRenderer>();
         heroPreview = transform.GetChild(0);
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
