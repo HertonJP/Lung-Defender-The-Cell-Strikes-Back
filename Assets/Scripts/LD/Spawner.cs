@@ -67,6 +67,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        player.gameObject.transform.position = shopSpawn.transform.position;
         currentStage = GameManager.Instance.targetStageLD;
         Time.timeScale = 0f;
         shopBGM.Play();
@@ -120,7 +121,7 @@ public class Spawner : MonoBehaviour
             {
                 //lobbyPanel.SetActive(true);
                 Time.timeScale = 1f;
-                yield return new WaitForSeconds(2);
+                //yield return new WaitForSeconds(2);
             }
             else if(currentStage == 12)
             {

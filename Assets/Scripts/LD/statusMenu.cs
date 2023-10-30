@@ -36,6 +36,4 @@ public class statusMenu : MonoBehaviour
         luck.text = player.luck.ToString();
         statPoints.text = player.availableStatPoints.ToString();
     }
-   
-
 }

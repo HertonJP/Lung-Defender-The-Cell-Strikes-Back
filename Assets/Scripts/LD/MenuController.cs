@@ -12,11 +12,15 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private float defaultVolume = 1.0f;
+    [SerializeField] private Button loadButton;
+    public bool disableLoad = false;
 
     public TMPro.TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
     private void Start()
     {
+        if(disableLoad)
+            PlayerPrefs.DeleteKey("CanLoad");
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
@@ -34,6 +38,11 @@ public class MenuController : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        if (PlayerPrefs.HasKey("CanLoad") || PlayerPrefs.GetInt("CanLoad") == 1)
+            loadButton.interactable = true;
+        else
+            loadButton.interactable = false;
     }
     public void SetResolution(int resolutionIndex)
     {
@@ -42,6 +51,7 @@ public class MenuController : MonoBehaviour
     }
     public void PlayButton()
     {
+        PlayerPrefs.SetInt("CanLoad", 1);
         StartCoroutine(LoadScene());
     }
 

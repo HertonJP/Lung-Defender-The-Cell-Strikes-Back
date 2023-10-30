@@ -63,16 +63,19 @@ public class playerStats : MonoBehaviour
 
     private void Start()
     {
-        
-        levelUpButton.SetActive(false);
-        gameOverPanel.SetActive(false);
-        this.gameObject.transform.position = shopSpawn.transform.position;
+        LoadStats();
+        if(levelUpButton!=null)
+            levelUpButton.SetActive(false);
+        if(gameOverPanel!=null)
+            gameOverPanel.SetActive(false);
+        //this.gameObject.transform.position = shopSpawn.transform.position;
         canRevive = false;
         isRollout = false;
         canBerserk = false;
         playerHP = playerMaxHP;
         StartCoroutine(CheckForLowHealth());
-        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+        if(shake!=null)
+            shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
         normalMats = GetComponent<SpriteRenderer>().material;
     }
 
@@ -84,7 +87,8 @@ public class playerStats : MonoBehaviour
         }
         if(availableStatPoints <= 0 || Time.timeScale == 0)
         {
-            levelUpButton.SetActive(false);
+            if(levelUpButton!=null)
+                levelUpButton.SetActive(false);
         }
         if (isLifestealActive && Time.time >= lifestealEndTime)
         {
@@ -96,6 +100,7 @@ public class playerStats : MonoBehaviour
     {
         xp += amount;
         CheckLevelUp();
+        SavePlayerStats();
     }
 
     public void CheckLevelUp()
@@ -113,6 +118,7 @@ public class playerStats : MonoBehaviour
         availableStatPoints += 3;
         xp = 0;
         Debug.Log("Player Leveled up");
+        SavePlayerStats();
         levelUpSFX.Play();
         GameObject instantiatedVFX = Instantiate(levelUpVFX, transform.position, Quaternion.identity);
         Destroy(instantiatedVFX, 2f);
@@ -244,6 +250,8 @@ public class playerStats : MonoBehaviour
             }
             availableStatPoints--;
         }
+        SavePlayerStats();
+        Debug.Log(PlayerPrefs.GetInt("StatPoints"));
     }
 
     private IEnumerator Flash()
@@ -257,14 +265,49 @@ public class playerStats : MonoBehaviour
 
     public void SavePlayerStats()
     {
-        PlayerPrefs.SetInt("Str", strength);
-        PlayerPrefs.SetInt("Vit", vit);
-        PlayerPrefs.SetInt("Agi", agility);
-        PlayerPrefs.SetInt("Luck", luck);
+        PlayerPrefs.SetInt("Xp", xp);
+
+        if(strTalent)
+            PlayerPrefs.SetInt("Str", strength-5);
+        else
+            PlayerPrefs.SetInt("Str", strength);
+
+        if (vitTalent)
+            PlayerPrefs.SetInt("Vit", vit-5);
+        else
+            PlayerPrefs.SetInt("Vit", vit);
+
+        if (agiTalent)
+            PlayerPrefs.SetInt("Agi", agility-5);
+        else
+            PlayerPrefs.SetInt("Agi", agility);
+
+        if (luckTalent)
+            PlayerPrefs.SetInt("Luck", luck-5);
+        else
+            PlayerPrefs.SetInt("Luck", luck);
+
         PlayerPrefs.SetInt("MaxHP", playerMaxHP);
         PlayerPrefs.SetInt("Level", playerLevel);
-        PlayerPrefs.SetFloat("CritCh", critChance);
+        PlayerPrefs.SetFloat("CritChance", critChance);
         PlayerPrefs.SetInt("Attack", attackDamage);
         PlayerPrefs.SetFloat("Speed", movementSpeed);
+        PlayerPrefs.SetInt("StatPoints", availableStatPoints);
+    }
+
+    private void LoadStats()
+    {
+        xp = PlayerPrefs.GetInt("Xp", 0);
+        strength = PlayerPrefs.GetInt("Str", 0);
+        vit = PlayerPrefs.GetInt("Vit", 0);
+        agility = PlayerPrefs.GetInt("Agi", 0);
+        luck = PlayerPrefs.GetInt("Luck", 0);
+        playerMaxHP = PlayerPrefs.GetInt("MaxHP", 150);
+        playerLevel = PlayerPrefs.GetInt("Level", 1);
+        critChance = PlayerPrefs.GetFloat("CritChance", .1f);
+        attackDamage = PlayerPrefs.GetInt("Attack", 10);
+        movementSpeed = PlayerPrefs.GetFloat("Speed", 6.5f);
+        availableStatPoints = PlayerPrefs.GetInt("StatPoints", 0);
+        Debug.Log("Stats Loaded");
     }
 }

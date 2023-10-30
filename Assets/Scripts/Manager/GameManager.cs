@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public List<string> itemsPlayerPrefs = new();
     public List<string> buttonPlayerPrefs = new();
+    public List<string> playerStatsPlayerPrefs = new();
     public string firstChar;
     public InventoryUpdater updater;
     public int targetStageLD;
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey(lastTDLevelPlayerPrefs))
             lastUnlockedTDLevel = PlayerPrefs.GetInt(lastTDLevelPlayerPrefs);
+        else
+            lastUnlockedTDLevel = 0;
         ValidateButtonPlayerPrefs();
         UpdateLastUnlockedTDLevel();
     }
@@ -49,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F1))
         {
             foreach (string s in itemsPlayerPrefs)
             {
@@ -97,6 +100,11 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt(s, 0);
         }
 
+        foreach( string s in playerStatsPlayerPrefs)
+        {
+            PlayerPrefs.DeleteKey(s);
+        }
+
         updater.UpdateAllText();
     }
 
@@ -115,11 +123,6 @@ public class GameManager : MonoBehaviour
     public void GoTDScene()
     {
         SceneManager.LoadScene(3);
-    }
-    public void GoLDScene(int stage)
-    {
-        targetStageLD = stage;
-        SceneManager.LoadScene(2);
     }
 
     public void SaveItems(string name, int itemCount)

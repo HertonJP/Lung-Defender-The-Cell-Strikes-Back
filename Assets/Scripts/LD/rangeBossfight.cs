@@ -7,10 +7,11 @@ public class rangeBossfight : MonoBehaviour
     private bool hasWin = false;
     public Enemy enemy;
     [SerializeField] private smallProjectiles smallProjectileScript;
-    [SerializeField] private ParticleSystem phase2Particles;
+    [SerializeField] private GameObject fx;
     [SerializeField] private RangeBossDrop drop;
     [SerializeField] private GameObject youWinPanel;
     [SerializeField] private AudioSource youWinSFX;
+    [SerializeField] private Transform wavePos;
     public playerStats player;
     public PlayerMovement playerMov;
 
@@ -69,13 +70,14 @@ public class rangeBossfight : MonoBehaviour
 
     private void StartPhase2()
     {
-        phase2Particles.Play();
+        GameObject effects = Instantiate(fx, wavePos);
         playerMov.isConfused = true;
+        Destroy(effects, 1.5f);
     }
 
     private void Die()
     {
-        youWinSFX.Play();
+        //youWinSFX.Play();
         youWinPanel.SetActive(true);
         hasWin = true;
         Time.timeScale = 1f;

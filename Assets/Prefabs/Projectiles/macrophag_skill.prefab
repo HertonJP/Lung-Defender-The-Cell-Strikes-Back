@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  hammerDamage: 25
+  hammerDamage: 50
   stunDuration: 0
 --- !u!82 &8520938363227462829
 AudioSource:

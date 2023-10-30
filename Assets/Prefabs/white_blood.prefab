@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1725810997}
   - component: {fileID: 1725810998}
-  - component: {fileID: 1725810999}
+  - component: {fileID: 7909534353254905745}
   m_Layer: 6
   m_Name: rolloutHitbox
   m_TagString: Untagged
@@ -59,7 +59,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3765032, y: 3.5356636}
   m_EdgeRadius: 0
---- !u!114 &1725810999
+--- !u!114 &7909534353254905745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,10 +68,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1725810996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541e302c8960da54da5aa9ea04fb20d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 185e46e9408a4cd4f9d698518e42bfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerStats: {fileID: 308435568753722842}
+  hitboxCollider: {fileID: 1725810998}
 --- !u!1 &3110290502189817488
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +242,8 @@ MonoBehaviour:
   rb: {fileID: 3110290503495425641}
   cam: {fileID: 0}
   rolloutHitbox: {fileID: 1725810998}
+  isConfused: 0
+  confusionDebuff: {fileID: 0}
   rollSFX: {fileID: 0}
   walkSFX: {fileID: 0}
 --- !u!50 &3110290503495425641
@@ -354,21 +357,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc50207d2f132fc429c30000de16d0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strTalent: 0
+  agiTalent: 0
+  vitTalent: 0
+  luckTalent: 0
+  cheat: 0
   strength: 0
   vit: 0
   agility: 0
   luck: 0
-  playerMaxHP: 100
+  playerMaxHP: 150
   xp: 0
   playerLevel: 1
-  critChance: 0.05
+  critChance: 0.1
   availableStatPoints: 0
-  attackDamage: 5
-  movementSpeed: 5
+  attackDamage: 10
+  movementSpeed: 6.5
   rollCooldown: 2
   levelUpVFX: {fileID: 4537883598953367861, guid: 502a5a708963e974fb5fd4a66017270a, type: 3}
   hitVFXPrefab: {fileID: 2981612518552317830, guid: ba83bc4fec4ddc741b63c0ab0d2d7e9c, type: 3}
   levelUpSFX: {fileID: 0}
+  gameOverPanel: {fileID: 0}
   talentUI: {fileID: 0}
   chooseTalentPanel: {fileID: 0}
   shopSpawn: {fileID: 0}
@@ -383,6 +392,12 @@ MonoBehaviour:
   lifestealDuration: 5
   lifestealEndTime: 0
   isImmune: 0
+  levelUpButton: {fileID: 0}
+  shake: {fileID: 0}
+  critSFX: {fileID: 0}
+  gameOverSFX: {fileID: 0}
+  flashDuration: 0
+  flashMaterial: {fileID: 0}
 --- !u!114 &182944456
 MonoBehaviour:
   m_ObjectHideFlags: 0

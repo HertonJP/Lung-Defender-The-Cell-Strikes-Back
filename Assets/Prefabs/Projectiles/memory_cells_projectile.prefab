@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilesSpeed: 5
-  projectilesDamage: 7
+  projectilesDamage: 5
   source: {fileID: 335422687647432634}
   skillClip: {fileID: 8300000, guid: 46765e492e659c54bb12e8cd1d69233c, type: 3}
   attackClip: {fileID: 8300000, guid: c77a5b6bb0644054f98b577629e83e7b, type: 3}
@@ -321,9 +321,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000005425489, y: -0.04551231}
+  m_Offset: {x: -0.02769133, y: -0.011467654}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 2.3249831
 --- !u!114 &5910999118816900877
 MonoBehaviour:
   m_ObjectHideFlags: 0

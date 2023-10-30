@@ -387,6 +387,85 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &113538423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 113538425}
+  - component: {fileID: 113538424}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &113538424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113538423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037830bd85c345c47806bbb7873a3220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastUnlockedTDLevel: 0
+  lastTDLevelPlayerPrefs: TDLevelPlayerPrefs
+  itemsPlayerPrefs:
+  - ResistantSample
+  - MDRHelmet
+  - Nucleus
+  - Fibroblast
+  - LeftArm
+  - Scale
+  - Club
+  - Eyeball
+  - MycoClaw
+  buttonPlayerPrefs:
+  - White Blood
+  - Killer T
+  - Macrophag
+  - Dendritic
+  - Naturaal Killer
+  - B Cell
+  - Memory Cell
+  playerStatsPlayerPrefs:
+  - Xp
+  - Str
+  - Vit
+  - Agi
+  - Luck
+  - MaxHP
+  - Level
+  - CritChance
+  - Attack
+  - Speed
+  - StatPoints
+  firstChar: White Blood
+  updater: {fileID: 2108148628078189714, guid: 29e5b1625fa96b14cb57bcf28da478f8, type: 3}
+  targetStageLD: 0
+--- !u!4 &113538425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113538423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.822157, y: 18.510218, z: -0.19906804}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &117217659
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +1071,18 @@ MonoBehaviour:
         - m_Target: {fileID: 267167077}
           m_TargetAssemblyTypeName: ButtonEffects, Assembly-CSharp
           m_MethodName: HoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 113538424}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: ResetPlayerPrefs
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5329,6 +5420,8 @@ MonoBehaviour:
   volumeTextValue: {fileID: 172583354}
   volumeSlider: {fileID: 203891409}
   defaultVolume: 1
+  loadButton: {fileID: 1541746837}
+  disableLoad: 0
   resolutionDropdown: {fileID: 2095133315}
 --- !u!82 &1821951863
 AudioSource:

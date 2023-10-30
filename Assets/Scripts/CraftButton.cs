@@ -8,6 +8,8 @@ public class CraftButton : MonoBehaviour
     [SerializeField] private string targetChar;
     [SerializeField] private Button craftButton;
     [SerializeField] private InventoryUpdater updater;
+    [field:SerializeField]
+    private static bool hasCraft = false;
 
     private void Awake()
     {
@@ -19,6 +21,12 @@ public class CraftButton : MonoBehaviour
         ValidateCrafting(targetChar);
     }
 
+    private void Update()
+    {
+        ValidateCrafting(targetChar);
+            
+    }
+
     // Start is called before the first frame update
     private void ValidateCrafting(string targetChar)
     {
@@ -27,17 +35,22 @@ public class CraftButton : MonoBehaviour
             case "Killer T":
                 if (PlayerPrefs.GetInt("Nucleus") >= 1 && PlayerPrefs.GetInt("MycoClaw") >= 3 && PlayerPrefs.GetInt(targetChar)==0)
                     craftButton.interactable = true;
+                else
+                    craftButton.interactable = false;
 
                 if (PlayerPrefs.GetInt(targetChar) == 1)
                 {
                     craftButton.interactable = false;
                     craftButton.GetComponentInChildren<TMPro.TMP_Text>().text = "Crafted";
                 }
+
                     
                 break;
             case "Macrophag":
                 if (PlayerPrefs.GetInt("Nucleus") >= 10 && PlayerPrefs.GetInt("Scale") >= 3 && PlayerPrefs.GetInt("MycoClaw")>=35 && PlayerPrefs.GetInt(targetChar) == 0)
                     craftButton.interactable = true;
+                else
+                    craftButton.interactable = false;
 
                 if (PlayerPrefs.GetInt(targetChar) == 1)
                 {
@@ -49,6 +62,8 @@ public class CraftButton : MonoBehaviour
             case "Dendritic":
                 if (PlayerPrefs.GetInt("Nucleus") >= 20 && PlayerPrefs.GetInt("MycoClaw") >= 50 && PlayerPrefs.GetInt("Fibroblast") >= 15 && PlayerPrefs.GetInt(targetChar) == 0)
                     craftButton.interactable = true;
+                else
+                    craftButton.interactable = false;
 
                 if (PlayerPrefs.GetInt(targetChar) == 1)
                 {
@@ -60,6 +75,8 @@ public class CraftButton : MonoBehaviour
             case "Natural Killer":
                 if (PlayerPrefs.GetInt("LeftArm") >= 1 && PlayerPrefs.GetInt("MDRHelmet") >= 5 && PlayerPrefs.GetInt("ResistantSample") >= 35 && PlayerPrefs.GetInt("Naturaal Killer") == 0)
                     craftButton.interactable = true;
+                else
+                    craftButton.interactable = false;
 
                 if (PlayerPrefs.GetInt("Naturaal Killer") == 1)
                 {
@@ -71,7 +88,8 @@ public class CraftButton : MonoBehaviour
             case "B Cell":
                 if (PlayerPrefs.GetInt("Eyeball") >= 1 && PlayerPrefs.GetInt("Club") >= 10 && PlayerPrefs.GetInt("ResistantSample") >= 50 && PlayerPrefs.GetInt(targetChar) == 0)
                     craftButton.interactable = true;
-
+                else
+                    craftButton.interactable = false;
                 if (PlayerPrefs.GetInt(targetChar) == 1)
                 {
                     craftButton.interactable = false;
@@ -82,6 +100,8 @@ public class CraftButton : MonoBehaviour
             case "Memory Cell":
                 if (PlayerPrefs.GetInt("LeftArm") >= 1 && PlayerPrefs.GetInt("Eyeball") >= 1 && PlayerPrefs.GetInt("Scale") >= 5 && PlayerPrefs.GetInt("MycoClaw") >= 75 && PlayerPrefs.GetInt(targetChar) == 0)
                     craftButton.interactable = true;
+                else
+                    craftButton.interactable = false;
 
                 if (PlayerPrefs.GetInt(targetChar) == 1)
                 {
@@ -137,6 +157,7 @@ public class CraftButton : MonoBehaviour
 
                 craftButton.interactable = false;
                 craftButton.GetComponentInChildren<TMPro.TMP_Text>().text = "Crafted";
+                hasCraft = true;
                 break;
             case "B Cell":
                 GameManager.Instance.UpdateTDButtonPlayerPrefs("B Cell");
@@ -162,6 +183,7 @@ public class CraftButton : MonoBehaviour
             default:
                 break;
         }
+        
         updater.UpdateAllText();
     }
 }
